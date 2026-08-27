@@ -70,3 +70,12 @@ Del mismo modo:
 - La responsabilidad del cliente aumenta a medida que administra más componentes de la infraestructura.
 
 ---
+
+| Tipo de servicio                | Responsabilidad del cliente |
+|---------------------------------|-----------------------------|
+| Servicios altamente gestionados | Menor                       |
+| Servicios menos gestionados     | Mayor                       |
+
+> !!! note "Idea principal!
+>
+> Cuanto mayor es el nivel de gestión que ofrece AWS, menor es la responsabilidad operativa del cliente.

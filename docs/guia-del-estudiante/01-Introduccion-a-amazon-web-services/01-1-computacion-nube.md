@@ -2,7 +2,7 @@
 
 La **computación en la nube** consiste en el suministro bajo demanda de recursos informáticos a través de Internet, con un modelo de pago por uso.
 
-En lugar de adquirir y mantener infraestructura propia, los recursos se consumen como un servicio cuando son necesarios.
+En lugar de adquirir y mantener infraestructura propia, los recursos pueden aprovisionarse y utilizarse como un servicio cuando son necesarios.
 
 ```text
                Computación en la nube

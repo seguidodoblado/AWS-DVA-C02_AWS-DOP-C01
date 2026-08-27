@@ -15,14 +15,13 @@ Al seleccionar una región para desplegar recursos, es importante considerar asp
 - Latencia.
 - Cumplimiento normativo.
 - Disponibilidad de servicios.
-- Proximidad a los usuarios.
 - Coste.
 
 ---
 
 ## Zonas de disponibilidad (Availability Zones)
 
-Cada región está formada por **una o más Zonas de disponibilidad (AZ)**.
+Cada región está formada por **tres o más Zonas de disponibilidad (AZ)**.
 
 Cada Zona de disponibilidad es un conjunto de uno o varios centros de datos físicamente independientes, con alimentación eléctrica, refrigeración y conectividad de red redundantes.
 
