@@ -20,4 +20,4 @@ Este repositorio es material de estudio independiente y no oficial. AWS, Amazon 
 
 ## Licencia
 
-Consulta el archivo [LICENSE](LICENSE) para más información.
+Consulta el archivo [COPYING](COPYING) para más información.
