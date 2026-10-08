@@ -33,4 +33,4 @@ Contiene todos los módulos teóricos del curso, organizados por tema. Cada mód
 
 #### Módulo 0: Descripción general del curso
 
-- [Módulo 0: Descripción general del curso](guia-del-estudiante/00-descripcion-general-del-curso/00-descripcion-general-del-curso.md)
+- [Módulo 0: Descripción general del curso](guia-del-estudiante00-descripcion-general-del-curso.md)
