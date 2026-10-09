@@ -54,7 +54,6 @@ nav:
   - Guía del estudiante:
       - AWS Technical Essentials:
           - Inicio: guia-del-estudiante/01-aws-technical-essentials/index.md
-          - 00. Descripción general del curso: guia-del-estudiante/01-aws-technical-essentials/modulos/00-descripcion-general-del-curso.md
           - 01. Introducción a Amazon Web Services: guia-del-estudiante/01-aws-technical-essentials/modulos/01-introduccion-a-amazon-web-services.md
           - Glosario: guia-del-estudiante/01-aws-technical-essentials/glosario.md
           - Referencias: guia-del-estudiante/01-aws-technical-essentials/referencias.md
