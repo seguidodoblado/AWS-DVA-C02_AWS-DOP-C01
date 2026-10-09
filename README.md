@@ -8,7 +8,7 @@ Este repositorio recopila apuntes, resúmenes y prácticas guiadas para aprender
 
 ## Documentación
 
-Consulta el sitio publicado en **[https://seguidodoblado.github.io/aws-technical-essentials/](https://seguidodoblado.github.io/aws-technical-essentials/)** para acceder a todo el contenido organizado.
+Consulta el sitio publicado en **[https://seguidodoblado.github.io/AWS-DVA-C02_AWS-DOP-C01/](https://seguidodoblado.github.io/AWS-DVA-C02_AWS-DOP-C01/)** para acceder a todo el contenido organizado.
 
 ---
 

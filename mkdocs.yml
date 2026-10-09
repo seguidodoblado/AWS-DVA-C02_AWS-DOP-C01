@@ -1,9 +1,9 @@
 site_name: AWS Technical Essentials
 site_description: Manual de estudio en español del curso AWS Technical Essentials
 site_author: José Antonio Seguido Doblado
-site_url: https://seguidodoblado.github.io/aws-technical-essentials/
+site_url: https://seguidodoblado.github.io/AWS-DVA-C02_AWS-DOP-C01/
 repo_name: GitHub
-repo_url: https://github.com/seguidodoblado/aws-technical-essentials
+repo_url: https://github.com/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01
 
 theme:
   name: material
