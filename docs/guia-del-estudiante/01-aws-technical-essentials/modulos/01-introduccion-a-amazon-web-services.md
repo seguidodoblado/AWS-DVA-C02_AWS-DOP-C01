@@ -103,17 +103,31 @@ AWS también ofrece servicios relacionados con:
 - Flujos de trabajo.
 - Seguimiento del uso.
 
+#### Infraestructura fundamental
+
 ```mermaid
 flowchart TD
-    A["Servicios de AWS"] --> B["Computación"]
+    A["Infraestructura de AWS"] --> B["Computación"]
     A --> C["Redes"]
     A --> D["Almacenamiento"]
     A --> E["Bases de datos"]
-    A --> F["Analítica"]
-    A --> G["Seguridad, identidad<br/>y cumplimiento"]
-    A --> H["Herramientas para<br/>desarrolladores"]
-    A --> I["Gestión y monitorización"]
-    A --> J["Servicios de aplicaciones"]
-    A --> K["Servicios móviles"]
-    A --> L["Internet de las cosas"]
+```
+
+#### Desarrollo, datos y aplicaciones
+
+```mermaid
+flowchart TD
+    A["Desarrollo, datos y aplicaciones"] --> B["Analítica"]
+    A --> C["Herramientas para desarrolladores"]
+    A --> D["Servicios de aplicaciones y móviles"]
+    A --> E["Aplicaciones empresariales"]
+```
+
+#### Gestión, seguridad y servicios conectados
+
+```mermaid
+flowchart TD
+    A["Operación y servicios conectados"] --> B["Gestión y monitorización"]
+    A --> C["Seguridad, identidad y cumplimiento"]
+    A --> D["Internet de las cosas (IoT)"]
 ```
