@@ -1,36 +1,22 @@
-# AWS Technical Essentials
+# AWS DVA-C02 y AWS DOP-C01
 
-Material de estudio en español basado en los conceptos fundamentales del curso **AWS Technical Essentials**.
+Material de estudio en español para preparar las certificaciones **AWS Certified Developer - Associate (DVA-C02)** y **AWS Certified DevOps Engineer - Professional (DOP-C01)**. La guía reúne los cursos teóricos organizados para consultar sus módulos, términos y referencias.
 
-Este repositorio recopila apuntes, resúmenes y prácticas guiadas para aprender los servicios esenciales de Amazon Web Services de forma progresiva.
+## Guía del estudiante
 
----
+Selecciona un curso para acceder a su contenido:
+
+- [AWS Technical Essentials](guia-del-estudiante/01-aws-technical-essentials/index.md)
+- [Developing on AWS](guia-del-estudiante/02-developing-on-aws/index.md)
+- [Advanced Developing on AWS](guia-del-estudiante/03-advanced-developing-on-aws/index.md)
+- [Developing Serverless Solutions on AWS](guia-del-estudiante/04-developing-serverless-solutions-on-aws/index.md)
+- [DevOps Engineering on AWS](guia-del-estudiante/05-devops-engineering-on-aws/index.md)
+- [Running Containers on Amazon EKS](guia-del-estudiante/06-running-containers-on-eks/index.md)
+- [Generative AI on AWS](guia-del-estudiante/07-generative-ai-on-aws/index.md)
+- [Developing Generative AI Applications on AWS](guia-del-estudiante/08-developing-generative-ai-applications-on-aws/index.md)
+
+Cada curso organiza su material en módulos e incluye páginas para el glosario y las referencias.
 
 ## Acerca de este proyecto
 
-Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio y no constituye documentación oficial de Amazon Web Services (AWS).
-
----
-
-## Objetivo
-
-El objetivo de este proyecto es ofrecer una guía de estudio clara y organizada para repasar los fundamentos de AWS, incluyendo conceptos de nube, infraestructura global, seguridad, cómputo, redes y otros servicios básicos.
-
-El material está pensado como apoyo para:
-
-- estudiantes que estén comenzando con AWS,
-- personas que preparan una formación introductoria,
-- profesionales que quieren repasar conceptos esenciales,
-- instructores que necesitan una base estructurada en español.
-
----
-
-## Contenido disponible
-
-### Guía del estudiante
-
-Contiene todos los módulos teóricos del curso, organizados por tema. Cada módulo incluye documentos en Markdown con explicaciones, objetivos y conceptos clave.
-
-#### Módulo 0: Descripción general del curso
-
-- [Módulo 0: Descripción general del curso](guia-del-estudiante/00-descripcion-general-del-curso.md)
+Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio. No constituye documentación oficial de Amazon Web Services (AWS).
