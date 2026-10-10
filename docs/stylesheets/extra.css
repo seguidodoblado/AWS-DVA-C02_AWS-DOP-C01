@@ -1,0 +1,48 @@
+#mermaid-modal {
+  width: 90vw;
+  height: 85vh;
+  max-width: none;
+  padding: 1rem;
+  border: 0;
+  border-radius: 12px;
+  background: var(--md-default-bg-color);
+}
+
+#mermaid-modal::backdrop {
+  background: rgb(0 0 0 / 80%);
+}
+
+.mermaid-modal-content {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+}
+
+.mermaid-modal-content svg {
+  max-width: none !important;
+  transform-origin: center center;
+}
+
+.mermaid-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  z-index: 2;
+  border: 0;
+  background: transparent;
+  color: var(--md-default-fg-color);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.mermaid-zoom-controls {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  gap: 0.4rem;
+  transform: translateX(-50%);
+}
