@@ -2,8 +2,8 @@
 
 <!-- markdownlint-disable MD033 -->
 <p align="center">
-  <img src="../../../AWS%20DVA-C02.webp" alt="Logotipo de AWS DVA-C02" width="128">
-  <img src="../../../assets/AWS%20DOP-C01.png" alt="Logotipo de AWS DOP-C01" width="128">
+  <img src="../../../../assets/AWS%20DVA-C02.webp" alt="Logotipo de AWS DVA-C02" width="128">
+  <img src="../../../../assets/AWS%20DOP-C01.png" alt="Logotipo de AWS DOP-C01" width="128">
 </p>
 <!-- markdownlint-enable MD033 -->
 
