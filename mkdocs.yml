@@ -44,7 +44,6 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.details
-  - pymdownx.superfences
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.snippets
@@ -61,35 +60,35 @@ nav:
 
   - Guía del estudiante:
       - AWS Technical Essentials:
-          - Inicio: guia-del-estudiante/01-aws-technical-essentials/index.md
+          - 00. Descripción general del curso: guia-del-estudiante/01-aws-technical-essentials/index.md
           - 01. Introducción a Amazon Web Services: guia-del-estudiante/01-aws-technical-essentials/modulos/01-introduccion-a-amazon-web-services.md
           - Glosario: guia-del-estudiante/01-aws-technical-essentials/glosario.md
           - Referencias: guia-del-estudiante/01-aws-technical-essentials/referencias.md
       - Developing on AWS:
-          - Inicio: guia-del-estudiante/02-developing-on-aws/index.md
+          - 00. Descripción general del curso: guia-del-estudiante/02-developing-on-aws/index.md
           - Glosario: guia-del-estudiante/02-developing-on-aws/glosario.md
           - Referencias: guia-del-estudiante/02-developing-on-aws/referencias.md
       - Advanced Developing on AWS:
-          - Inicio: guia-del-estudiante/03-advanced-developing-on-aws/index.md
+          - 00. Descripción general del curso: guia-del-estudiante/03-advanced-developing-on-aws/index.md
           - Glosario: guia-del-estudiante/03-advanced-developing-on-aws/glosario.md
           - Referencias: guia-del-estudiante/03-advanced-developing-on-aws/referencias.md
       - Developing Serverless Solutions on AWS:
-          - Inicio: guia-del-estudiante/04-developing-serverless-solutions-on-aws/index.md
+          - 00. Descripción general del curso: guia-del-estudiante/04-developing-serverless-solutions-on-aws/index.md
           - Glosario: guia-del-estudiante/04-developing-serverless-solutions-on-aws/glosario.md
           - Referencias: guia-del-estudiante/04-developing-serverless-solutions-on-aws/referencias.md
       - DevOps Engineering on AWS:
-          - Inicio: guia-del-estudiante/05-devops-engineering-on-aws/index.md
+          - 00. Descripción general del curso: guia-del-estudiante/05-devops-engineering-on-aws/index.md
           - Glosario: guia-del-estudiante/05-devops-engineering-on-aws/glosario.md
           - Referencias: guia-del-estudiante/05-devops-engineering-on-aws/referencias.md
       - Running Containers on Amazon EKS:
-          - Inicio: guia-del-estudiante/06-running-containers-on-eks/index.md
+          - 00. Descripción general del curso: guia-del-estudiante/06-running-containers-on-eks/index.md
           - Glosario: guia-del-estudiante/06-running-containers-on-eks/glosario.md
           - Referencias: guia-del-estudiante/06-running-containers-on-eks/referencias.md
       - Generative AI on AWS:
-          - Inicio: guia-del-estudiante/07-generative-ai-on-aws/index.md
+          - 00. Descripción general del curso: guia-del-estudiante/07-generative-ai-on-aws/index.md
           - Glosario: guia-del-estudiante/07-generative-ai-on-aws/glosario.md
           - Referencias: guia-del-estudiante/07-generative-ai-on-aws/referencias.md
       - Developing Generative AI Applications on AWS:
-          - Inicio: guia-del-estudiante/08-developing-generative-ai-applications-on-aws/index.md
+          - 00. Descripción general del curso: guia-del-estudiante/08-developing-generative-ai-applications-on-aws/index.md
           - Glosario: guia-del-estudiante/08-developing-generative-ai-applications-on-aws/glosario.md
           - Referencias: guia-del-estudiante/08-developing-generative-ai-applications-on-aws/referencias.md

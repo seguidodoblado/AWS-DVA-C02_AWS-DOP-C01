@@ -568,3 +568,29 @@ flowchart TD
 ```
 
 Como buena práctica, se recomienda exigir autenticación multifactor (MFA) para los usuarios de IAM.
+
+### Políticas de IAM
+
+Una política es un documento que concede o deniega permisos para utilizar servicios y recursos de AWS.
+
+Como buena práctica, las políticas deben seguir el principio de mínimo privilegio: conceder únicamente los permisos necesarios para realizar una tarea.
+
+---
+
+### Grupos de IAM
+
+Un grupo de IAM es una colección de usuarios de IAM.
+
+Cuando asignas una política de IAM a un grupo, todos los usuarios que pertenecen a ese grupo reciben los permisos especificados por dicha política.
+
+```mermaid
+flowchart TD
+    A["Política de IAM"] --> B["Grupo de IAM"]
+    B --> C["Usuario de IAM 1"]
+    B --> D["Usuario de IAM 2"]
+    B --> E["Usuario de IAM 3"]
+
+    C --> F["Hereda los permisos"]
+    D --> F
+    E --> F
+```
