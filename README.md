@@ -1,4 +1,9 @@
-# AWS Technical Essentials
+# AWS DVA-C02 / AWS DOP-C01
+
+<p align="center">
+  <img src="assets/AWS DVA-C02.webp" alt="Logotipo de AWS DVA-C02" width="128">
+  <img src="assets/AWS DOP-C01.png" alt="Logotipo de AWS DVA-C02" width="128">
+</p>
 
 Material de estudio en español para preparar las certificaciones **AWS Certified Developer - Associate (DVA-C02)** y **AWS Certified DevOps Engineer - Professional (DOP-C01)**.
 
