@@ -26,6 +26,8 @@
   let modal;
   let content;
   let scale = 1;
+  let translateX = 0;
+  let translateY = 0;
 
   function createModal() {
     if (modal) return;
@@ -52,14 +54,19 @@
 
     modal.querySelectorAll("[data-zoom]").forEach((button) => {
       button.onclick = () => {
-        scale += Number(button.dataset.zoom);
-        scale = Math.max(0.3, Math.min(scale, 4));
-        updateZoom();
+        const bounds = content.getBoundingClientRect();
+        zoomAt(
+          scale + Number(button.dataset.zoom),
+          bounds.left + bounds.width / 2,
+          bounds.top + bounds.height / 2
+        );
       };
     });
 
     modal.querySelector("[data-reset]").onclick = () => {
       scale = 1;
+      translateX = 0;
+      translateY = 0;
       updateZoom();
     };
 
@@ -69,17 +76,34 @@
 
     content.addEventListener("wheel", (event) => {
       event.preventDefault();
-      scale += event.deltaY < 0 ? 0.1 : -0.1;
-      scale = Math.max(0.3, Math.min(scale, 4));
-      updateZoom();
+      zoomAt(
+        scale + (event.deltaY < 0 ? 0.1 : -0.1),
+        event.clientX,
+        event.clientY
+      );
     }, { passive: false });
+  }
+
+  function zoomAt(nextScale, clientX, clientY) {
+    const svg = content.querySelector("svg");
+    const clampedScale = Math.max(0.3, Math.min(nextScale, 4));
+
+    if (svg && clampedScale !== scale) {
+      const bounds = svg.getBoundingClientRect();
+      const scaleRatio = clampedScale / scale;
+      translateX += (clientX - bounds.left) * (1 - scaleRatio);
+      translateY += (clientY - bounds.top) * (1 - scaleRatio);
+    }
+
+    scale = clampedScale;
+    updateZoom();
   }
 
   function updateZoom() {
     const svg = content.querySelector("svg");
 
     if (svg) {
-      svg.style.transform = `scale(${scale})`;
+      svg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
     }
   }
 
@@ -95,6 +119,8 @@
 
     content.replaceChildren(svg.cloneNode(true));
     scale = 1;
+    translateX = 0;
+    translateY = 0;
     updateZoom();
 
     modal.showModal();
