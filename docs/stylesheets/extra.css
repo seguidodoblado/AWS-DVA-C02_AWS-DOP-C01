@@ -118,6 +118,21 @@
   transform-origin: top left;
 }
 
+.mermaid-modal-content.is-pan-mode {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.mermaid-modal-content.is-pan-mode svg {
+  cursor: grab;
+}
+
+.mermaid-modal-content.is-panning,
+.mermaid-modal-content.is-panning svg {
+  cursor: grabbing;
+}
+
 .mermaid-close {
   display: inline-flex;
   flex: 0 0 auto;
@@ -172,6 +187,12 @@
   transform: scale(1.08);
   background: color-mix(in srgb, var(--md-primary-fg-color) 14%, transparent);
   color: var(--md-primary-fg-color);
+}
+
+.mermaid-zoom-controls button[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 20%, transparent);
+  color: var(--md-primary-fg-color);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--md-primary-fg-color) 40%, transparent);
 }
 
 .mermaid-zoom-controls button svg {
