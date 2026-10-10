@@ -1,6 +1,8 @@
 # AWS Technical Essentials
 
-Material de estudio en español para preparar las certificaciones **AWS Certified Developer - Associate (DVA-C02)** y **AWS Certified DevOps Engineer - Professional (DOP-C01)**. La guía reúne los cursos teóricos organizados para consultar sus módulos, términos y referencias.
+Material de estudio en español para preparar las certificaciones **AWS Certified Developer - Associate (DVA-C02)** y **AWS Certified DevOps Engineer - Professional (DOP-C01)**.
+
+La guía reúne los cursos teóricos organizados para consultar sus módulos, términos y referencias.
 
 ---
 

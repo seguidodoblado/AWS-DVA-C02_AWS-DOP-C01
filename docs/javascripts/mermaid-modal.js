@@ -47,7 +47,7 @@
         <div>
           <p class="mermaid-modal-eyebrow">DIAGRAMA · MERMAID</p>
           <h2 id="mermaid-modal-title">Vista ampliada</h2>
-          <p class="mermaid-modal-hint">Rueda para zoom · activa la mano y arrastra para moverte.</p>
+          <p class="mermaid-modal-hint">Rueda para zoom · Activa la mano y arrastra para moverte.</p>
         </div>
         <button class="mermaid-close" type="button">Cerrar vista</button>
       </header>
