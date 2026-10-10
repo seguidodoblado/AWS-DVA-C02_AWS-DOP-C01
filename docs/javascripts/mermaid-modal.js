@@ -34,15 +34,34 @@
 
     modal = document.createElement("dialog");
     modal.id = "mermaid-modal";
+    modal.setAttribute("aria-labelledby", "mermaid-modal-title");
 
     modal.innerHTML = `
-      <button class="mermaid-close" type="button">×</button>
-      <div class="mermaid-zoom-controls">
-        <button type="button" data-zoom="-0.1">−</button>
-        <button type="button" data-zoom="0.1">+</button>
-        <button type="button" data-reset>100%</button>
-      </div>
+      <header class="mermaid-modal-header">
+        <div>
+          <p class="mermaid-modal-eyebrow">DIAGRAMA · MERMAID</p>
+          <h2 id="mermaid-modal-title">Vista ampliada</h2>
+          <p class="mermaid-modal-hint">Usa la rueda del ratón para acercar el diagrama.</p>
+        </div>
+        <button class="mermaid-close" type="button">Cerrar vista</button>
+      </header>
       <div class="mermaid-modal-content"></div>
+      <div class="mermaid-zoom-controls">
+        <button type="button" data-zoom="-0.1" aria-label="Reducir zoom" title="Reducir zoom">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /></svg>
+        </button>
+        <span class="mermaid-zoom-label">Zoom</span>
+        <button type="button" data-zoom="0.1" aria-label="Aumentar zoom" title="Aumentar zoom">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+        </button>
+        <span class="mermaid-zoom-divider" aria-hidden="true"></span>
+        <button type="button" data-reset aria-label="Restablecer zoom" title="Restablecer zoom">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 11a8 8 0 0 0-14.9-3L3 11" />
+            <path d="M3 5v6h6M4 13a8 8 0 0 0 14.9 3L21 13" />
+          </svg>
+        </button>
+      </div>
     `;
 
     document.body.appendChild(modal);
@@ -108,7 +127,7 @@
   }
 
   document.addEventListener("click", (event) => {
-    const svg = event.target.closest(".mermaid svg");
+    const svg = event.target.closest?.(".mermaid svg");
 
     if (!svg) return;
 

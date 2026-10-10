@@ -3,56 +3,114 @@
 }
 
 #mermaid-modal {
-  width: 90vw;
-  height: 85vh;
+  width: min(94vw, 1500px);
+  height: min(90vh, 1000px);
   max-width: none;
-  padding: 1rem;
-  border: 0;
-  border-radius: 12px;
+  padding: 1.5rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
+  border-radius: 1.25rem;
   background: var(--md-default-bg-color);
   opacity: 0;
-  transform: scale(0.96) translateY(0.5rem);
+  transform: scale(0.82) translateY(2rem) rotateX(5deg);
+  transform-origin: center 60%;
+  box-shadow: 0 2rem 6rem rgb(0 0 0 / 35%);
   transition:
-    opacity 180ms ease,
-    transform 180ms ease,
-    display 180ms allow-discrete,
-    overlay 180ms allow-discrete;
+    opacity 420ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    display 420ms allow-discrete,
+    overlay 420ms allow-discrete;
 }
 
 #mermaid-modal[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   opacity: 1;
-  transform: scale(1) translateY(0);
+  transform: scale(1) translateY(0) rotateX(0);
 }
 
 @starting-style {
   #mermaid-modal[open] {
     opacity: 0;
-    transform: scale(0.96) translateY(0.5rem);
+    transform: scale(0.82) translateY(2rem) rotateX(5deg);
+  }
+
+  #mermaid-modal[open]::backdrop {
+    background: rgb(0 0 0 / 0%);
+    backdrop-filter: blur(0);
   }
 }
 
 #mermaid-modal::backdrop {
   background: rgb(0 0 0 / 0%);
-  transition: background-color 180ms ease;
+  backdrop-filter: blur(0);
+  transition:
+    background-color 420ms ease,
+    backdrop-filter 420ms ease,
+    display 420ms allow-discrete,
+    overlay 420ms allow-discrete;
 }
 
 #mermaid-modal[open]::backdrop {
   background: rgb(0 0 0 / 80%);
+  backdrop-filter: blur(5px);
 }
 
 @media (prefers-reduced-motion: reduce) {
   #mermaid-modal,
   #mermaid-modal::backdrop {
-    transition-duration: 0.01ms;
+    transition-duration: 0.01ms !important;
   }
+}
+
+.mermaid-modal-header {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 0.25rem 0.25rem;
+}
+
+.mermaid-modal-header p,
+.mermaid-modal-header h2 {
+  margin: 0;
+}
+
+.mermaid-modal-eyebrow {
+  color: var(--md-accent-fg-color);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.mermaid-modal-header h2 {
+  margin-top: 0.25rem;
+  color: var(--md-default-fg-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.mermaid-modal-hint {
+  margin-top: 0.2rem !important;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.75rem;
 }
 
 .mermaid-modal-content {
   width: 100%;
-  height: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
   display: grid;
   place-items: safe center;
   overflow: auto;
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 8%, transparent);
+  border-radius: 0.9rem;
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--md-default-fg-color) 10%, transparent) 1px, transparent 1px)
+    0 0 / 18px 18px,
+    color-mix(in srgb, var(--md-default-bg-color) 94%, var(--md-default-fg-color));
 }
 
 .mermaid-modal-content svg {
@@ -61,23 +119,94 @@
 }
 
 .mermaid-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.75rem;
-  z-index: 2;
-  border: 0;
-  background: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 14%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--md-default-bg-color) 90%, var(--md-default-fg-color));
   color: var(--md-default-fg-color);
-  font-size: 2rem;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.mermaid-close:hover {
+  transform: translateY(-1px);
+  border-color: var(--md-primary-fg-color);
+  background: color-mix(in srgb, var(--md-primary-fg-color) 10%, var(--md-default-bg-color));
 }
 
 .mermaid-zoom-controls {
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  z-index: 2;
   display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
   gap: 0.4rem;
-  transform: translateX(-50%);
+  align-self: center;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--md-default-bg-color) 92%, var(--md-default-fg-color));
+  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 12%);
+}
+
+.mermaid-zoom-controls button {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.mermaid-zoom-controls button:hover {
+  transform: scale(1.08);
+  background: color-mix(in srgb, var(--md-primary-fg-color) 14%, transparent);
+  color: var(--md-primary-fg-color);
+}
+
+.mermaid-zoom-controls button svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.mermaid-zoom-label {
+  padding: 0 0.3rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.mermaid-zoom-divider {
+  width: 1px;
+  height: 1.25rem;
+  margin: 0 0.1rem;
+  background: color-mix(in srgb, var(--md-default-fg-color) 16%, transparent);
+}
+
+@media (max-width: 600px) {
+  #mermaid-modal {
+    width: 96vw;
+    height: 92vh;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .mermaid-modal-hint {
+    max-width: 12rem;
+  }
 }
