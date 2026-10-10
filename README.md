@@ -1,8 +1,6 @@
 # AWS Technical Essentials
 
-Material de estudio en español basado en los conceptos fundamentales del curso **AWS Technical Essentials**.
-
-Este repositorio recopila apuntes, resúmenes y prácticas guiadas para aprender los servicios esenciales de Amazon Web Services de forma progresiva.
+Material de estudio en español para preparar las certificaciones **AWS Certified Developer - Associate (DVA-C02)** y **AWS Certified DevOps Engineer - Professional (DOP-C01)**. La guía reúne los cursos teóricos organizados para consultar sus módulos, términos y referencias.
 
 ---
 
