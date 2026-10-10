@@ -26,6 +26,7 @@
   let modal;
   let content;
   let scale = 1;
+  let minimumScale = 0.3;
   let translateX = 0;
   let translateY = 0;
   let panMode = false;
@@ -95,10 +96,7 @@
     });
 
     modal.querySelector("[data-reset]").onclick = () => {
-      scale = 1;
-      translateX = 0;
-      translateY = 0;
-      updateZoom();
+      fitDiagram();
     };
 
     const panButton = modal.querySelector("[data-pan]");
@@ -160,7 +158,7 @@
 
   function zoomAt(nextScale, clientX, clientY) {
     const svg = content.querySelector("svg");
-    const clampedScale = Math.max(0.3, Math.min(nextScale, 4));
+    const clampedScale = Math.max(minimumScale, Math.min(nextScale, 4));
 
     if (svg && clampedScale !== scale) {
       const bounds = svg.getBoundingClientRect();
@@ -170,6 +168,28 @@
     }
 
     scale = clampedScale;
+    updateZoom();
+  }
+
+  function fitDiagram() {
+    const svg = content.querySelector("svg");
+
+    if (!svg) return;
+
+    svg.style.transform = "none";
+    const svgBounds = svg.getBoundingClientRect();
+    const contentBounds = content.getBoundingClientRect();
+    const availableWidth = content.clientWidth;
+    const availableHeight = content.clientHeight;
+
+    if (!svgBounds.width || !svgBounds.height || !availableWidth || !availableHeight) return;
+
+    scale = Math.min(1, availableWidth / svgBounds.width, availableHeight / svgBounds.height);
+    minimumScale = Math.min(0.3, scale);
+    translateX = contentBounds.left + content.clientLeft
+      + (availableWidth - svgBounds.width * scale) / 2 - svgBounds.left;
+    translateY = contentBounds.top + content.clientTop
+      + (availableHeight - svgBounds.height * scale) / 2 - svgBounds.top;
     updateZoom();
   }
 
@@ -193,6 +213,7 @@
 
     content.replaceChildren(svg.cloneNode(true));
     scale = 1;
+    minimumScale = 0.3;
     translateX = 0;
     translateY = 0;
     panMode = false;
@@ -201,8 +222,7 @@
     modal.querySelector("[data-pan]").setAttribute("aria-pressed", "false");
     modal.querySelector("[data-pan]").setAttribute("aria-label", "Activar desplazamiento");
     modal.querySelector("[data-pan]").title = "Activar desplazamiento";
-    updateZoom();
-
     modal.showModal();
+    requestAnimationFrame(fitDiagram);
   });
 })();
