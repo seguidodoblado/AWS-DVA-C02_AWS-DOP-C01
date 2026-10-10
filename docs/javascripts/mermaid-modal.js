@@ -176,18 +176,26 @@
 
     if (!svg) return;
 
+    const viewBox = svg.viewBox.baseVal;
+    const svgWidth = viewBox.width;
+    const svgHeight = viewBox.height;
+
+    if (!svgWidth || !svgHeight) return;
+
+    svg.style.width = `${svgWidth}px`;
+    svg.style.height = `${svgHeight}px`;
     svg.style.transform = "none";
-    const svgWidth = svg.offsetWidth;
-    const svgHeight = svg.offsetHeight;
     const availableWidth = content.clientWidth;
     const availableHeight = content.clientHeight;
 
-    if (!svgWidth || !svgHeight || !availableWidth || !availableHeight) return;
+    if (!availableWidth || !availableHeight) return;
 
     scale = Math.min(1, availableWidth / svgWidth, availableHeight / svgHeight);
     minimumScale = Math.min(0.3, scale);
-    translateX = (availableWidth - svgWidth * scale) / 2 - svg.offsetLeft;
-    translateY = (availableHeight - svgHeight * scale) / 2 - svg.offsetTop;
+    const initialX = Math.max(0, (availableWidth - svgWidth) / 2);
+    const initialY = Math.max(0, (availableHeight - svgHeight) / 2);
+    translateX = (availableWidth - svgWidth * scale) / 2 - initialX;
+    translateY = (availableHeight - svgHeight * scale) / 2 - initialY;
     updateZoom();
   }
 
