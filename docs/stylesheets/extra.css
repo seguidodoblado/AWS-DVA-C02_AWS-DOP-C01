@@ -99,6 +99,7 @@
 }
 
 .mermaid-modal-content {
+  position: relative;
   width: 100%;
   min-height: 0;
   flex: 1 1 auto;

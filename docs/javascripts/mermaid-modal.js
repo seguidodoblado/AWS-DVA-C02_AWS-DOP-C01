@@ -177,19 +177,17 @@
     if (!svg) return;
 
     svg.style.transform = "none";
-    const svgBounds = svg.getBoundingClientRect();
-    const contentBounds = content.getBoundingClientRect();
+    const svgWidth = svg.offsetWidth;
+    const svgHeight = svg.offsetHeight;
     const availableWidth = content.clientWidth;
     const availableHeight = content.clientHeight;
 
-    if (!svgBounds.width || !svgBounds.height || !availableWidth || !availableHeight) return;
+    if (!svgWidth || !svgHeight || !availableWidth || !availableHeight) return;
 
-    scale = Math.min(1, availableWidth / svgBounds.width, availableHeight / svgBounds.height);
+    scale = Math.min(1, availableWidth / svgWidth, availableHeight / svgHeight);
     minimumScale = Math.min(0.3, scale);
-    translateX = contentBounds.left + content.clientLeft
-      + (availableWidth - svgBounds.width * scale) / 2 - svgBounds.left;
-    translateY = contentBounds.top + content.clientTop
-      + (availableHeight - svgBounds.height * scale) / 2 - svgBounds.top;
+    translateX = (availableWidth - svgWidth * scale) / 2 - svg.offsetLeft;
+    translateY = (availableHeight - svgHeight * scale) / 2 - svg.offsetTop;
     updateZoom();
   }
 
