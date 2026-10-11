@@ -745,8 +745,7 @@ A diferencia de las credenciales permanentes de un usuario, un rol proporciona c
 - [ ] Alta disponibilidad, impuestos, velocidad y cumplimiento normativo
 - [ ] Seguridad, resiliencia, impuestos y rendimiento
 
-Respuesta correcta: **Latencia, precio, disponibilidad de servicios y cumplimiento normativo.**
-*Al elegir una Región debes valorar la proximidad de los usuarios, el coste, los servicios disponibles y los requisitos legales o normativos aplicables.*
+*Respuesta correcta: **Latencia, precio, disponibilidad de servicios y cumplimiento normativo.** - Al elegir una Región debes valorar la proximidad de los usuarios, el coste, los servicios disponibles y los requisitos legales o normativos aplicables.*
 </quiz>
 
 <quiz>
@@ -757,8 +756,7 @@ Respuesta correcta: **Latencia, precio, disponibilidad de servicios y cumplimien
 - [ ] Los centros de datos están formados por varias Regiones
 - [ ] Una Región contiene un único centro de datos
 
-Respuesta correcta: **Una Región está formada por varias zonas de disponibilidad, y estas contienen uno o más centros de datos.**
-*Una Región es una ubicación geográfica independiente. Dentro de ella existen varias Zonas de disponibilidad, y cada Zona está formada por uno o más centros de datos.*
+*Respuesta correcta: **Una Región está formada por varias zonas de disponibilidad, y estas contienen uno o más centros de datos.** - Una Región es una ubicación geográfica independiente. Dentro de ella existen varias Zonas de disponibilidad, y cada Zona está formada por uno o más centros de datos.*
 </quiz>
 
 <quiz>
@@ -769,8 +767,7 @@ Respuesta correcta: **Una Región está formada por varias zonas de disponibilid
 - [ ] Sobredimensionar la infraestructura por adelantado
 - [x] Llegar a otras partes del mundo en pocos minutos
 
-Respuesta correcta: **Llegar a otras partes del mundo en pocos minutos.**
-*AWS permite crear recursos en distintas Regiones rápidamente. Esto facilita ampliar una aplicación a nuevos mercados sin construir centros de datos propios.*
+*Respuesta correcta: **Llegar a otras partes del mundo en pocos minutos.** - AWS permite crear recursos en distintas Regiones rápidamente. Esto facilita ampliar una aplicación a nuevos mercados sin construir centros de datos propios.*
 </quiz>
 
 <quiz>
@@ -781,7 +778,6 @@ Una empresa quiere que sus usuarios, autenticados previamente en su red corporat
 - [x] Un rol de IAM
 - [ ] Un grupo de IAM
 
-Respuesta correcta: **Un rol de IAM.**
-*Un rol de IAM proporciona permisos temporales y puede ser asumido por usuarios federados. Por eso es adecuado para escenarios de federación e inicio de sesión único.*
+*Respuesta correcta: **Un rol de IAM.** - Un rol de IAM proporciona permisos temporales y puede ser asumido por usuarios federados. Por eso es adecuado para escenarios de federación e inicio de sesión único.*
 </quiz>
 <!-- markdownlint-enable MD033 -->
