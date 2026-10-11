@@ -20,8 +20,8 @@ Selecciona el área que quieres consultar:
 
     Material de estudio en español para preparar las certificaciones:
 
-    - **AWS Certified Developer - Associate (DVA-C02)**
-    - **AWS Certified DevOps Engineer - Professional (DOP-C01)**
+    Certified Developer - Associate (DVA-C02)
+    Certified DevOps Engineer - Professional (DOP-C01)
 
     [:octicons-arrow-right-24: Acceder a la teoría](guia-del-estudiante/student-guides.md)
 
