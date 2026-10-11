@@ -2,8 +2,8 @@
 
 <!-- markdownlint-disable MD033 -->
 <p align="center">
-  <img src="../../assets/AWS%20DVA-C02.webp" alt="Logotipo de AWS DVA-C02" width="128">
-  <img src="../../assets/AWS%20DOP-C01.png" alt="Logotipo de AWS DOP-C01" width="128">
+  <img src="../assets/AWS%20DVA-C02.webp" alt="Logotipo de AWS DVA-C02" width="128">
+  <img src="../assets/AWS%20DOP-C01.png" alt="Logotipo de AWS DOP-C01" width="128">
 </p>
 <!-- markdownlint-enable MD033 -->
 
@@ -80,6 +80,10 @@ floci help
 Si Floci se inicia correctamente, el entorno estará preparado para configurar AWS CLI y comenzar los laboratorios.
 
 Se puede acceder a su panel de control desde [http://localhost:4566](http://localhost:4566).
+
+<!-- markdownlint-disable MD033 -->
+<img src="../assets/floci-dashboard.png" alt="Dashboard de Floci">
+<!-- markdownlint-enable MD033 -->
 
 #### Consideraciones de seguridad
 
