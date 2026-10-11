@@ -60,7 +60,7 @@ markdown_extensions:
 
 nav:
   - Inicio: index.md
-
+  
   - Guía del estudiante:
       - AWS Technical Essentials:
           - 00. Descripción general del curso: guia-del-estudiante/01-aws-technical-essentials/index.md
@@ -95,3 +95,5 @@ nav:
           - 00. Descripción general del curso: guia-del-estudiante/08-developing-generative-ai-applications-on-aws/index.md
           - Glosario: guia-del-estudiante/08-developing-generative-ai-applications-on-aws/glosario.md
           - Referencias: guia-del-estudiante/08-developing-generative-ai-applications-on-aws/referencias.md
+
+  - Laboratorios: laboratorios/index.md
