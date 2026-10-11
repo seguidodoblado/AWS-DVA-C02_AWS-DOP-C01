@@ -18,9 +18,11 @@ Selecciona el área que quieres consultar:
 
 - :material-school-outline:{ .lg .middle } **Student Training Hub**
 
-    Material de estudio en español para preparar las certificaciones **AWS Certified Developer - Associate (DVA-C02)** y **AWS Certified DevOps Engineer - Professional (DOP-C01)**
+  Material de estudio en español para preparar las certificaciones:
+  - **AWS Certified Developer - Associate (DVA-C02)**
+  - **AWS Certified DevOps Engineer - Professional (DOP-C01)**
 
-    [:octicons-arrow-right-24: Acceder a la teoría](guia-del-estudiante/student-guides.md)
+  [:octicons-arrow-right-24: Acceder a la teoría](guia-del-estudiante/student-guides.md)
 
 - :material-flask-outline:{ .lg .middle } **Labs Training Hub**
 
