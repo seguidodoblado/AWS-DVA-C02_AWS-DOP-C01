@@ -1,4 +1,4 @@
-# Floci
+# Configurar emulador local de AWS FLOCI
 
 <!-- markdownlint-disable MD033 -->
 <p align="center">
