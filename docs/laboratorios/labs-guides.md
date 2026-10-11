@@ -102,5 +102,5 @@ Cada laboratorio adaptado incluirá:
     - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
     - No constituye documentación oficial de Amazon Web Services (AWS).
 !!! warning
-    Estos laboratorios no reproducen necesariamente todos los pasos de la consola real de AWS.
-    Las instrucciones se adaptarán al simulador local utilizado, manteniendo los objetivos y conceptos de la guía del laboratorio original.
+    - Estos laboratorios no reproducen necesariamente todos los pasos de la consola real de AWS.
+    - Las instrucciones se adaptarán al simulador local utilizado, manteniendo los objetivos y conceptos de la guía del laboratorio original.
