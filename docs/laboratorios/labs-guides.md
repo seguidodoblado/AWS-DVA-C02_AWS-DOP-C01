@@ -22,49 +22,49 @@ Aquí se recogen las adaptaciones de los laboratorios oficiales para ejecutarlos
 
     Laboratorios sobre IAM, VPC, EC2, S3, DynamoDB y alta disponibilidad.
 
-    [:octicons-arrow-right-24: Acceder a los laboratorios](01-aws-technical-essentials/index.md)
+    [:octicons-arrow-right-24: Acceder a la guía del curso](../guia-del-estudiante/01-aws-technical-essentials/index.md)
 
 - :material-language-javascript:{ .lg .middle } **Developing on AWS**
 
     Laboratorios relacionados con el desarrollo de aplicaciones mediante servicios de AWS.
 
-    [:octicons-arrow-right-24: Acceder a los laboratorios](02-developing-on-aws/index.md)
+    [:octicons-arrow-right-24: Acceder a la guía del curso](../guia-del-estudiante/02-developing-on-aws/index.md)
 
 - :material-code-braces:{ .lg .middle } **Advanced Developing on AWS**
 
     Laboratorios de desarrollo avanzado y diseño de aplicaciones en AWS.
 
-    [:octicons-arrow-right-24: Acceder a los laboratorios](03-advanced-developing-on-aws/index.md)
+    [:octicons-arrow-right-24: Acceder a la guía del curso](../guia-del-estudiante/03-advanced-developing-on-aws/index.md)
 
 - :material-server-network:{ .lg .middle } **Developing Serverless Solutions on AWS**
 
     Laboratorios sobre arquitecturas y aplicaciones sin servidor.
 
-    [:octicons-arrow-right-24: Acceder a los laboratorios](04-developing-serverless-solutions/index.md)
+    [:octicons-arrow-right-24: Acceder a la guía del curso](../guia-del-estudiante/04-developing-serverless-solutions-on-aws/index.md)
 
 - :material-cog-outline:{ .lg .middle } **DevOps Engineering on AWS**
 
     Laboratorios de automatización, integración continua, entrega continua y operaciones.
 
-    [:octicons-arrow-right-24: Acceder a los laboratorios](05-devops-engineering-on-aws/index.md)
+    [:octicons-arrow-right-24: Acceder a la guía del curso](../guia-del-estudiante/05-devops-engineering-on-aws/index.md)
 
 - :material-kubernetes:{ .lg .middle } **Running Containers on Amazon EKS**
 
     Laboratorios sobre contenedores, Kubernetes y Amazon EKS.
 
-    [:octicons-arrow-right-24: Acceder a los laboratorios](06-running-containers-on-eks/index.md)
+    [:octicons-arrow-right-24: Acceder a la guía del curso](../guia-del-estudiante/06-running-containers-on-eks/index.md)
 
 - :material-creation:{ .lg .middle } **Generative AI Essentials on AWS**
 
     Laboratorios introductorios sobre inteligencia artificial generativa en AWS.
 
-    [:octicons-arrow-right-24: Acceder a los laboratorios](07-generative-ai-essentials-on-aws/index.md)
+    [:octicons-arrow-right-24: Acceder a la guía del curso](../guia-del-estudiante/07-generative-ai-on-aws/index.md)
 
 - :material-brain:{ .lg .middle } **Developing Generative AI Applications on AWS**
 
     Laboratorios para desarrollar aplicaciones de inteligencia artificial generativa.
 
-    [:octicons-arrow-right-24: Acceder a los laboratorios](08-developing-generative-ai-applications/index.md)
+    [:octicons-arrow-right-24: Acceder a la guía del curso](../guia-del-estudiante/08-developing-generative-ai-applications-on-aws/index.md)
 
 </div>
 <!-- markdownlint-disable MD033 -->

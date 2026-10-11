@@ -26,13 +26,15 @@ Selecciona el área que quieres consultar:
 
 - :material-flask-outline:{ .lg .middle } **Labs Training Hub**
 
-    Adaptación práctica de los laboratorios oficiales para entornos locales mediante **Floci** o **LocalStack**.
+  Adaptación práctica de los laboratorios oficiales para entornos locales
+  mediante **Floci** o **LocalStack**.
 
-    [:octicons-arrow-right-24: Acceder a los laboratorios](laboratorios/labs-guides.md)
+  [:octicons-arrow-right-24: Acceder a los laboratorios](laboratorios/labs-guides.md)
 
 </div>
 <!-- markdownlint-enable MD033 -->
 
 !!! info "Acerca de este proyecto"
-    - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
+    - Esta documentación ha sido elaborada de forma independiente por
+      **José Antonio Seguido Doblado** como material de estudio.
     - No constituye documentación oficial de Amazon Web Services (AWS).
