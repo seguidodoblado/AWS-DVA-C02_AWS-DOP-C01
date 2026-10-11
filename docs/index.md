@@ -13,6 +13,7 @@ Material de estudio en español para preparar las certificaciones **AWS Certifie
 
 Selecciona un curso para acceder a su contenido:
 
+- [Como usar este guía](guia-del-estudiante/student-guides.md)
 - [AWS Technical Essentials](guia-del-estudiante/01-aws-technical-essentials/index.md)
 - [Developing on AWS](guia-del-estudiante/02-developing-on-aws/index.md)
 - [Advanced Developing on AWS](guia-del-estudiante/03-advanced-developing-on-aws/index.md)
