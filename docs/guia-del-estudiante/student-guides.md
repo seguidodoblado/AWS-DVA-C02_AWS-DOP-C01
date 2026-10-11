@@ -37,7 +37,7 @@ Esta documentación reúne la traducción y organización de los cursos de AWS, 
 
     Desarrollo de soluciones sin servidor utilizando AWS.
 
-    [:octicons-arrow-right-24: Acceder al curso](04-developing-serverless-solutions/index.md)
+    [:octicons-arrow-right-24: Acceder al curso](04-developing-serverless-solutions-on-aws/index.md)
 
 - :material-cog-outline:{ .lg .middle } __DevOps Engineering on AWS__
 
@@ -55,13 +55,13 @@ Esta documentación reúne la traducción y organización de los cursos de AWS, 
 
     Conceptos fundamentales de inteligencia artificial generativa en AWS.
 
-    [:octicons-arrow-right-24: Acceder al curso](07-generative-ai-essentials-on-aws/index.md)
+    [:octicons-arrow-right-24: Acceder al curso](07-generative-ai-on-aws/index.md)
 
 - :material-brain:{ .lg .middle } __Developing Generative AI Applications on AWS__
 
     Desarrollo de aplicaciones de inteligencia artificial generativa en AWS.
 
-    [:octicons-arrow-right-24: Acceder al curso](08-developing-generative-ai-applications/index.md)
+    [:octicons-arrow-right-24: Acceder al curso](08-developing-generative-ai-applications-on-aws/index.md)
 
 </div>
 <!-- markdownlint-enable MD033 -->
