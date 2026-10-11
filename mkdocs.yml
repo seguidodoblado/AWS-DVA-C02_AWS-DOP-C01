@@ -97,7 +97,7 @@ nav:
           - Referencias: guia-del-estudiante/08-developing-generative-ai-applications-on-aws/referencias.md
 
   - Laboratorios:
-      - Configuración inicial: laboratorios/configuracion-inicial.md
+      - Configuración inicial: laboratorios/configuracion-floci.md
       - AWS Technical Essentials:
          - 01. Introducción a AWS Identity and Access Management: laboratorios/01-aws-technical-essentials/labs/01-introduccion-a-aws-identity-and-access-management.md
          
