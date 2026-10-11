@@ -7,12 +7,12 @@
 </p>
 <!-- markdownlint-enable MD033 -->
 
+!!! info "Acerca de este proyecto"
+    Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio. No constituye documentación oficial de Amazon Web Services (AWS).
+
 Bienvenido a la guía de estudio de AWS.
 
 Esta documentación reúne la traducción y organización de los cursos de AWS, manteniendo el orden original de los Student Guides.
-
-!!! info "Acerca de este proyecto"
-    Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio. No constituye documentación oficial de Amazon Web Services (AWS).
 
 ---
 

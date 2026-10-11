@@ -101,6 +101,7 @@ nav:
           - Referencias: guia-del-estudiante/08-developing-generative-ai-applications-on-aws/referencias.md
 
   - Laboratorios:
+      - Como usar esta guía: laboratorios/labs-guides.md
       - Configuración inicial: laboratorios/configuracion-floci.md
       - AWS Technical Essentials:
           - 00. Descripción general del curso: laboratorios/01-aws-technical-essentials/index.md
