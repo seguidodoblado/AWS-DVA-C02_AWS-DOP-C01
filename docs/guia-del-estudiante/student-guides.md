@@ -7,13 +7,9 @@
 </p>
 <!-- markdownlint-enable MD033 -->
 
-!!! info "Acerca de este proyecto"
-    - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
-    - No constituye documentación oficial de Amazon Web Services (AWS).
-
 Bienvenido a la guía de estudio de AWS.
 
-Esta documentación reúne la traducción y organización de los cursos de AWS, manteniendo el orden original de los Student Guides.
+Esta documentación reúne la traducción y organización de los cursos de AWS, manteniendo toda la fidelidad posible con las guías de estudio oficiales.
 
 ---
 
@@ -88,3 +84,7 @@ Cada curso está organizado siguiendo la estructura de su Student Guide:
 Los laboratorios se mantienen separados de la teoría y se adaptan en una guía independiente para su ejecución local mediante simuladores de AWS.
 
 ---
+
+!!! info "Acerca de este proyecto"
+    - Esta documentación ha sido elaborada de forma independiente por __José Antonio Seguido Doblado__ como material de estudio.
+    - No constituye documentación oficial de Amazon Web Services (AWS).

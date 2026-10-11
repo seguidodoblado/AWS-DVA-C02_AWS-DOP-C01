@@ -7,13 +7,6 @@
 </p>
 <!-- markdownlint-enable MD033 -->
 
-!!! info "Acerca de este proyecto"
-    - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
-    - No constituye documentación oficial de Amazon Web Services (AWS).
-!!! warning
-    Estos laboratorios no reproducen necesariamente todos los pasos de la consola real de AWS.
-    Las instrucciones se adaptarán al simulador local utilizado, manteniendo los objetivos y conceptos de la guía del laboratorio original.
-
 Bienvenido a la sección práctica de los cursos de AWS.
 
 Aquí se recogen las adaptaciones de los laboratorios oficiales para ejecutarlos en entornos locales mediante **Floci** y **LocalStack**.
@@ -104,3 +97,10 @@ Cada laboratorio adaptado incluirá:
 9. Limpieza del entorno.
 
 ---
+
+!!! info "Acerca de este proyecto"
+    - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
+    - No constituye documentación oficial de Amazon Web Services (AWS).
+!!! warning
+    Estos laboratorios no reproducen necesariamente todos los pasos de la consola real de AWS.
+    Las instrucciones se adaptarán al simulador local utilizado, manteniendo los objetivos y conceptos de la guía del laboratorio original.

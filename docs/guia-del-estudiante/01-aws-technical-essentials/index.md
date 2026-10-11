@@ -107,3 +107,7 @@ flowchart TD
 ```
 
 *Los módulos que contienen este símbolo ⚗️ disponen de laboratorio práctico.*
+
+!!! info "Acerca de este proyecto"
+    - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
+    - No constituye documentación oficial de Amazon Web Services (AWS).

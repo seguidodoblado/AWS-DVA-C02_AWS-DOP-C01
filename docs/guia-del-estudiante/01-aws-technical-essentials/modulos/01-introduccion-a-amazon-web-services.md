@@ -785,3 +785,7 @@ Respuesta correcta: **Un rol de IAM.**
 *Un rol de IAM proporciona permisos temporales y puede ser asumido por usuarios federados. Por eso es adecuado para escenarios de federación e inicio de sesión único.*
 </quiz>
 <!-- markdownlint-enable MD033 -->
+
+!!! info "Acerca de este proyecto"
+    - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
+    - No constituye documentación oficial de Amazon Web Services (AWS).

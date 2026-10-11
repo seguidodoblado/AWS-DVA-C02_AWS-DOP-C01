@@ -274,6 +274,10 @@ flowchart TD
 
 IAM controla qué usuarios y componentes pueden acceder a cada servicio. VPC proporciona la red, EC2 ejecuta la aplicación, S3 almacena imágenes, DynamoDB conserva los datos y el balanceador junto con Auto Scaling proporcionan disponibilidad y capacidad de crecimiento.
 
+!!! info "Acerca de este proyecto"
+    - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
+    - No constituye documentación oficial de Amazon Web Services (AWS).
+
 !!! warning "Advertencia"
     - Para los laboratorios posteriores en el entorno local, esta guía servirá como referencia funcional.
     - Cada laboratorio se adaptará manteniendo sus objetivos, aunque algunos elementos gestionados de AWS podrán representarse mediante recursos simulados o equivalentes locales.

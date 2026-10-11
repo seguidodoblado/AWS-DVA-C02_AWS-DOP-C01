@@ -7,10 +7,6 @@
 </p>
 <!-- markdownlint-enable MD033 -->
 
-!!! info "Acerca de este proyecto"
-    - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
-    - No constituye documentación oficial de Amazon Web Services (AWS).
-
 ## AWS Training Hub
 
 Bienvenido al centro de formación de AWS.
@@ -34,3 +30,7 @@ Selecciona el área que quieres consultar:
 
 </div>
 <!-- markdownlint-enable MD033 -->
+
+!!! info "Acerca de este proyecto"
+    - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
+    - No constituye documentación oficial de Amazon Web Services (AWS).
