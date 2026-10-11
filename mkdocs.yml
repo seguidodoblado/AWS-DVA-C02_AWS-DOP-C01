@@ -5,6 +5,9 @@ site_url: https://seguidodoblado.github.io/AWS-DVA-C02_AWS-DOP-C01/
 repo_name: GitHub
 repo_url: https://github.com/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01
 
+plugins:
+  - mkdocs_quiz
+
 theme:
   name: material
   logo: assets/logo.png

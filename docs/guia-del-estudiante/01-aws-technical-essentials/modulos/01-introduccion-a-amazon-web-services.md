@@ -733,3 +733,51 @@ A diferencia de las credenciales permanentes de un usuario, un rol proporciona c
 - Son útiles para conceder acceso temporal.
 - Los servicios de AWS pueden asumir roles para actuar en una cuenta.
 - Los permisos del rol deben limitarse a las acciones necesarias.
+
+## Cuestionario de conocimiento
+
+<!-- markdownlint-disable MD033 -->
+<quiz>
+¿Cuáles son cuatro factores importantes al elegir una Región de AWS?
+
+- [x] Latencia, precio, disponibilidad de servicios y cumplimiento normativo
+- [ ] Latencia, impuestos, velocidad y seguridad
+- [ ] Alta disponibilidad, impuestos, velocidad y cumplimiento normativo
+- [ ] Seguridad, resiliencia, impuestos y rendimiento
+
+*Al elegir una Región debes valorar la proximidad de los usuarios, el coste, los servicios disponibles y los requisitos legales o normativos aplicables.*
+</quiz>
+
+<quiz>
+¿Cuál describe correctamente la relación entre Regiones, Zonas de disponibilidad y centros de datos?
+
+- [ ] Las Zonas de disponibilidad contienen varias Regiones
+- [x] Una Región está formada por varias Zonas de disponibilidad, y estas contienen uno o más centros de datos
+- [ ] Los centros de datos están formados por varias Regiones
+- [ ] Una Región contiene un único centro de datos
+
+*Una Región es una ubicación geográfica independiente. Dentro de ella existen varias Zonas de disponibilidad, y cada Zona está formada por uno o más centros de datos.*
+</quiz>
+
+<quiz>
+¿Cuál de las siguientes es una ventaja de la computación en la nube?
+
+- [ ] Mantener centros de datos propios
+- [ ] Aumentar el tiempo necesario para lanzar aplicaciones
+- [ ] Sobredimensionar la infraestructura por adelantado
+- [x] Llegar a otras partes del mundo en pocos minutos
+
+*AWS permite crear recursos en distintas Regiones rápidamente. Esto facilita ampliar una aplicación a nuevos mercados sin construir centros de datos propios.*
+</quiz>
+
+<quiz>
+Una empresa quiere que sus usuarios, autenticados previamente en su red corporativa, accedan a AWS sin iniciar sesión otra vez. ¿Qué opción se utiliza normalmente junto con la federación de usuarios o el inicio de sesión único?
+
+- [ ] El usuario raíz de IAM
+- [ ] Un usuario de IAM
+- [x] Un rol de IAM
+- [ ] Un grupo de IAM
+
+*Un rol de IAM proporciona permisos temporales y puede ser asumido por usuarios federados. Por eso es adecuado para escenarios de federación e inicio de sesión único.*
+</quiz>
+<!-- markdownlint-enable MD033 -->
