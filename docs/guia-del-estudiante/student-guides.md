@@ -1,11 +1,18 @@
 # Student Training Hub
 
+<!-- markdownlint-disable MD033 -->
+<p align="center">
+  <img src="../../assets/AWS%20DVA-C02.webp" alt="Logotipo de AWS DVA-C02" width="128">
+  <img src="../../assets/AWS%20DOP-C01.png" alt="Logotipo de AWS DOP-C01" width="128">
+</p>
+<!-- markdownlint-enable MD033 -->
+
 Bienvenido a la guía de estudio de AWS.
 
 Esta documentación reúne la traducción y organización de los cursos de AWS, manteniendo el orden original de los Student Guides.
 
 !!! info "Acerca de este proyecto"
-        Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio. No constituye documentación oficial de Amazon Web Services (AWS).
+    Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio. No constituye documentación oficial de Amazon Web Services (AWS).
 
 ---
 

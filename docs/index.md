@@ -7,9 +7,6 @@
 </p>
 <!-- markdownlint-enable MD033 -->
 
-- Material de estudio en español para preparar las certificaciones **AWS Certified Developer - Associate (DVA-C02)** y **AWS Certified DevOps Engineer - Professional (DOP-C01)**.
-- La guía reúne los cursos teóricos organizados para consultar sus módulos, términos y referencias.
-
 ## AWS Training Hub
 
 Bienvenido al centro de formación de AWS.
@@ -21,13 +18,13 @@ Selecciona el área que quieres consultar:
 
 - :material-school-outline:{ .lg .middle } **Student Training Hub**
 
-    Teoría traducida de los cursos oficiales de AWS, organizada por módulos y respetando el orden original de las guías del estudiante.
+    Material de estudio en español para preparar las certificaciones **AWS Certified Developer - Associate (DVA-C02)** y **AWS Certified DevOps Engineer - Professional (DOP-C01)**
 
     [:octicons-arrow-right-24: Acceder a la teoría](guia-del-estudiante/student-guides.md)
 
 - :material-flask-outline:{ .lg .middle } **Labs Training Hub**
 
-    Adaptación práctica de los laboratorios para entornos locales mediante Floci y LocalStack.
+    Adaptación práctica de los laboratorios oficiales para entornos locales mediante **Floci** o **LocalStack**.
 
     [:octicons-arrow-right-24: Acceder a los laboratorios](laboratorios/labs-guides.md)
 
