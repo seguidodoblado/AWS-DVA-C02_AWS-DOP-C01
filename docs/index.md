@@ -20,8 +20,8 @@ Selecciona el área que quieres consultar:
 
     Material de estudio en español para preparar las certificaciones:
 
-    **Developer - Associate (DVA-C02)**
-    **DevOps Engineer - Professional (DOP-C01)**
+    - **Developer - Associate (DVA-C02)**
+    - **DevOps Engineer - Professional (DOP-C01)**
 
     [:octicons-arrow-right-24: Acceder a la teoría](guia-del-estudiante/student-guides.md)
 
