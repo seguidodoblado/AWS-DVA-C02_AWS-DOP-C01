@@ -2,8 +2,8 @@
 
 <!-- markdownlint-disable MD033 -->
 <p align="center">
-  <img src="../assets/AWS%20DVA-C02.webp" ...>
-  <img src="../assets/AWS%20DOP-C01.png" ...>
+  <img src="../../assets/AWS%20DVA-C02.webp" ...>
+  <img src="../../assets/AWS%20DOP-C01.png" ...>
 </p>
 <!-- markdownlint-enable MD033 -->
 
