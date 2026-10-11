@@ -1,5 +1,12 @@
 # Laboratorios
 
+<!-- markdownlint-disable MD033 -->
+<p align="center">
+  <img src="../assets/AWS%20DVA-C02.webp" ...>
+  <img src="../assets/AWS%20DOP-C01.png" ...>
+</p>
+<!-- markdownlint-enable MD033 -->
+
 En esta sección encontrarás laboratorios prácticos para aplicar los conceptos y servicios de AWS incluidos en las guías de estudio.
 
 ## 0.1. Instalación y configuración de Floci

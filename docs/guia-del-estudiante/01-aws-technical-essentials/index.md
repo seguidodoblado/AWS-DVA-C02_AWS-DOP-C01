@@ -9,7 +9,7 @@
 
 ## Mapa del curso
 
-### Módulo 1: Introducción a Amazon Web Services
+### [Módulo 1: Introducción a Amazon Web Services](modulos/01-introduccion-a-amazon-web-services.md)
 
 Este módulo presenta:
 

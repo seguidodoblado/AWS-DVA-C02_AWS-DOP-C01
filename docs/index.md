@@ -24,6 +24,13 @@ Selecciona un curso para acceder a su contenido:
 
 Cada curso organiza su material en módulos e incluye páginas para el glosario y las referencias.
 
+## Laboratorios
+
+Selecciona un curso para acceder a su contenido:
+
+- [Configuración inicial](laboratorios/configuracion-floci.md)
+- [AWS Technical Essentials](laboratorios/01-aws-technical-essentials/labs/01-introduccion-a-aws-identity-and-access-management.md)
+
 ## Acerca de este proyecto
 
 Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio. No constituye documentación oficial de Amazon Web Services (AWS).
