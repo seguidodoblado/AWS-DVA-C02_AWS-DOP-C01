@@ -374,7 +374,7 @@ flowchart LR
     C --> D["Aplicaciones, datos y accesos"]
 ```
 
-### Resumen
+### Resumen de modelo de responsabilidad compartida en AWS
 
 La seguridad en AWS es una responsabilidad compartida:
 
@@ -594,3 +594,142 @@ flowchart TD
     D --> F
     E --> F
 ```
+
+#### Organización de grupos
+
+Una forma habitual de organizar los grupos consiste en agrupar a los usuarios según sus funciones laborales.
+
+Por ejemplo, una empresa que desarrolla una aplicación podría crear:
+
+- Un grupo de desarrolladores.
+- Un grupo de control de calidad.
+- Un grupo de administradores.
+
+Después, se pueden crear políticas específicas y asignarlas a cada grupo en lugar de asignarlas individualmente a cada usuario.
+
+```mermaid
+flowchart LR
+    A["Funciones laborales"] --> B["Desarrolladores"]
+    A --> C["Control de calidad"]
+    A --> D["Administradores"]
+
+    B --> E["Política de desarrollo"]
+    C --> F["Política de pruebas"]
+    D --> G["Política administrativa"]
+```
+
+#### Características de los grupos de IAM
+
+- Un grupo puede contener muchos usuarios.
+- Un usuario puede pertenecer a varios grupos.
+- Los grupos no pueden pertenecer a otros grupos.
+- Los usuarios heredan las políticas asignadas a los grupos.
+- Las políticas pueden gestionarse de forma centralizada mediante grupos.
+
+#### Buena práctica
+
+Como buena práctica, se recomienda asociar las políticas de IAM a grupos de IAM en lugar de asignarlas directamente a usuarios individuales.
+
+Esto permite:
+
+- Administrar permisos de forma centralizada.
+- Reducir la duplicación de políticas.
+- Facilitar los cambios de puesto o de función.
+- Aplicar una configuración de permisos coherentes.
+- Simplificar la administración cuando aumenta el número de usuarios.
+
+```mermaid
+flowchart TD
+    A["Políticas asignadas directamente<br/>a usuarios"] --> B["Gestión individual"]
+    C["Políticas asignadas a grupos"] --> D["Gestión centralizada"]
+    D --> E["Usuarios con permisos coherentes"]
+```
+
+Si una persona cambia temporalmente de función durante el día, los grupos pueden no ser la solución más adecuada. En este caso pueden utilizar un **rol de IAM** para obtener acceso temporal a los recursos que necesita.
+
+---
+
+### Roles de IAM
+
+Un rol de IAM es una identidad que puede ser asumida por una persona para obtener acceso temporal a otros recursos o servicios de AWS.
+
+Cuando se asume un rol de IAM, se reciben credenciales de seguridad temporales para la sesión.
+
+```mermaid
+flowchart LR
+    A["Usuario o servicio"] --> B["Asume un rol de IAM"]
+    B --> C["Credenciales temporales"]
+    C --> D["Acceso a recursos o servicios AWS"]
+```
+
+#### Entidades que pueden asumir un rol
+
+Un rol de IAM puede ser asumido por:
+
+- Un usuario de IAM de la misma cuenta de AWS.
+- Un usuario de IAM de otra cuenta de AWS.
+- Un servicio de AWS.
+- Un usuario externo autenticado mediante un proveedor de identidad compatible.
+- Un proveedor de identidad que utilice OpenID Connect.
+- Un intermediario de identidad desarrollado a medida.
+
+```mermaid
+flowchart TD
+    A["Rol de IAM"] --> B["Usuario de IAM"]
+    A --> C["Servicio de AWS"]
+    A --> D["Usuario externo"]
+    A --> E["Proveedor de identidad"]
+    E --> F["SAML 2.0"]
+    E --> G["OpenID Connect"]
+```
+
+#### Uso de roles con usuarios externos
+
+Imagina una empresa con 5000 empleados que necesitan acceder a una cuenta de AWS.
+
+Si la empresa ya dispone de un proveedor de identidad que permite a sus empleados iniciar sesión en sus ordenadores de trabajo, no es necesario crear 5000 cuentas independientes.
+
+En su lugar, se pueden utilizar roles de IAM para conceder acceso a las identidades existentes en el directorio corporativo.
+
+Estos usuarios se conocen como **usuarios federados**.
+
+```mermaid
+flowchart LR
+    A["Directorio corporativo"] --> B["Proveedor de identidad"]
+    B --> C["Usuarios federados"]
+    C --> D["Rol de IAM"]
+    D --> E["Recursos de AWS"]
+```
+
+#### Roles asumidos por servicios de AWS
+
+Los servicios de AWS también pueden asumir un rol de IAM para realizar acciones en una cuenta en nombre del cliente.
+
+Cuando configuras un servicio de AWS, debes definir un rol que contenga todos los permisos necesarios para que ese servicio puede realizar las acciones requeridas.
+
+Los permisos del rol deben configurarse siguiendo los requisitos documentados para el servicio correspondiente.
+
+Los roles asignados a servicios de AWS son específicos de cada cuenta.
+
+```mermaid
+flowchart LR
+    A["Servicio de AWS"] --> B["Asume un rol de IAM"]
+    B --> C["Obtiene permisos definidos"]
+    C --> D["Realiza acciones en la cuenta"]
+```
+
+#### Cuando utilizar los roles
+
+Como buena práctica, los roles de IAM son adecuados cuando el acceso a servicios o recursos debe concederse de forma temporal.
+
+A diferencia de las credenciales permanentes de un usuario, un rol proporciona credenciales temporales para una sesión concreta.
+
+#### Resumen de los roles de IAM
+
+- Un rol es una identidad que puede ser asumida.
+- Los roles proporcionan credenciales temporales.
+- Pueden ser asumidos por usuarios, servicios o identidades externas.
+- Permiten evitar la creación de usuarios individuales para cada persona.
+- Son útiles para conceder acceso temporal.
+- Los servicios de AWS pueden asumir roles para actuar en una cuenta.
+- Los permisos del rol deben limitarse a las acciones necesarias.
