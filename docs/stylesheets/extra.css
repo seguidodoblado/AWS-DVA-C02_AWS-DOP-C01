@@ -7,7 +7,9 @@
   font-size: 0.9em;
 }
 
-.md-typeset .highlight:has(code.language-bash, code.language-sh, code.language-shell) {
+.md-typeset .highlight.language-bash,
+.md-typeset .highlight.language-sh,
+.md-typeset .highlight.language-shell {
   position: relative;
   overflow: hidden;
   border-left: 0.35rem solid var(--md-accent-fg-color);
@@ -15,7 +17,9 @@
   background: color-mix(in srgb, var(--md-code-bg-color) 88%, var(--md-default-fg-color));
 }
 
-.md-typeset .highlight:has(code.language-bash, code.language-sh, code.language-shell)::before {
+.md-typeset .highlight.language-bash::before,
+.md-typeset .highlight.language-sh::before,
+.md-typeset .highlight.language-shell::before {
   display: flex;
   min-height: 2.8rem;
   align-items: center;
@@ -28,7 +32,9 @@
   letter-spacing: 0.02em;
 }
 
-.md-typeset .highlight:has(code.language-bash, code.language-sh, code.language-shell) pre {
+.md-typeset .highlight.language-bash pre,
+.md-typeset .highlight.language-sh pre,
+.md-typeset .highlight.language-shell pre {
   margin: 0;
   border-radius: 0;
   background: transparent;
