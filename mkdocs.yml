@@ -50,6 +50,9 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: "material.extensions.emoji.twemoji"
+      emoji_generator: "material.extensions.emoji.to_svg"
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -62,7 +65,7 @@ nav:
   - Inicio: index.md
 
   - Guía del estudiante:
-      - Como usar esta guía: guia-del-estudiante/student-guide.md
+      - Como usar esta guía: guia-del-estudiante/student-guides.md
       - AWS Technical Essentials:
           - 00. Descripción general del curso: guia-del-estudiante/01-aws-technical-essentials/index.md
           - 01. Introducción a Amazon Web Services: guia-del-estudiante/01-aws-technical-essentials/modulos/01-introduccion-a-amazon-web-services.md
