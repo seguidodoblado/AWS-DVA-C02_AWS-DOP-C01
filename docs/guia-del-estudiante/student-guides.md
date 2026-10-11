@@ -4,9 +4,9 @@ Bienvenido a la guía de estudio de AWS.
 
 Esta documentación reúne la traducción y organización de los cursos de AWS, manteniendo el orden original de los Student Guides.
 
-> [!info]
-> El contenido teórico procede exclusivamente de las guías oficiales del alumno.
-> Los laboratorios se gestionan por separado en una sección específica.
+!!! info "Información"
+    - El contenido teórico procede exclusivamente de las guías oficiales del alumno.
+    - Los laboratorios se gestionan por separado en una sección específica.
 
 ---
 
