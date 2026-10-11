@@ -1,12 +1,11 @@
-# AWS Training Hub
+# Student Training Hub
 
 Bienvenido a la guía de estudio de AWS.
 
 Esta documentación reúne la traducción y organización de los cursos de AWS, manteniendo el orden original de los Student Guides.
 
-!!! info "Información"
-    - El contenido teórico procede exclusivamente de las guías oficiales del alumno.
-    - Los laboratorios se gestionan por separado en una sección específica.
+!!! info "Acerca de este proyecto"
+  Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio. No constituye documentación oficial de Amazon Web Services (AWS).
 
 ---
 
