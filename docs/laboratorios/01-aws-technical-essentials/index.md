@@ -61,12 +61,11 @@ Este laboratorio introduce IAM mediante un escenario de empleados con diferentes
 2. [Revisar las políticas `AmazonS3ReadOnlyAccess` y `AmazonEC2ReadOnlyAccess`.](labs/01-introduccion-a-aws-identity-and-access-management.md#51-crear-la-politica-de-lectura-de-s3)
 3. [Revisar la política inline del grupo `EC2-Admin`.](labs/01-introduccion-a-aws-identity-and-access-management.md#55-crear-la-politica-inline-de-administracion-de-ec2)
 4. [Añadir cada usuario a su grupo correspondiente.](labs/01-introduccion-a-aws-identity-and-access-management.md#61-asociar-user-1-a-s3-support)
-5. Iniciar sesión con cada usuario.
-6. Comprobar qué servicios puede consultar cada uno.
-7. Verificar que:
-    - `user-1` puede consultar S3, pero no EC2.
-    - `user-2` puede consultar EC2, pero no modificar instancias.
-    - `user-3` puede detener una instancia EC2.
+5. [Comprobar qué servicios puede consultar cada uno.](labs/01-introduccion-a-aws-identity-and-access-management.md#74-configurar-perfiles-aws-cli)
+6. Verificar que:
+    - [`user-1` puede consultar S3, pero no EC2.](labs/01-introduccion-a-aws-identity-and-access-management.md#83-probar-user-1)
+    - [`user-2` puede consultar EC2, pero no modificar instancias.](labs/01-introduccion-a-aws-identity-and-access-management.md#84-probar-user-2)
+    - [`user-3` puede detener una instancia EC2.](labs/01-introduccion-a-aws-identity-and-access-management.md#85-probar-user-3)
 
 Este laboratorio se centra principalmente en IAM y en la evaluación de permisos.
 

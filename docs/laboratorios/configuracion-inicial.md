@@ -22,7 +22,7 @@ En esta sección encontrarás como configurar los emuladores del cloud para no t
 
 ## Configurar región en AWS CLI
 
-```shell
+```shell title="Configurar región AWS CLI"
 aws configure set region eu-west-1
 ```
 
@@ -45,7 +45,7 @@ Los laboratorios se ejecutarán con *Floci Community* como emulador local de ser
 
 Floci necesita Docker y Docker Compose. Se pueden comprobar con:
 
-```shell
+```shell title="Comprobar Docker y Docker Compose"
 docker --version
 docker compose version
 ```
@@ -54,20 +54,20 @@ docker compose version
 
 La instalación se realiza mediante el instalador oficial de Floci.
 
-```shell
+```shell title="Instalador oficial Floci"
 curl -fsSL https://floci.io/install.sh | sh
 ```
 
 Después, se comprueba la versión instalada:
 
-```shell
+```shell title="Comprobar versión Floci"
 floci --version
 ```
 
 La instalación debe mostrar Floci `2.2.0` y la edición Community.
 Posteriormente comprobaremos el entorno
 
-```shell
+```shell title="Comprobar entorno Floci"
 floci doctor
 ```
 
@@ -90,7 +90,7 @@ floci doctor
 
 También se puede comprobar la salud del endpoint:
 
-```shell
+```shell title="Comprobar salud endpoint"
 curl http://localhost:4566/_localstack/health
 ```
 
@@ -98,7 +98,7 @@ curl http://localhost:4566/_localstack/health
 
 Para iniciar el entorno local:
 
-```shell
+```shell title="Iniciar Floci"
 floci start
 ```
 
@@ -108,7 +108,7 @@ Floci utilizará su configuración predeterminada y expondrá el endpoint princi
 
 Para detener el entorno:
 
-```shell
+```shell title="Detener Floci"
 floci stop
 ```
 
@@ -118,7 +118,7 @@ Se debe detener Floci antes de iniciar LocalStack, porque ambos utilizan el puer
 
 La instalación puede verificarse también consultando la ayuda del programa.
 
-```shell
+```shell title="Ayuda Floci"
 floci help
 ```
 
@@ -136,7 +136,7 @@ Se puede acceder a su panel de control desde [http://localhost:4566](http://loca
 
 Por defecto, Floci puede crear usuarios, grupos y políticas IAM sin aplicar necesariamente esas políticas al autorizar las llamadas a los servicios. Para reproducir mejor el comportamiento de AWS, se activa el motor de evaluación IAM mediante:
 
-```yaml
+```yaml title="Activar motor evaluación IAM"
 FLOCI_SERVICES_IAM_ENFORCEMENT_ENABLED=true
 ```
 
@@ -144,7 +144,7 @@ FLOCI_SERVICES_IAM_ENFORCEMENT_ENABLED=true
 
 Se utiliza un archivo independiente llamado `compose.floci.yaml`:
 
-```yaml
+```yaml title="compose.floci.yaml"
 services:
   floci:
     image: floci/floci:latest
@@ -170,14 +170,14 @@ La variable se define dentro `environment`, de modo que llega al contenedor de F
 
 Si Floci fue iniciado previamente con `floci start`, primero se detiene y se elimina el contenedor anterior para evitar conflictos de nombre:
 
-```shell
+```shell title="Eliminar contenedor anterior"
 floci stop
 docker rm floci
 ```
 
 Si el contenedor sigue activo:
 
-```shell
+```shell title="Forzar eliminar contenedor anterior"
 docker rm -f floci
 ```
 
@@ -186,19 +186,19 @@ docker rm -f floci
 
 En caso necesario, LocalStack debe estar detenido, porque ambos entornos utilizan el puerto `4566`:
 
-```shell
+```shell title="Detener contenedor LocalStack"
 docker compose -f compose.localstack.yaml down
 ```
 
 Después se inicia Floci con la configuración de enforcement:
 
-```shell
+```shell title="Iniciar Floci configuración enforcement"
 docker compose -f compose.floci.yaml up
 ```
 
 ### Verificar la variable dentro del contenedor
 
-```shell
+```shell title="Verificar variable dentro contenedor"
 docker inspect floci \
   --format '{{range .Config.Env}}{{println .}}{{end}}' \
   | grep FLOCI_SERVICES_IAM_ENFORCEMENT_ENABLED
@@ -209,19 +209,19 @@ docker inspect floci \
 
 Consultar los logs relacionados con IAM:
 
-```shell
+```shell title="Consultar logs Floci IAM"
 docker logs floci 2>&1 | grep -iE 'iam|policy|enforce'
 ```
 
 También se puede comprobar que el contenedor está activo:
 
-```shell
+```shell title="Comprobar contenedor activo"
 docker ps
 ```
 
 ### Verificar el endpoint de Floci
 
-```shell
+```shell title="Verificar endpoint Floci"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -238,13 +238,13 @@ El volumen `floci-data` conserva el estado de Floci entre reinicios del contened
 
 Para comprobar el volumen:
 
-```shell
+```shell title="Comprobar volumen contenedor"
 docker volume ls
 ```
 
 Para eliminar todo el estado local de Floci, primero se detiene el servicio y después se elimina su volumen:
 
-```shell
+```shell title="Eliminar todo estado local Floci"
 docker compose -f compose.floci.yaml down
 docker volume rm desarrollo_floci-data
 ```
@@ -264,7 +264,7 @@ LocalStack se utilizará como entorno alternativo a Floc. Ambos emuladores utili
 
 Comprobar Docker:
 
-```shell
+```shell title="Comprobar Docker y Docker Compose"
 docker --version
 docker compose version
 ```
@@ -273,19 +273,19 @@ docker compose version
 
 La instalación recomendada para Linux mediante npm es:
 
-```shell
+```shell title="Instalación recomendada LocalStack"
 npm install -g @localstack/lstk
 ```
 
 Comprobar la instalación:
 
-```shell
+```shell title="Comprobar versión LocalStack"
 lstk --version
 ```
 
 También se puede comprobar el entorno:
 
-```shell
+```shell title="Comprobar entorno LocalStack"
 lstk doctor
 ```
 
@@ -293,7 +293,7 @@ lstk doctor
 
 La primera ejecución inicia el proceso de autenticación de LocalStack:
 
-```shell
+```shell title="Iniciar LocalStack"
 lstk start
 ```
 
@@ -306,7 +306,7 @@ Se puede acceder a su panel de control desde [https://app.localstack.cloud/inst/
 
 Para detener LocalStack:
 
-```shell
+```shell title="Detener LocalStack"
 lstk stop
 ```
 
@@ -317,13 +317,13 @@ lstk stop
 
 Por defecto, LocalStack permite acceder a las APIs sin evaluar completamente las políticas IAM. Para reproducir el comportamiento de autorización de AWS se activa:
 
-```toml
+```toml title="Activar validación políticas IAM"
 ENFORCE_IAM=1
 ```
 
 La configuración de LocalStack puede gestionarse mediante un archivo `config.toml`:
 
-```toml
+```toml title="config.toml"
 [[containers]]
 type = "aws"
 
@@ -338,7 +338,7 @@ La variable `ENFORCE_IAM=1` hace que LocalStack evalúe las políticas de identi
 
 Como alternativa, se puede utilizar un archivo separado:
 
-```yaml
+```yaml title="compose.localstack.yaml"
 services:
   localstack:
     image: localstack/localstack:latest
@@ -368,25 +368,25 @@ compose.localstack.yaml
 
 ### Validar la configuración
 
-```shell
+```shell title="Validar configuración Docker"
 docker compose -f compose.localstack.yaml config
 ```
 
 ### Iniciar LocalStack mediante Compose
 
-```shell
+```shell title="Iniciar LocalStack configuración enforcement"
 docker compose -f compose.localstack.yaml up
 ```
 
 ### Detener LocalStack mediante Compose
 
-```shell
+```shell title="Detener LocalStack configuración enforcement"
 docker compose -f compose.localstack.yaml down
 ```
 
 ### Comprobar el endpoint de LocalStack
 
-```shell
+```shell title="Verificar endpoint LocalStack"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -399,7 +399,7 @@ sts get-caller-identity
 
 También se puede comprobar la salud del endpoint:
 
-```shell
+```shell title="Comprobar salud endpoint"
 curl http://localhost:4566/_localstack/health
 ```
 
@@ -407,7 +407,7 @@ curl http://localhost:4566/_localstack/health
 
 Si LocalStack se inicio con Docker Compose, comprobar la variable dentro del contenedor:
 
-```shell
+```shell title="Comprobar variable dentro contenedor"
 docker inspect localstack \
   --format '{{range .Config.Env}}{{println .}}{{end}}' \
   | grep ENFORCE_IAM
@@ -418,7 +418,7 @@ docker inspect localstack \
 
 Consultar los logs relacionados con IAM:
 
-```shell
+```shell title="Consultar logs LocalStack IAM
 docker logs localstack 2>&1 | grep -iE 'iam|policy|enforce'
 ```
 
@@ -442,14 +442,14 @@ La comprobación funcional definitiva consiste en crear un usuario sin permisos,
 
 Para pasar de Floci a LocalStack:
 
-```shell
+```shell title="Pasar de Floci a LocalStack"
 docker compose -f compose.floci.yaml down
 docker compose -f compose.localstack.yaml up
 ```
 
 Para pasar de LocalStack a Floci
 
-```shell
+```shell title="Pasar de LocalStack a Floci"
 docker compose -f compose.localstack.yaml down
 docker compose -f compose.floci.yaml up -d
 ```

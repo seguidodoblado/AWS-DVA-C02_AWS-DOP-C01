@@ -62,7 +62,7 @@ flowchart LR
 
 Para este laboratorio se utilizarán credenciales ficticias:
 
-```shell
+```text
 AWS_ACCESS_KEY_ID=test
 AWS_SECRET_ACCESS_KEY=test
 ```
@@ -76,7 +76,7 @@ Estas credenciales no pertenecen a una cuenta AWS real.
 
 Comprobar que Floci responde mediante STS:
 
-```shell
+```shell title="Verificar endpoint local"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -85,7 +85,7 @@ sts get-caller-identity
 
 Resultado obtenido:
 
-```json
+```json title="Resultado obtenido"
 {
     "UserId": "000000000000",
     "Account": "000000000000",
@@ -97,9 +97,12 @@ La cuenta `000000000000` es la cuenta simulada por Floci.
 
 ### Fase 2 - Verificar IAM antes de comenzar
 
+!!! warning "Atención"
+    Este laboratorio en particular requiere la activación de Policy Enforcement en Floci siguiendo los siguientes [pasos](../../configuracion-inicial.md#activar-iam-policy-enforcement-en-floci).
+
 Consultar los usuarios existentes:
 
-```shell
+```shell title="Consultar usuarios existentes"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -108,7 +111,7 @@ iam list-users
 
 Resultado esperado al comenzar:
 
-```json
+```json title="Resultado esperado"
 {
     "Users": []
 }
@@ -122,7 +125,7 @@ El laboratorio utiliza tres usuarios con diferentes responsabilidades.
 
 #### 3.1. Crear `user-1`
 
-```shell
+```shell title="Crear user-1"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -131,7 +134,7 @@ iam create-user --user-name user-1
 
 Resultado esperado:
 
-```json
+```json title="Resultado esperado"
 {
     "User": {
         "Path": "/",
@@ -145,7 +148,7 @@ Resultado esperado:
 
 #### 3.2. Crear `user-2`
 
-```shell
+```shell title="Crear user-2"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -154,7 +157,7 @@ iam create-user --user-name user-2
 
 #### 3.3. Crear `user-3`
 
-```shell
+```shell title="Crear user-3"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -173,7 +176,7 @@ Usuarios creados:
 
 Comprobar la lista:
 
-```shell
+```shell title="Comprobar lista usuarios creados"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -186,7 +189,7 @@ Los grupos permiten organizar los permisos según la función de cada usuario.
 
 #### 4.1. Crear `S3-Support`
 
-```shell
+```shell title="Crear S3-Support"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -195,7 +198,7 @@ iam create-group --group-name S3-Support
 
 #### 4.2. Crear `EC2-Support`
 
-```shell
+```shell title="Crear EC2-Support"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -204,7 +207,7 @@ iam create-group --group-name EC2-Support
 
 #### 4.3. Crear `EC2-Admin`
 
-```shell
+```shell title="Crear EC2-Admin"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -213,7 +216,7 @@ iam create-group --group-name EC2-Admin
 
 Resultado esperado para cada grupo:
 
-```json
+```json title="Resultado esperado"
 {
     "Group": {
         "Path": "/",
@@ -229,7 +232,7 @@ Los identificadores y las fechas pueden variar.
 
 Comprobar los grupos creados:
 
-```shell
+```shell title="Comprobar lista grupos creados"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -258,13 +261,13 @@ flowchart TD
 
 Crear el archivo:
 
-```shell
+```shell title="s3-read-only-policy.json"
 nano s3-read-only-policy.json
 ```
 
 Contenido:
 
-```json
+```json title="Contenido s3-read-only-policy.json"
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -283,7 +286,7 @@ Contenido:
 
 Guardar el archivo y crear la política:
 
-```shell
+```shell title="S3-ReadOnly-Policy"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -294,13 +297,13 @@ iam create-policy \
 
 La respuesta incluirá un ARN similar a:
 
-```shell
+```shell title="ARN incluido en respuesta"
 arn:aws:iam::000000000000:policy/S3-ReadOnly-Policy
 ```
 
 #### 5.2. Asociar la política de S3 al grupo
 
-```shell
+```shell title="Asociar S3-ReadOnly-Policy a S3-Support"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -315,13 +318,13 @@ La operación no devuelve contenido si se ejecuta correctamente.
 
 Crear el archivo:
 
-```shell
+```shell title="ec2-read-only-policy.json"
 nano ec2-read-only-policy.json
 ```
 
 Contenido:
 
-```json
+```json title="Contenido ec2-read-only-policy.json"
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -339,7 +342,7 @@ Contenido:
 
 Crear la política:
 
-```shell
+```shell title="EC2-ReadOnly-Policy"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -350,7 +353,7 @@ iam create-policy \
 
 #### 5.4. Asociar la política de EC2 al grupo
 
-```shell
+```shell title="Asociar EC2-ReadOnly-Policy a EC2-Support"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -365,13 +368,13 @@ En el laboratorio original, el grupo `EC2-Admin` utiliza una política inline pa
 
 Crear el archivo:
 
-```shell
+```shell title="ec2-admin-policy.json"
 nano ec2-admin-policy.json
 ```
 
 Contenido:
 
-```json
+```json title="Contenido ec2-admin-policy.json"
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -391,7 +394,7 @@ Contenido:
 
 Asociar la política inline al grupo:
 
-```shell
+```shell title="Asociar EC2-Admin-Policy a EC2-Admin"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -407,7 +410,7 @@ La operación no devuelve contenido si se ejecuta correctamente.
 
 Listar las políticas locales:
 
-```shell
+```shell title="Listar políticas locales"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -416,7 +419,7 @@ iam list-policies --scope Local
 
 La respuesta debe incluir:
 
-```shell
+```shell title="Políticas incluidas en la respuesta"
 S3-ReadOnly-Policy
 EC2-ReadOnly-Policy
 ```
@@ -425,7 +428,7 @@ EC2-ReadOnly-Policy
 
 Comprobar el grupo `S3-Support`:
 
-```shell
+```shell title="Comprobar políticas asociadas a S3-Support"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -435,7 +438,7 @@ iam list-attached-group-policies \
 
 Comprobar el grupo `EC2-Support`:
 
-```shell
+```shell title="Comprobar políticas asociadas a EC2-Support"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -445,7 +448,7 @@ iam list-attached-group-policies \
 
 Comprobar la política inline de `EC2-Admin`:
 
-```shell
+```shell title="Comprobar política inline EC2-Admin"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -473,7 +476,7 @@ Asociar cada usuario al grupo correspondiente:
 
 #### 6.1. Asociar `user-1` a `S3-Support`
 
-```shell
+```shell title="Asociar user-1 a S3-Support"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -484,7 +487,7 @@ iam add-user-to-group \
 
 #### 6.2. Asociar `user-2` a `EC2-Support`
 
-```shell
+```shell title="Asociar user-2 a EC2-Support"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -495,7 +498,7 @@ iam add-user-to-group \
 
 #### 6.3. Asociar `user-3` a `EC2-Admin`
 
-```shell
+```shell title="Asociar user-3 a EC2-Admin"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -508,7 +511,7 @@ Estas operaciones no devuelven contenido si se ejecutan correctamente.
 
 #### 6.4. Comprobar las asociaciones
 
-```shell
+```shell title="Comprobar usuarios S3-Support"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -517,7 +520,7 @@ iam get-group --group-name S3-Support
 
 ---
 
-```shell
+```shell title="Comprobar usuarios EC2-Support"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -526,7 +529,7 @@ iam get-group --group-name EC2-Support
 
 ---
 
-```shell
+```shell title="Comprobar usuarios EC2-Admin"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -547,7 +550,7 @@ Para probar los permisos de cada usuario, necesitamos crear una clave de acceso 
 
 #### 7.1. Crear una clave para `user-1`
 
-```shell
+```shell title="Crear clave user-1"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -556,7 +559,7 @@ iam create-access-key --user-name user-1
 
 Guarda los valores:
 
-```json
+```json title="Valores clave user-1"
 {
     "AccessKey": {
         "UserName": "user-1",
@@ -569,7 +572,7 @@ Guarda los valores:
 
 #### 7.2. Crear una clave para `user-2`
 
-```shell
+```shell title="Crear clave user-2"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -580,7 +583,7 @@ Guarda igualmente `AccessKeyId` y `SecretAccessKey`.
 
 ### 7.3. Crear una clave para `user-3`
 
-```shell
+```shell title="Crear clave user-3"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
@@ -591,16 +594,13 @@ iam create-access-key --user-name user-3
 
 Crea un perfil para cada usuario:
 
-```shell
-AWS_ACCESS_KEY_ID=test \
-AWS_SECRET_ACCESS_KEY=test \
-aws --endpoint-url=http://localhost:4566 \
+```shell title="Crear perfil user-1"
 aws configure --profile user-1
 ```
 
 Introduce la clave y el secreto correspondientes a `user-1`:
 
-```shell
+```shell title="Configurar perfil user-1"
 AWS Access Key ID: <access-key-user-1>
 AWS Secret Access Key: <secret-key-user-1>
 Default region name: eu-west-1
@@ -609,7 +609,7 @@ Default output format: json
 
 Repite el proceso:
 
-```shell
+```shell title="Configurar resto de perfiles"
 aws configure --profile user-2
 aws configure --profile user-3
 ```
@@ -623,7 +623,7 @@ Cada perfil utilizará las credenciales de su usuario IAM correspondiente.
 
 Consultar la identidad de cada perfil contra Floci:
 
-```shell
+```shell title="Comprobar identidad user-1"
 aws --profile user-1 \
   --endpoint-url=http://localhost:4566 \
   sts get-caller-identity
@@ -631,7 +631,7 @@ aws --profile user-1 \
 
 ---
 
-```shell
+```shell title="Comprobar identidad user-2"
 aws --profile user-2 \
   --endpoint-url=http://localhost:4566 \
   sts get-caller-identity
@@ -639,7 +639,7 @@ aws --profile user-2 \
 
 ---
 
-```shell
+```shell title="Comprobar identidad user-3"
 aws --profile user-3 \
   --endpoint-url=http://localhost:4566 \
   sts get-caller-identity
@@ -647,6 +647,456 @@ aws --profile user-3 \
 
 El resultado debería identificar a cada usuario mediante un ARN similar a:
 
-```shell
+```shell title="Resultado"
 arn:aws:iam::000000000000:user/user-1
 ```
+
+### Fase 8 - Crear recursos y probar permisos
+
+En esta fase se crean recursos de prueba con la cuenta administrativa de Floci. Después se prueban las operaciones utilizando los perfiles de los distintos usuarios.
+
+#### 8.1. Crear un bucket S3 de prueba
+
+Crear el bucket con las credenciales administrativas:
+
+```shell title="Crear bucket S3 de prueba"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+s3api create-bucket \
+  --bucket lab1-employee-data \
+  --create-bucket-configuration LocationConstraint=eu-west-1
+```
+
+Comprobar que se ha creado:
+
+```shell title="Comprobar bucket de prueba"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+s3api list-buckets
+```
+
+!!! success "Resultado esperado:"
+    `lab1-employee-data`
+
+#### 8.2. Crear una instancia EC2 de prueba
+
+Crear una instancia EC2 simulada:
+
+```shell title="Comprobar instancia EC2 de prueba"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+ec2 run-instances \
+  --image-id ami-12345678 \
+  --instance-type t3.micro
+```
+
+Guardar el valor de `InstanceId` que devuelva Floci. Tendrá un formato similar a:
+
+```text
+i-e62a20f4c4ca39817
+```
+
+También se puede obtener automáticamente:
+
+```shell title="Obtener InstanceId EC2"
+INSTANCE_ID=$(
+  AWS_ACCESS_KEY_ID=test \
+  AWS_SECRET_ACCESS_KEY=test \
+  aws --endpoint-url=http://localhost:4566 \
+  ec2 describe-instances \
+  --query 'Reservations[0].Instances[0].InstanceId' \
+  --output text
+)
+
+echo "$INSTANCE_ID"
+```
+
+Comprobar la instancia:
+
+```shell title="Comprobar instancia"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+ec2 describe-instances
+```
+
+### 8.3. Probar `user-1`
+
+#### Consultar S3 user-1
+
+```shell title="Consultar bucket S3 user-1"
+aws --profile user-1 \
+  --endpoint-url=http://localhost:4566 \
+  s3 ls
+```
+
+!!! success "Resultado esperado:"
+    `lab1-employee-data`
+
+`user-1` puede consultar el bucket porque pertenece al grupo `S3-Support`.
+
+#### Consultar EC2 user-1
+
+```shell title="Consultar instancia EC2 user-1"
+aws --profile user-1 \
+  --endpoint-url=http://localhost:4566 \
+  ec2 describe-instances
+```
+
+!!! success "Resultado esperado"
+    `AccessDenied`
+
+### 8.4. Probar `user-2`
+
+#### Consultar EC2 user-2
+
+```shell title="Consultar instancia EC2 user-2"
+aws --profile user-2 \
+  --endpoint-url=http://localhost:4566 \
+  ec2 describe-instances
+```
+<!-- markdownlint-disable MD046 -->
+!!! success "Resultado esperado:"
+
+    - La operación se ejecuta correctamente.
+    - `user-2` puede consultar la instancia.
+<!-- markdownlint-enable MD046 -->
+
+#### Intentar detener la instancia
+
+```shell title="Detener instancia EC2 user-2"
+aws --profile user-2 \
+  --endpoint-url=http://localhost:4566 \
+  ec2 stop-instances \
+  --instance-ids "$INSTANCE_ID"
+```
+
+!!! success "Resultado esperado"
+    `AccessDenied`
+
+#### Consultar S3 user-2
+
+```shell title="Consultar bucket S3 user-2"
+aws --profile user-2 \
+  --endpoint-url=http://localhost:4566 \
+  s3api list-buckets
+```
+
+!!! success "Resultado esperado"
+    `AccessDenied`
+
+### 8.5. Probar `user-3`
+
+#### Consultar EC2 user-3
+
+```shell title="Consultar instancia EC2 user-3"
+aws --profile user-3 \
+  --endpoint-url=http://localhost:4566 \
+  ec2 describe-instances
+```
+
+!!! success "Resultado esperado"
+    La operación se ejecuta correctamente
+
+#### Detener la instancia
+
+```shell title="Detener instancia EC2 user-3"
+aws --profile user-3 \
+  --endpoint-url=http://localhost:4566 \
+  ec2 stop-instances \
+  --instance-ids "$INSTANCE_ID"
+```
+
+!!! info "Información"
+    El valor de `$INTANCE_ID` es el valor copiado cuando se generó la instancia.
+
+!!! success "Resultado esperado:"
+    La instancia cambia a estado `stopping` o equivalente soportado por Floci.
+    `user-3` puede detenerla gracias a `EC2-Admin-Policy`.
+
+### 8.6. Verificar el estado final
+
+Comprobar el estado de la instancia con `user-3`:
+
+```shell title="Comprobar estado instancia"
+aws --profile user-3 \
+  --endpoint-url=http://localhost:4566 \
+  ec2 describe-instances \
+  --instance-ids "$INSTANCE_ID"
+```
+
+La instancia debe aparecer en estado `stopped` o equivalente.
+
+### 8.7. Resultado de las pruebas de permisos
+
+| Usuario  | S3          | Consultar EC2 | Detener EC2 |
+| -------- | ----------- | ------------- | ----------- |
+| `user-1` | Permitido   | Denegado      | Denegado    |
+| `user-2` | Denegado    | Permitido     | Denegado    |
+| `user-3` | No definido | Permitido     | Permitido   |
+
+Con IAM Policy Enforcement activado, Floci reproduce correctamente el comportamiento esperado del laboratorio de AWS.
+
+```mermaid
+flowchart TD
+    U1[user-1] -->|Permitido| S3[S3]
+    U1 -->|Denegado| EC2Read[Consultar EC2]
+
+    U2[user-2] -->|Permitido| EC2Read
+    U2 -->|Denegado| EC2Stop[Detener instancia EC2]
+
+    U3[user-3] -->|Permitido| EC2Admin[Consultar y detener EC2]
+```
+
+### 8.8. Diferencias respecto al laboratorio real de AWS
+
+La adaptación local mantiene los objetivos del laboratorio, pero presenta estas diferencias:
+
+- Se utiliza Floci en lugar de una cuenta AWS real.
+- Los usuarios, grupos y políticas existen en la cuenta simulada `000000000000`.
+- Se utilizan perfiles AWS CLI en lugar de iniciar sesión en la consola IAM.
+- La instancia EC2 es simulada y no ejecuta realmente un sistema operativo.
+- El endpoint es local: `http://localhost:4566`.
+- No se utiliza una URL de inicio de sesión IAM pública.
+- La evaluación de permisos requiere iniciar Floci con:
+
+    ```yaml title="Policy Enforcement activo"
+    FLOCI_SERVICES_IAM_ENFORCEMENT_ENABLED=true
+    ```
+
+- Los recursos no generan costes ni afectan a una cuenta AWS real.
+
+### 8.9. Limpieza de recursos
+
+La limpieza debe ejecutarse con las credenciales administrativas de Floci.
+
+#### Terminar la instancia
+
+```shell title="Terminar la instancia"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+ec2 terminate-instances \
+  --instance-ids "$INSTANCE_ID"
+```
+
+#### Vaciar y eliminar el bucket
+
+```shell title="Vaciar bucket S3"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+s3 rm s3://lab1-employee-data --recursive
+```
+
+```shell title="Eliminar bucket S3"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+s3api delete-bucket \
+  --bucket lab1-employee-data
+```
+
+#### Eliminar las claves de acceso
+
+Obtener las claves existentes:
+
+```shell title="Obtener claves existentes"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam list-access-keys --user-name user-1
+```
+
+Repetir para `user-2` y `user-3`, y eliminar cada clave:
+
+> [!INFO] Información
+> El valor de `<ACCESS_KEY_ID>` se debe sustituir por los conseguidos para cada user en el comando anterior
+
+```shell title="Eliminar clave"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam delete-access-key \
+  --user-name user-1 \
+  --access-key-id <ACCESS_KEY_ID>
+```
+
+#### Eliminar las políticas
+
+Desasociar primero las políticas administradas:
+
+```shell title="Desasociar S3-ReadOnly-Policy"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam detach-group-policy \
+  --group-name S3-Support \
+  --policy-arn arn:aws:iam::000000000000:policy/S3-ReadOnly-Policy
+```
+
+```shell title="Desasociar EC2-ReadOnly-Policy"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam detach-group-policy \
+  --group-name EC2-Support \
+  --policy-arn arn:aws:iam::000000000000:policy/EC2-ReadOnly-Policy
+```
+
+Eliminar la política inline:
+
+```shell title="Eliminar EC2-Admin-Policy"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam delete-group-policy \
+  --group-name EC2-Admin \
+  --policy-name EC2-Admin-Policy
+```
+
+Eliminar las políticas administradas:
+
+```shell title="Eliminar S3-ReadOnly-Policy"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam delete-policy \
+  --policy-arn arn:aws:iam::000000000000:policy/S3-ReadOnly-Policy
+```
+
+```shell title="Eliminar EC2-ReadOnly-Policy"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam delete-policy \
+  --policy-arn arn:aws:iam::000000000000:policy/EC2-ReadOnly-Policy
+```
+
+#### Eliminar usuarios de los grupos
+
+```shell title="Eliminar user-1 del grupo S3-Support"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam remove-user-from-group \
+  --user-name user-1 \
+  --group-name S3-Support
+```
+
+```shell title="Eliminar user-2 del grupo EC2-Support"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam remove-user-from-group \
+  --user-name user-2 \
+  --group-name EC2-Support
+```
+
+```shell title="Eliminar user-3 del grupo EC2-Admin"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam remove-user-from-group \
+  --user-name user-3 \
+  --group-name EC2-Admin
+```
+
+#### Eliminar los grupos
+
+```shell title="Eliminar grupo S3-Support"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam delete-group --group-name S3-Support
+```
+
+```shell title="Eliminar grupo EC2-Support"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam delete-group --group-name EC2-Support
+```
+
+```shell title="Eliminar grupo EC2-Admin"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam delete-group --group-name EC2-Admin
+```
+
+#### Eliminar los usuarios
+
+```shell title="Eliminar usuario user-1"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam delete-user --user-name user-1
+```
+
+```shell title="Eliminar usuario user-2"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam delete-user --user-name user-2
+```
+
+```shell title="Eliminar usuario user-3"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam delete-user --user-name user-3
+```
+
+### 8.10. Comprobación de limpieza
+
+```shell title="Comprobar usuarios"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+iam list-users
+```
+
+```shell title="Comprobar buckets S3"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+s3api list-buckets
+```
+
+```shell title="Comprobar instancias EC2"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+ec2 describe-instances
+```
+
+Otra alternativa para ver las instancias sería:
+
+```shell title="Comprobar instancias EC2"
+AWS_ACCESS_KEY_ID=test \
+AWS_SECRET_ACCESS_KEY=test \
+aws --endpoint-url=http://localhost:4566 \
+ec2 describe-instances \
+  --query 'Reservations[].Instances[].{Id:InstanceId,State:State.Name,Type:InstanceType}' \
+  --output table
+```
+
+El entorno debería quedar sin usuarios, buckets ni instancias de este laboratorio.
+
+## Conclusión
+
+El laboratorio ha permitido:
+
+- crear usuarios y grupos IAM;
+- asociar permisos mediante políticas;
+- comprobar permisos heredados;
+- crear recursos S3 y EC2;
+- probar operaciones permitidas y denegadas;
+- validar la evaluación IAM con Floci;
+- limpiar los recursos creados.
+
+Con IAM Policy Enforcement activado, Floci permite reproducir funcionalmente el objetivo principal del Lab 1 de AWS Technical Essentials.
