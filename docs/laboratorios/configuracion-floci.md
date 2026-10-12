@@ -1,4 +1,4 @@
-# Configurar emulador local de AWS FLOCI
+# Configurar emuladores locales de AWS
 
 <!-- markdownlint-disable MD033 -->
 <p align="center">
@@ -7,7 +7,14 @@
 </p>
 <!-- markdownlint-enable MD033 -->
 
-En esta sección encontrarás laboratorios prácticos para aplicar los conceptos y servicios de AWS incluidos en las guías de estudio.
+## Consideraciones de seguridad
+
+!!! warning "Atención"
+    El instalador se descarga y ejecuta directamente desde Internet. Antes de utilizar este método en un entorno sensible, conviene revisar el contenido del script y verificar que procede del sitio oficial de Floci.
+
+    Todos los recursos creados durante los laboratorios serán locales y estarán aislados del entorno AWS real, salvo que se indique expresamente lo contrario.
+
+En esta sección encontrarás laboratorios prácticos para aplicar los conceptos y servicios de AWS incluidos en las guías de laboratorio.
 
 ## 0.1. Instalación y configuración de Floci
 
@@ -85,8 +92,11 @@ Se puede acceder a su panel de control desde [http://localhost:4566](http://loca
 <img src="../../assets/floci-dashboard.png" alt="Dashboard de Floci">
 <!-- markdownlint-enable MD033 -->
 
-#### Consideraciones de seguridad
+---
 
-El instalador se descarga y ejecuta directamente desde Internet. Antes de utilizar este método en un entorno sensible, conviene revisar el contenido del script y verificar que procede del sitio oficial de Floci.
-
-Todos los recursos creados durante los laboratorios serán locales y estarán aislados del entorno AWS real, salvo que se indique expresamente lo contrario.
+!!! info "Acerca de este proyecto"
+    - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
+    - No constituye documentación oficial de Amazon Web Services (AWS).
+!!! warning
+    - Estos laboratorios no reproducen necesariamente todos los pasos de la consola real de AWS.
+    - Las instrucciones se adaptarán al simulador local utilizado, manteniendo los objetivos y conceptos de la guía del laboratorio original.

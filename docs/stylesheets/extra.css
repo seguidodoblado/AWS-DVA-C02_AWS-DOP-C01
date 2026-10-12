@@ -40,6 +40,36 @@
   background: transparent;
 }
 
+.md-typeset .highlight.language-json,
+.md-typeset .highlight.language-jsonc {
+  position: relative;
+  overflow: hidden;
+  border-left: 0.35rem solid #42a5f5;
+  border-radius: 0.35rem;
+  background: color-mix(in srgb, var(--md-code-bg-color) 88%, var(--md-default-fg-color));
+}
+
+.md-typeset .highlight.language-json::before,
+.md-typeset .highlight.language-jsonc::before {
+  display: flex;
+  min-height: 2.8rem;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
+  color: var(--md-default-fg-color--light);
+  content: "{ }    JSON";
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.md-typeset .highlight.language-json pre,
+.md-typeset .highlight.language-jsonc pre {
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
 #mermaid-modal {
   width: min(94vw, 1500px);
   height: min(90vh, 1000px);

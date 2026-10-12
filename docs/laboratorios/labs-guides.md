@@ -9,7 +9,11 @@
 
 Bienvenido a la sección práctica de los cursos de AWS.
 
-Aquí se recogen las adaptaciones de los laboratorios oficiales para ejecutarlos en entornos locales mediante **Floci** y **LocalStack**.
+Aquí se recogen las adaptaciones de los laboratorios oficiales para ejecutarlos en entornos locales mediante **Floci** o **LocalStack**.
+
+---
+
+## [Configuración inicial](../laboratorios/configuracion-floci.md)
 
 ---
 
@@ -22,7 +26,7 @@ Aquí se recogen las adaptaciones de los laboratorios oficiales para ejecutarlos
 
     Laboratorios sobre IAM, VPC, EC2, S3, DynamoDB y alta disponibilidad.
 
-    [:octicons-arrow-right-24: Acceder a la guía del curso](../guia-del-estudiante/01-aws-technical-essentials/index.md)
+    [:octicons-arrow-right-24: Acceder a la guía del curso](../laboratorios/01-aws-technical-essentials/labs//01-introduccion-a-aws-identity-and-access-management.md)
 
 - :material-language-javascript:{ .lg .middle } **Developing on AWS**
 

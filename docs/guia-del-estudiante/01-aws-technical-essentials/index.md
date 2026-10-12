@@ -13,8 +13,8 @@
 
 Este módulo presenta:
 
-- [Los conceptos fundamentales de la nube.](modulos/01-introduccion-a-amazon-web-services.md#qué-es-la-computación-en-la-nube)
-- [Las ventajas de utilizar servicios en la nube.](modulos/01-introduccion-a-amazon-web-services.md#ventajas-de-la-computación-en-la-nube)
+- [Los conceptos fundamentales de la nube.](modulos/01-introduccion-a-amazon-web-services.md#que-es-la-computacion-en-la-nube)
+- [Las ventajas de utilizar servicios en la nube.](modulos/01-introduccion-a-amazon-web-services.md#ventajas-de-la-computacion-en-la-nube)
 - [La infraestructura global de AWS.](modulos/01-introduccion-a-amazon-web-services.md#aws-global-infrastructure)
 - [AWS Identity and Access Management (IAM).](modulos/01-introduccion-a-amazon-web-services.md#aws-identity-and-access-management-iam)
 

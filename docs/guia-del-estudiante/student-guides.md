@@ -73,7 +73,7 @@ Esta documentación reúne la traducción y organización de los cursos de AWS, 
 
 ## Cómo utilizar esta guía
 
-Cada curso está organizado siguiendo la estructura de su Student Guide:
+Cada curso está organizado siguiendo la estructura de su guía de estudiante:
 
 1. Descripción general del curso.
 2. Módulos en el orden original.
