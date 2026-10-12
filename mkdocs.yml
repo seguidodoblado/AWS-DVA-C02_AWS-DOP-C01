@@ -7,6 +7,7 @@ repo_url: https://github.com/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01
 
 plugins:
   - mkdocs_quiz
+  - search
 
 theme:
   name: material
@@ -103,7 +104,7 @@ nav:
 
   - Laboratorios:
       - Como usar esta guía: laboratorios/labs-guides.md
-      - Configuración inicial: laboratorios/configuracion-floci.md
+      - Configuración inicial: laboratorios/configuracion-inicial.md
       - AWS Technical Essentials:
           - 00. Descripción general del curso: laboratorios/01-aws-technical-essentials/index.md
           - 01. Introducción a AWS Identity and Access Management: laboratorios/01-aws-technical-essentials/labs/01-introduccion-a-aws-identity-and-access-management.md

@@ -19,7 +19,7 @@ La progresión general es:
 3. Integrar la aplicación con S3 y DynamoDB
 4. Convertir la aplicación en una arquitectura de alta disponibilidad y escalable.
 
-## Lab 1: Introduction to AWS Identity and Access Management
+## [Lab 1: Introduction to AWS Identity and Access Management](labs/01-introduccion-a-aws-identity-and-access-management.md)
 
 Este laboratorio introduce IAM mediante un escenario de empleados con diferentes responsabilidades.
 
@@ -57,10 +57,10 @@ Este laboratorio introduce IAM mediante un escenario de empleados con diferentes
 
 ### Flujo principal del laboratorio 1
 
-1. Explorar los usuarios y grupos IAM.
-2. Revisar las políticas `AmazonS3ReadOnlyAccess` y `AmazonEC2ReadOnlyAccess`.
-3. Revisar la política inline del grupo `EC2-Admin`.
-4. Añadir cada usuario a su grupo correspondiente.
+1. [Explorar los usuarios y grupos IAM.](labs/01-introduccion-a-aws-identity-and-access-management.md#31-crear-user-1)
+2. [Revisar las políticas `AmazonS3ReadOnlyAccess` y `AmazonEC2ReadOnlyAccess`.](labs/01-introduccion-a-aws-identity-and-access-management.md#51-crear-la-politica-de-lectura-de-s3)
+3. [Revisar la política inline del grupo `EC2-Admin`.](labs/01-introduccion-a-aws-identity-and-access-management.md#55-crear-la-politica-inline-de-administracion-de-ec2)
+4. [Añadir cada usuario a su grupo correspondiente.](labs/01-introduccion-a-aws-identity-and-access-management.md#61-asociar-user-1-a-s3-support)
 5. Iniciar sesión con cada usuario.
 6. Comprobar qué servicios puede consultar cada uno.
 7. Verificar que:

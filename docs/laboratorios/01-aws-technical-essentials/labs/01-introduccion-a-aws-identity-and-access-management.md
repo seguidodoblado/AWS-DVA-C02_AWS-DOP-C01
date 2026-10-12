@@ -16,7 +16,27 @@
 - Comprender la herencia de permisos.
 - Probar permisos diferenciados sobre S3 y EC2.
 
-## Adaptación a Floci
+## Servicios utilizados
+
+| Servicio | Uso en el laboratorio |
+| --- | --- |
+| **AWS IAM** | Crear usuarios, grupos y políticas; asociar permisos. |
+| **Amazon S3** | Probar permisos de lectura para `user-1`. |
+| **Amazon EC2** | Probar permisos de lectura y administración para `user-2` y `user-3`. |
+| **AWS STS** | Comprobar la identidad asociada a cada perfil mediante `get-caller-identity`. |
+| **AWS CLI** | Ejecutar todas las operaciones contra Floci. |
+
+En Floci, todos estos servicios funcionan localmente a través del endpoint:
+
+[http://localhost:4566](http://localhost:4566)
+
+El núcleo del laboratorio es IAM. S3 y EC2 se utilizan para demostrar cómo las políticas permiten o deniegan operaciones según el usuario. STS se utiliza para validar qué identidad está utilizando cada perfil.
+
+## Requisitos del entorno local
+
+Para realizar este laboratorio se deben haber ejecutado los pasos previos de la [configuración inicial.](../../configuracion-floci.md)
+
+## Preparación del simulador
 
 El laboratorio original utiliza la consola de AWS y usuarios IAM reales. En esta adaptación se utilizará Floci como entorno local y AWS CLI como herramienta principal.
 
@@ -609,11 +629,15 @@ aws --profile user-1 \
   sts get-caller-identity
 ```
 
+---
+
 ```shell
 aws --profile user-2 \
   --endpoint-url=http://localhost:4566 \
   sts get-caller-identity
 ```
+
+---
 
 ```shell
 aws --profile user-3 \

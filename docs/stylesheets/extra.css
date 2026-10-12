@@ -70,6 +70,60 @@
   background: transparent;
 }
 
+.md-typeset .highlight.language-yaml {
+  position: relative;
+  overflow: hidden;
+  border-left: 0.35rem solid #cb8b27;
+  border-radius: 0.35rem;
+  background: color-mix(in srgb, var(--md-code-bg-color) 88%, var(--md-default-fg-color));
+}
+
+.md-typeset .highlight.language-yaml::before {
+  display: flex;
+  min-height: 2.8rem;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
+  color: var(--md-default-fg-color--light);
+  content: "---    YAML";
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.md-typeset .highlight.language-yaml pre {
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.md-typeset .highlight.language-toml {
+  position: relative;
+  overflow: hidden;
+  border-left: 0.35rem solid #9c6ade;
+  border-radius: 0.35rem;
+  background: color-mix(in srgb, var(--md-code-bg-color) 88%, var(--md-default-fg-color));
+}
+
+.md-typeset .highlight.language-toml::before {
+  display: flex;
+  min-height: 2.8rem;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
+  color: var(--md-default-fg-color--light);
+  content: "[ ]    TOML";
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.md-typeset .highlight.language-toml pre {
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
 #mermaid-modal {
   width: min(94vw, 1500px);
   height: min(90vh, 1000px);
