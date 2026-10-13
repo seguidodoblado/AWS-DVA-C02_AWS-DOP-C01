@@ -1,5 +1,5 @@
 
-# Módulo: Computación en AWS
+# Módulo 2: Computación en AWS
 
 <!-- markdownlint-disable MD033 -->
 <p align="center">
