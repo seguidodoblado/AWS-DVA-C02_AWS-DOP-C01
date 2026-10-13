@@ -892,6 +892,8 @@ aws --endpoint-url=http://localhost:4566 \
 s3 rm s3://lab1-employee-data --recursive
 ```
 
+---
+
 ```shell title="Eliminar bucket S3"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
@@ -938,6 +940,8 @@ iam detach-group-policy \
   --policy-arn arn:aws:iam::000000000000:policy/S3-ReadOnly-Policy
 ```
 
+---
+
 ```shell title="Desasociar EC2-ReadOnly-Policy"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
@@ -968,6 +972,8 @@ iam delete-policy \
   --policy-arn arn:aws:iam::000000000000:policy/S3-ReadOnly-Policy
 ```
 
+---
+
 ```shell title="Eliminar EC2-ReadOnly-Policy"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
@@ -987,6 +993,8 @@ iam remove-user-from-group \
   --group-name S3-Support
 ```
 
+---
+
 ```shell title="Eliminar user-2 del grupo EC2-Support"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
@@ -995,6 +1003,8 @@ iam remove-user-from-group \
   --user-name user-2 \
   --group-name EC2-Support
 ```
+
+---
 
 ```shell title="Eliminar user-3 del grupo EC2-Admin"
 AWS_ACCESS_KEY_ID=test \
@@ -1014,12 +1024,16 @@ aws --endpoint-url=http://localhost:4566 \
 iam delete-group --group-name S3-Support
 ```
 
+---
+
 ```shell title="Eliminar grupo EC2-Support"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
 iam delete-group --group-name EC2-Support
 ```
+
+---
 
 ```shell title="Eliminar grupo EC2-Admin"
 AWS_ACCESS_KEY_ID=test \
@@ -1037,12 +1051,16 @@ aws --endpoint-url=http://localhost:4566 \
 iam delete-user --user-name user-1
 ```
 
+---
+
 ```shell title="Eliminar usuario user-2"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
 iam delete-user --user-name user-2
 ```
+
+---
 
 ```shell title="Eliminar usuario user-3"
 AWS_ACCESS_KEY_ID=test \
@@ -1060,12 +1078,16 @@ aws --endpoint-url=http://localhost:4566 \
 iam list-users
 ```
 
+---
+
 ```shell title="Comprobar buckets S3"
 AWS_ACCESS_KEY_ID=test \
 AWS_SECRET_ACCESS_KEY=test \
 aws --endpoint-url=http://localhost:4566 \
 s3api list-buckets
 ```
+
+---
 
 ```shell title="Comprobar instancias EC2"
 AWS_ACCESS_KEY_ID=test \
