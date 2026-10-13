@@ -20,15 +20,14 @@ Este módulo presenta:
 
 ---
 
-### Módulo 2: Computación en AWS
+### [Módulo 2: Computación en AWS](modulos/02-computacion-en-aws.md)
 
 Este módulo presenta los principales servicios de computación de AWS:
 
-- Amazon Elastic Compute Cloud (Amazon EC2).
-- AWS Fargate.
-- AWS Lambda.
-- Amazon Elastic Container Service (Amazon ECS).
-- Amazon Elastic Kubernetes Service (Amazon EKS).
+- [Amazon Elastic Compute Cloud (Amazon EC2).](modulos/02-computacion-en-aws.md#amazon-elastic-compute-cloud)
+- [AWS Lambda.](modulos/02-computacion-en-aws.md#aws-lambda)
+- [Amazon Elastic Container Service (Amazon ECS).](modulos/02-computacion-en-aws.md#amazon-elastic-container-service)
+- [Amazon Elastic Kubernetes Service (Amazon EKS).](modulos/02-computacion-en-aws.md#amazon-elastic-kubernetes-service)
 
 El módulo explica distintas formas de ejecutar aplicaciones y cargas de trabajo en AWS, desde instancias virtuales hasta contenedores y funciones sin servidor.
 

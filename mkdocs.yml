@@ -71,6 +71,7 @@ nav:
       - AWS Technical Essentials:
           - 00. Descripción general del curso: guia-del-estudiante/01-aws-technical-essentials/index.md
           - 01. Introducción a Amazon Web Services: guia-del-estudiante/01-aws-technical-essentials/modulos/01-introduccion-a-amazon-web-services.md
+          - 02. Computación en AWS: guia-del-estudiante/01-aws-technical-essentials/modulos/02-computacion-en-aws.md
           - Glosario: guia-del-estudiante/01-aws-technical-essentials/glosario.md
           - Referencias: guia-del-estudiante/01-aws-technical-essentials/referencias.md
       - Developing on AWS:
@@ -108,4 +109,3 @@ nav:
       - AWS Technical Essentials:
           - 00. Descripción general del curso: laboratorios/01-aws-technical-essentials/index.md
           - 01. Introducción a AWS Identity and Access Management: laboratorios/01-aws-technical-essentials/labs/01-introduccion-a-aws-identity-and-access-management.md
-         
