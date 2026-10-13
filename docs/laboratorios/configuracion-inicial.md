@@ -418,7 +418,7 @@ docker inspect localstack \
 
 Consultar los logs relacionados con IAM:
 
-```shell title="Consultar logs LocalStack IAM
+```shell title="Consultar logs LocalStack IAM"
 docker logs localstack 2>&1 | grep -iE 'iam|policy|enforce'
 ```
 
