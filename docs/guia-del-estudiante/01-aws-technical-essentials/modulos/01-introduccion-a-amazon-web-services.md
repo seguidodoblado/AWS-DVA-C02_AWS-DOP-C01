@@ -1,4 +1,3 @@
-
 # Módulo 1: Introducción a Amazon Web Services
 
 <!-- markdownlint-disable MD033 -->

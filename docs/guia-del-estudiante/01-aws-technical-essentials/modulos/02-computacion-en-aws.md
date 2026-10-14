@@ -1,4 +1,3 @@
-
 # Módulo 2: Computación en AWS
 
 <!-- markdownlint-disable MD033 -->

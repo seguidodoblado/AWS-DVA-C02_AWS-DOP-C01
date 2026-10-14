@@ -1,4 +1,3 @@
-
 # Módulo 3: Redes en AWS
 
 <!-- markdownlint-disable MD033 -->
