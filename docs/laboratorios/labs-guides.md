@@ -26,7 +26,7 @@ Aquí se recogen las adaptaciones de los laboratorios oficiales para ejecutarlos
 
     Laboratorios sobre IAM, VPC, EC2, S3, DynamoDB y alta disponibilidad.
 
-    [:octicons-arrow-right-24: Acceder a la guía del laboratorio](../laboratorios/01-aws-technical-essentials/labs//01-introduccion-a-aws-identity-and-access-management.md){ .md-button .md-button--primary }
+    [:octicons-arrow-right-24: Acceder a la guía del laboratorio](../laboratorios/01-aws-technical-essentials/index.md){ .md-button .md-button--primary }
 
 - :material-language-javascript:{ .lg .middle } **Developing on AWS**
 
