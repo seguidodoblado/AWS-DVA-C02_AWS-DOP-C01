@@ -14,7 +14,7 @@ Bienvenido al centro de formación de AWS.
 Selecciona el área que quieres consultar:
 
 <!-- markdownlint-disable MD033 -->
-<div class="grid cards" markdown>
+<div class="grid cards card-button-grid" markdown>
 
 - :material-school-outline:{ .lg .middle } **Student Training Hub**
 
@@ -23,14 +23,14 @@ Selecciona el área que quieres consultar:
     - **Developer - Associate (DVA-C02)**
     - **DevOps Engineer - Professional (DOP-C01)**
 
-    [:octicons-arrow-right-24: Acceder a la teoría](guia-del-estudiante/student-guides.md)
+    [:octicons-arrow-right-24: Acceder a la teoría](guia-del-estudiante/student-guides.md){ .md-button .md-button--primary }
 
 - :material-flask-outline:{ .lg .middle } **Labs Training Hub**
 
     Adaptación práctica de los laboratorios oficiales para entornos locales
     mediante **Floci** o **LocalStack**.
 
-    [:octicons-arrow-right-24: Acceder a los laboratorios](laboratorios/labs-guides.md)
+    [:octicons-arrow-right-24: Acceder a los laboratorios](laboratorios/labs-guides.md){ .md-button .md-button--primary }
 
 </div>
 <!-- markdownlint-enable MD033 -->

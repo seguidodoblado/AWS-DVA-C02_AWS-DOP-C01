@@ -12,6 +12,19 @@
   font-size: 0.9em;
 }
 
+.md-typeset .grid.cards.card-button-grid > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+
+.md-typeset .grid.cards.card-button-grid > ul > li > p:last-child {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 .md-typeset .highlight.language-bash,
 .md-typeset .highlight.language-sh,
 .md-typeset .highlight.language-shell {

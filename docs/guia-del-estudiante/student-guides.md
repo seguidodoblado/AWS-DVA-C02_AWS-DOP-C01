@@ -16,55 +16,55 @@ Esta documentación reúne la traducción y organización de los cursos de AWS, 
 ## Cursos disponibles
 
 <!-- markdownlint-disable MD033 -->
-<div class="grid cards" markdown>
+<div class="grid cards card-button-grid" markdown>
 
 - :material-cloud-outline:{ .lg .middle } __AWS Technical Essentials__
 
     Introducción a los principales conceptos y servicios de AWS.
 
-    [:octicons-arrow-right-24: Acceder al curso](01-aws-technical-essentials/index.md)
+    [:octicons-arrow-right-24: Acceder al curso](01-aws-technical-essentials/index.md){ .md-button .md-button--primary }
 
 - :material-language-javascript:{ .lg .middle } __Developing on AWS__
 
     Desarrollo de aplicaciones utilizando servicios de AWS.
 
-    [:octicons-arrow-right-24: Acceder al curso](02-developing-on-aws/index.md)
+    [:octicons-arrow-right-24: Acceder al curso](02-developing-on-aws/index.md){ .md-button .md-button--primary }
 
 - :material-code-braces:{ .lg .middle } __Advanced Developing on AWS__
 
     Desarrollo avanzado y diseño de aplicaciones en AWS.
 
-    [:octicons-arrow-right-24: Acceder al curso](03-advanced-developing-on-aws/index.md)
+    [:octicons-arrow-right-24: Acceder al curso](03-advanced-developing-on-aws/index.md){ .md-button .md-button--primary }
 
 - :material-server-network:{ .lg .middle } __Developing Serverless Solutions on AWS__
 
     Desarrollo de soluciones sin servidor utilizando AWS.
 
-    [:octicons-arrow-right-24: Acceder al curso](04-developing-serverless-solutions-on-aws/index.md)
+    [:octicons-arrow-right-24: Acceder al curso](04-developing-serverless-solutions-on-aws/index.md){ .md-button .md-button--primary }
 
 - :material-cog-outline:{ .lg .middle } __DevOps Engineering on AWS__
 
     Automatización, integración continua, despliegue y operaciones.
 
-    [:octicons-arrow-right-24: Acceder al curso](05-devops-engineering-on-aws/index.md)
+    [:octicons-arrow-right-24: Acceder al curso](05-devops-engineering-on-aws/index.md){ .md-button .md-button--primary }
 
 - :material-kubernetes:{ .lg .middle } __Running Containers on Amazon EKS__
 
     Ejecución y administración de contenedores mediante Amazon EKS.
 
-    [:octicons-arrow-right-24: Acceder al curso](06-running-containers-on-eks/index.md)
+    [:octicons-arrow-right-24: Acceder al curso](06-running-containers-on-eks/index.md){ .md-button .md-button--primary }
 
 - :material-creation:{ .lg .middle } __Generative AI Essentials on AWS__
 
     Conceptos fundamentales de inteligencia artificial generativa en AWS.
 
-    [:octicons-arrow-right-24: Acceder al curso](07-generative-ai-on-aws/index.md)
+    [:octicons-arrow-right-24: Acceder al curso](07-generative-ai-on-aws/index.md){ .md-button .md-button--primary }
 
 - :material-brain:{ .lg .middle } __Developing Generative AI Applications on AWS__
 
     Desarrollo de aplicaciones de inteligencia artificial generativa en AWS.
 
-    [:octicons-arrow-right-24: Acceder al curso](08-developing-generative-ai-applications-on-aws/index.md)
+    [:octicons-arrow-right-24: Acceder al curso](08-developing-generative-ai-applications-on-aws/index.md){ .md-button .md-button--primary }
 
 </div>
 <!-- markdownlint-enable MD033 -->
