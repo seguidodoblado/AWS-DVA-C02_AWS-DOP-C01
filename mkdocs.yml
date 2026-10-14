@@ -11,6 +11,9 @@ plugins:
 
 theme:
   name: material
+  font:
+    text: Ubuntu Sans
+    code: Ubuntu Sans Mono
   logo: assets/logo.png
   favicon: assets/favicon.png
   features:
@@ -72,6 +75,7 @@ nav:
           - 00. Descripción general del curso: guia-del-estudiante/01-aws-technical-essentials/index.md
           - 01. Introducción a Amazon Web Services: guia-del-estudiante/01-aws-technical-essentials/modulos/01-introduccion-a-amazon-web-services.md
           - 02. Computación en AWS: guia-del-estudiante/01-aws-technical-essentials/modulos/02-computacion-en-aws.md
+          - 03. Redes en AWS: guia-del-estudiante/01-aws-technical-essentials/modulos/03-redes-en-aws.md
           - Glosario: guia-del-estudiante/01-aws-technical-essentials/glosario.md
           - Referencias: guia-del-estudiante/01-aws-technical-essentials/referencias.md
       - Developing on AWS:

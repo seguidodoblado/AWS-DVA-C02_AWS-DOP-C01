@@ -283,8 +283,8 @@ En el estado **terminada:**
 - Se eliminan los datos almacenados en la instancia.
 - Los datos guardados en almacenamiento externo no se eliminan necesariamente.
 
-> [!NOTE] Nota  
-> La terminación es diferente de la detención: una instancia detenida puede volver a iniciarse, mientras que una instancia terminada se elimina de forma permanente.
+!!! note "Nota"
+    La terminación es diferente de la detención: una instancia detenida puede volver a iniciarse, mientras que una instancia terminada se elimina de forma permanente.
 
 ---
 

@@ -129,7 +129,7 @@ Si Floci se inicia correctamente, el entorno estará preparado para configurar A
 Se puede acceder a su panel de control desde [http://localhost:4566](http://localhost:4566).
 
 <!-- markdownlint-disable MD033 -->
-<img src="../../assets/floci-dashboard.png" alt="Dashboard de Floci">
+<img src="../../assets/floci-dashboard.png" alt="Dashboard de Floci" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 
 ## Activar IAM Policy Enforcement en Floci
@@ -301,7 +301,7 @@ La CLI se encarga de iniciar el contenedor y conectarlo con el endpoint local.
 Se puede acceder a su panel de control desde [https://app.localstack.cloud/inst/default/resources](https://app.localstack.cloud/inst/default/resources).
 
 <!-- markdownlint-disable MD033 -->
-<img src="../../assets/localstack-dashboard.png" alt="Dashboard de Floci">
+<img src="../../assets/localstack-dashboard.png" alt="Dashboard de LocalStack" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 
 Para detener LocalStack:

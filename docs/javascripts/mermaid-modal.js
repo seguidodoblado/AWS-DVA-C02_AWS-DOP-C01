@@ -4,7 +4,12 @@
     return;
   }
 
-  window.mermaid.initialize({ startOnLoad: false });
+  window.mermaid.initialize({
+    startOnLoad: false,
+    themeVariables: {
+      fontFamily: '"Ubuntu Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+    }
+  });
 
   function renderMermaid() {
     document.querySelectorAll("pre.mermaid").forEach((codeBlock) => {
@@ -29,7 +34,7 @@
   let minimumScale = 0.3;
   let translateX = 0;
   let translateY = 0;
-  let panMode = false;
+
   let activePointerId = null;
   let pointerStartX = 0;
   let pointerStartY = 0;
@@ -48,7 +53,7 @@
         <div>
           <p class="mermaid-modal-eyebrow">DIAGRAMA · MERMAID</p>
           <h2 id="mermaid-modal-title">Vista ampliada</h2>
-          <p class="mermaid-modal-hint">Rueda para zoom · Activa la mano y arrastra para moverte.</p>
+          <p class="mermaid-modal-hint">Rueda para zoom · Arrastra para moverte.</p>
         </div>
         <button class="mermaid-close" type="button">Cerrar vista</button>
       </header>
@@ -66,12 +71,6 @@
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20 11a8 8 0 0 0-14.9-3L3 11" />
             <path d="M3 5v6h6M4 13a8 8 0 0 0 14.9 3L21 13" />
-          </svg>
-        </button>
-        <span class="mermaid-zoom-divider" aria-hidden="true"></span>
-        <button type="button" data-pan aria-label="Activar desplazamiento" aria-pressed="false" title="Activar desplazamiento">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M8 12V5.5a1.5 1.5 0 0 1 3 0V11 4.5a1.5 1.5 0 0 1 3 0V11 6a1.5 1.5 0 0 1 3 0v6-2a1.5 1.5 0 0 1 3 0v5.5a6.5 6.5 0 0 1-6.5 6.5h-1.2a6 6 0 0 1-4.2-1.8L4.5 17a1.8 1.8 0 0 1 2.6-2.5L9 16.2" />
           </svg>
         </button>
       </div>
@@ -99,24 +98,12 @@
       fitDiagram();
     };
 
-    const panButton = modal.querySelector("[data-pan]");
-    panButton.onclick = () => {
-      panMode = !panMode;
-      panButton.setAttribute("aria-pressed", String(panMode));
-      panButton.setAttribute(
-        "aria-label",
-        panMode ? "Desactivar desplazamiento" : "Activar desplazamiento"
-      );
-      panButton.title = panMode ? "Desactivar desplazamiento" : "Activar desplazamiento";
-      content.classList.toggle("is-pan-mode", panMode);
-    };
-
     modal.onclick = (event) => {
       if (event.target === modal) modal.close();
     };
 
     content.addEventListener("pointerdown", (event) => {
-      if (!panMode || !event.target.closest?.("svg")) return;
+      if (!event.target.closest?.("svg")) return;
 
       event.preventDefault();
       activePointerId = event.pointerId;
@@ -222,13 +209,212 @@
     minimumScale = 0.3;
     translateX = 0;
     translateY = 0;
-    panMode = false;
     activePointerId = null;
-    content.classList.remove("is-pan-mode", "is-panning");
-    modal.querySelector("[data-pan]").setAttribute("aria-pressed", "false");
-    modal.querySelector("[data-pan]").setAttribute("aria-label", "Activar desplazamiento");
-    modal.querySelector("[data-pan]").title = "Activar desplazamiento";
+    content.classList.remove("is-panning");
     modal.showModal();
     requestAnimationFrame(fitDiagram);
+  });
+
+  /* ───────────────────────────────────────────────
+   *  Modal de imágenes con clase "zoomable"
+   * ─────────────────────────────────────────────── */
+
+  let imgModal;
+  let imgContent;
+  let imgScale = 1;
+  let imgMinScale = 0.3;
+  let imgTranslateX = 0;
+  let imgTranslateY = 0;
+  let imgActivePointerId = null;
+  let imgPointerStartX = 0;
+  let imgPointerStartY = 0;
+  let imgTranslateStartX = 0;
+  let imgTranslateStartY = 0;
+
+  function createImageModal() {
+    if (imgModal) return;
+
+    imgModal = document.createElement("dialog");
+    imgModal.id = "image-modal";
+    imgModal.setAttribute("aria-labelledby", "image-modal-title");
+
+    imgModal.innerHTML = `
+      <header class="image-modal-header">
+        <div>
+          <p class="image-modal-eyebrow">IMAGEN</p>
+          <h2 id="image-modal-title">Vista ampliada</h2>
+          <p class="image-modal-hint">Rueda para zoom · Arrastra para moverte.</p>
+        </div>
+        <button class="image-close" type="button">Cerrar vista</button>
+      </header>
+      <div class="image-modal-content"></div>
+      <div class="image-zoom-controls">
+        <button type="button" data-img-zoom="-0.1" aria-label="Reducir zoom" title="Reducir zoom">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /></svg>
+        </button>
+        <span class="image-zoom-label">Zoom</span>
+        <button type="button" data-img-zoom="0.1" aria-label="Aumentar zoom" title="Aumentar zoom">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+        </button>
+        <span class="image-zoom-divider" aria-hidden="true"></span>
+        <button type="button" data-img-reset aria-label="Restablecer zoom" title="Restablecer zoom">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 11a8 8 0 0 0-14.9-3L3 11" />
+            <path d="M3 5v6h6M4 13a8 8 0 0 0 14.9 3L21 13" />
+          </svg>
+        </button>
+      </div>
+    `;
+
+    document.body.appendChild(imgModal);
+    imgContent = imgModal.querySelector(".image-modal-content");
+
+    imgModal.querySelector(".image-close").onclick = () => {
+      imgModal.close();
+    };
+
+    imgModal.querySelectorAll("[data-img-zoom]").forEach((button) => {
+      button.onclick = () => {
+        const bounds = imgContent.getBoundingClientRect();
+        imgZoomAt(
+          imgScale + Number(button.dataset.imgZoom),
+          bounds.left + bounds.width / 2,
+          bounds.top + bounds.height / 2
+        );
+      };
+    });
+
+    imgModal.querySelector("[data-img-reset]").onclick = () => {
+      fitImage();
+    };
+
+    imgModal.onclick = (event) => {
+      if (event.target === imgModal) imgModal.close();
+    };
+
+    imgContent.addEventListener("pointerdown", (event) => {
+      const img = event.target.closest?.("img");
+      if (!img) return;
+
+      event.preventDefault();
+      imgActivePointerId = event.pointerId;
+      imgPointerStartX = event.clientX;
+      imgPointerStartY = event.clientY;
+      imgTranslateStartX = imgTranslateX;
+      imgTranslateStartY = imgTranslateY;
+      imgContent.setPointerCapture(event.pointerId);
+      imgContent.classList.add("is-panning");
+    });
+
+    imgContent.addEventListener("pointermove", (event) => {
+      if (event.pointerId !== imgActivePointerId) return;
+
+      imgTranslateX = imgTranslateStartX + event.clientX - imgPointerStartX;
+      imgTranslateY = imgTranslateStartY + event.clientY - imgPointerStartY;
+      updateImageZoom();
+    });
+
+    const stopImgPanning = (event) => {
+      if (event.pointerId !== imgActivePointerId) return;
+
+      imgActivePointerId = null;
+      imgContent.classList.remove("is-panning");
+    };
+
+    imgContent.addEventListener("pointerup", stopImgPanning);
+    imgContent.addEventListener("pointercancel", stopImgPanning);
+
+    imgContent.addEventListener("wheel", (event) => {
+      event.preventDefault();
+      imgZoomAt(
+        imgScale + (event.deltaY < 0 ? 0.1 : -0.1),
+        event.clientX,
+        event.clientY
+      );
+    }, { passive: false });
+  }
+
+  function imgZoomAt(nextScale, clientX, clientY) {
+    const img = imgContent.querySelector("img");
+    const clampedScale = Math.max(imgMinScale, Math.min(nextScale, 4));
+
+    if (img && clampedScale !== imgScale) {
+      const bounds = img.getBoundingClientRect();
+      const scaleRatio = clampedScale / imgScale;
+      imgTranslateX += (clientX - bounds.left) * (1 - scaleRatio);
+      imgTranslateY += (clientY - bounds.top) * (1 - scaleRatio);
+    }
+
+    imgScale = clampedScale;
+    updateImageZoom();
+  }
+
+  function fitImage() {
+    const img = imgContent.querySelector("img");
+
+    if (!img) return;
+
+    const naturalW = img.naturalWidth;
+    const naturalH = img.naturalHeight;
+
+    if (!naturalW || !naturalH) return;
+
+    img.style.width = `${naturalW}px`;
+    img.style.height = `${naturalH}px`;
+    img.style.transform = "none";
+
+    const availableWidth = imgContent.clientWidth;
+    const availableHeight = imgContent.clientHeight;
+
+    if (!availableWidth || !availableHeight) return;
+
+    imgScale = Math.min(1, availableWidth / naturalW, availableHeight / naturalH);
+    imgMinScale = Math.min(0.3, imgScale);
+    imgTranslateX = (availableWidth - naturalW * imgScale) / 2;
+    imgTranslateY = (availableHeight - naturalH * imgScale) / 2;
+    updateImageZoom();
+  }
+
+  function updateImageZoom() {
+    const img = imgContent.querySelector("img");
+
+    if (img) {
+      img.style.transform = `translate(${imgTranslateX}px, ${imgTranslateY}px) scale(${imgScale})`;
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    const img = event.target.closest?.("img.zoomable");
+
+    if (!img) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    createImageModal();
+
+    const clone = img.cloneNode(true);
+    clone.removeAttribute("width");
+    clone.removeAttribute("height");
+    clone.style.maxWidth = "none";
+    imgContent.replaceChildren(clone);
+
+    const title = img.alt || "Vista ampliada";
+    imgModal.querySelector("#image-modal-title").textContent = title;
+
+    imgScale = 1;
+    imgMinScale = 0.3;
+    imgTranslateX = 0;
+    imgTranslateY = 0;
+    imgActivePointerId = null;
+    imgContent.classList.remove("is-panning");
+
+    imgModal.showModal();
+
+    if (clone.complete) {
+      requestAnimationFrame(fitImage);
+    } else {
+      clone.onload = () => requestAnimationFrame(fitImage);
+    }
   });
 })();

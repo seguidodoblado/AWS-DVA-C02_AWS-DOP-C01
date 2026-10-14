@@ -33,15 +33,15 @@ El módulo explica distintas formas de ejecutar aplicaciones y cargas de trabajo
 
 ---
 
-### Módulo 3: Redes en AWS
+### [Módulo 3: Redes en AWS](modulos/03-redes-en-aws.md)
 
 Este módulo se centra en Amazon Virtual Private Cloud (Amazon VPC).
 También aborda otras tecnologías de red utilizadas para:
 
-- Crear redes privadas en AWS.
-- Proteger los recursos.
-- Controlar la comunicación entre componentes.
-- Conectar una red privada con los recursos de AWS.
+- [Crear redes privadas en AWS.](modulos/03-redes-en-aws.md#amazon-virtual-private-cloud-amazon-vpc)
+- [Proteger los recursos.](modulos/03-redes-en-aws.md#listas-de-control-de-acceso-de-red-y-grupos-de-seguridad)
+- [Controlar la comunicación entre componentes.](modulos/03-redes-en-aws.md#tablas-de-rutas)
+- [Conectar una red privada con los recursos de AWS.](modulos/03-redes-en-aws.md#virtual-private-network-vpn)
 
 ---
 
