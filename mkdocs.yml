@@ -77,6 +77,7 @@ nav:
           - 02. Computación en AWS: guia-del-estudiante/01-aws-technical-essentials/modulos/02-computacion-en-aws.md
           - 03. Redes en AWS: guia-del-estudiante/01-aws-technical-essentials/modulos/03-redes-en-aws.md
           - 04. Almacenamiento en AWS: guia-del-estudiante/01-aws-technical-essentials/modulos/04-almacenamiento-en-aws.md
+          - 05. Bases de datos: guia-del-estudiante/01-aws-technical-essentials/modulos/05-bases-de-datos.md
           - Glosario: guia-del-estudiante/01-aws-technical-essentials/glosario.md
           - Referencias: guia-del-estudiante/01-aws-technical-essentials/referencias.md
       - Developing on AWS:

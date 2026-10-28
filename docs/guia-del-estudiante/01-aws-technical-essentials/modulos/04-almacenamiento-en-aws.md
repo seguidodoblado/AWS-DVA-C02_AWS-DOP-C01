@@ -207,7 +207,6 @@ Un objeto queda identificado de forma única por la combinación de:
 - ID de versión.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart TD
     A["Región de AWS"] --> B["Bucket de S3"]
     B --> C["Objeto"]
@@ -327,7 +326,6 @@ Un bucket puede encontrarse en uno de estos estados:
 - **Versionado suspendido:** los nuevos objetos reciben un ID de versión nulo; las versiones anteriores se conservan.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Carga inicial<br/>documento.pdf"] --> B["Versión 1"]
     C["Nueva carga<br/>documento.pdf"] --> D["Versión 2"]

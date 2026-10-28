@@ -59,12 +59,12 @@ El módulo explica cómo seleccionar una solución de almacenamiento según las 
 
 ---
 
-### Módulo 5: Bases de datos
+### [Módulo 5: Bases de datos](modulos/05-bases-de-datos.md)
 
 Este módulo presenta varios casos de uso relacionados con servicios de base de datos, con especial atención a:
 
-- Amazon Relational Database Service (Amazon RDS).
-- Amazon DynamoDB.
+- [Amazon Relational Database Service (Amazon RDS).](modulos/05-bases-de-datos.md#amazon-relational-database-service)
+- [Amazon DynamoDB.](modulos/05-bases-de-datos.md#amazon-dynamodb)
 
 ---
 
