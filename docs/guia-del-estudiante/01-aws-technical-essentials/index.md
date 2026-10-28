@@ -68,13 +68,13 @@ Este módulo presenta varios casos de uso relacionados con servicios de base de 
 
 ---
 
-### Módulo 6: Monitorización, balanceo de carga y escalado
+### [Módulo 6: Monitorización, balanceo de carga y escalado](modulos/06-monitorizacion-balanceo-de-carga-y-escalado.md)
 
 Este módulo explica cómo monitorizar y escalar aplicaciones mediante:
 
-- Amazon CloudWatch.
-- Elastic Load Balancing (ELB).
-- Amazon EC2 Auto Scaling.
+- [Amazon CloudWatch.](modulos/06-monitorizacion-balanceo-de-carga-y-escalado.md#amazon-cloudwatch)
+- [Elastic Load Balancing (ELB).](modulos/06-monitorizacion-balanceo-de-carga-y-escalado.md#elastic-load-balancing)
+- [Amazon EC2 Auto Scaling.](modulos/06-monitorizacion-balanceo-de-carga-y-escalado.md#amazon-ec2-auto-scaling)
 
 Estos servicios permiten observar el comportamiento de las aplicaciones, distribuir el tráfico y adaptar la capacidad según la demanda.
 
