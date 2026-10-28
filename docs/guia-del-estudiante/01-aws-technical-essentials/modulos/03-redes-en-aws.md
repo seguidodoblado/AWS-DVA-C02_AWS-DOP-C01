@@ -46,7 +46,6 @@ La configuración de enrutamiento se aplica a nivel de subred y determina qué r
 Para alta disponibilidad, se recomienda crear subredes públicas y privadas en dos zonas de disponibilidad distintas.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart TB
     A["Amazon VPC"] --> B["Zona de disponibilidad 1"]
     A --> C["Zona de disponibilidad 2"]
@@ -101,7 +100,6 @@ Los rangos reservados para redes privadas son:
 ---
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["192.168.1.0/24"] --> B["24 bits fijos"]
     A --> C["8 bits flexibles"]
@@ -121,7 +119,6 @@ Una VPC se conecta a Internet mediante un **Internet Gateway**.
 Este componente está diseñado para ser altamente disponible y escalar de forma transparente.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Internet"] --> B["Internet Gateway"]
     B --> C["Subred pública"]
@@ -137,7 +134,6 @@ Los recursos ubicados en una subred privada pueden acceder a Internet mediante u
 Para alta disponibilidad, se debe crear un NAT Gateway en cada zona de disponibilidad. Así, si una zona deja de estar disponible, los recursos de las zonas restantes pueden seguir accediendo a Internet.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Subred privada"] --> B["NAT Gateway"]
     B --> C["Internet Gateway"]
@@ -159,7 +155,6 @@ Para crear esta conexión debes:
 3. Establecer la conexión VPN entre ambos gateways.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Centro de datos local"] --> B["Customer Gateway"]
     B --> C["VPN"]
@@ -183,7 +178,6 @@ La red local se conecta a una ubicación de AWS Direct Connect mediante un cable
 Esa ubicación proporciona acceso a AWS dentro de la región asociada.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Centro de datos corporativo"] --> B["Router o firewall del cliente"]
     B --> C["Ubicación de AWS Direct Connect"]
@@ -212,7 +206,6 @@ Cada ruta contiene:
 Por lo general, el origen del tráfico es una subred.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Subred"] --> B["Tabla de rutas"]
     B --> C["Destino: rango CIDR"]
@@ -239,7 +232,6 @@ Para conectar recursos de una subred privada a Internet mediante un NAT Gateway:
 3. Dirige el tráfico destinado a Internet hacia el NAT Gateway.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Subred privada"] --> B["Tabla de rutas privada"]
     B --> C["NAT Gateway<br/>en subred pública"]
@@ -272,7 +264,6 @@ Cada regla puede permitir o denegar tráfico.
 Las network ACL son **sin estado**. Esto significa que, aunque una regla permita que el tráfico entre en la subred, debe existir otra regla para permitir el tráfico de respuesta en dirección de salida.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Tráfico entrante"] --> B["Network ACL"]
     B --> C["Subred"]
@@ -298,7 +289,6 @@ Un grupo de seguridad es un firewall virtual que controla el tráfico entrante y
 Los grupos de seguridad son **con estado**. Una vez permitido el tráfico hacia una instancia, el grupo recuerda la sesión y permite automáticamente el tráfico de respuesta, sin comprobar reglas adicionales de salida.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Tráfico entrante permitido"] --> B["Grupo de seguridad"]
     B --> C["Instancia EC2"]
@@ -338,7 +328,6 @@ Los Flow Logs capturan información del tráfico de red para:
 Por ejemplo, si determinado tráfico no llega a una instancia, puedes consultar los registros para investigar la causa.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart TD
     A["Amazon VPC"] --> B["Subred"]
     B --> C["Interfaz de red"]

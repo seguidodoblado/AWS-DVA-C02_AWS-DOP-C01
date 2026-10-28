@@ -745,7 +745,7 @@ A diferencia de las credenciales permanentes de un usuario, un rol proporciona c
 - [ ] Alta disponibilidad, impuestos, velocidad y cumplimiento normativo
 - [ ] Seguridad, resiliencia, impuestos y rendimiento
 
-*Al elegir una Región debes valorar la proximidad de los usuarios, el coste, los servicios disponibles y los requisitos legales o normativos aplicables.*
+_Al elegir una Región debes valorar la proximidad de los usuarios, el coste, los servicios disponibles y los requisitos legales o normativos aplicables._
 </quiz>
 
 <quiz>
@@ -756,7 +756,7 @@ A diferencia de las credenciales permanentes de un usuario, un rol proporciona c
 - [ ] Los centros de datos están formados por varias Regiones
 - [ ] Una Región contiene un único centro de datos
 
-*Una Región es una ubicación geográfica independiente. Dentro de ella existen varias Zonas de disponibilidad, y cada Zona está formada por uno o más centros de datos.*
+_Una Región es una ubicación geográfica independiente. Dentro de ella existen varias Zonas de disponibilidad, y cada Zona está formada por uno o más centros de datos._
 </quiz>
 
 <quiz>
@@ -767,7 +767,7 @@ A diferencia de las credenciales permanentes de un usuario, un rol proporciona c
 - [ ] Sobredimensionar la infraestructura por adelantado
 - [x] Llegar a otras partes del mundo en pocos minutos
 
-*AWS permite crear recursos en distintas Regiones rápidamente. Esto facilita ampliar una aplicación a nuevos mercados sin construir centros de datos propios.*
+_AWS permite crear recursos en distintas Regiones rápidamente. Esto facilita ampliar una aplicación a nuevos mercados sin construir centros de datos propios._
 </quiz>
 
 <quiz>
@@ -778,7 +778,7 @@ Una empresa quiere que sus usuarios, autenticados previamente en su red corporat
 - [x] Un rol de IAM
 - [ ] Un grupo de IAM
 
-*Un rol de IAM proporciona permisos temporales y puede ser asumido por usuarios federados. Por eso es adecuado para escenarios de federación e inicio de sesión único.*
+_Un rol de IAM proporciona permisos temporales y puede ser asumido por usuarios federados. Por eso es adecuado para escenarios de federación e inicio de sesión único._
 </quiz>
 <!-- markdownlint-enable MD033 -->
 

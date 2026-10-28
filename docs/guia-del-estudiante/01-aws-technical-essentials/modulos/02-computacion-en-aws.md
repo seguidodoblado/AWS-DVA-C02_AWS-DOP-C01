@@ -132,11 +132,13 @@ El tamaño indica cuántos recursos tiene la instancia, como:
 - Ancho de banda de red.
 - Almacenamiento de la instancia.
 
+<!-- cSpell:disable-next-line -->
 Por ejemplo, una instancia `m8g.4xlarge` representa:
 
 - Familia `m` : propósito general.
 - Generación `8` .
 - Procesador `g` : Amazon Graviton.
+<!-- cSpell:disable-next-line -->
 - Tamaño `4xlarge` .
 
 Una instancia de propósito general ofrece un equilibrio entre computación, memoria y recursos de red.
@@ -146,6 +148,7 @@ Estas instancias son adecuadas para:
 - Repositorios de código.
 - Bases de datos pequeñas y medianas.
 
+<!-- cSpell:disable -->
 ```mermaid
 flowchart TD
     A["Nombre de instancia: m8g.4xlarge"] --> B["m<br/>Familia de propósito general"]
@@ -153,6 +156,7 @@ flowchart TD
     A --> D["g<br/>Procesador Graviton"]
     A --> E["4xlarge<br/>Tamaño y cantidad de recursos"]
 ```
+<!-- cSpell:enable -->
 
 Este sistema permite separar:
 
@@ -162,6 +166,7 @@ Este sistema permite separar:
 Puedes comenzar con un tamaño pequeño y aumentar los recursos a medida que crece la carga de trabajo.
 
 AWS Graviton son procesadores basados en ARM diseñadores por AWS para ofrecer una buena relación entre precio y rendimiento para cargas de trabajo en la nube.
+<!-- cSpell:disable-next-line -->
 El tamaño `4xlarge` indica aproximadamente cuatro veces los recursos de un tamaño `xlarge` .
 
 ---
@@ -534,7 +539,7 @@ Las funciones Lambda también pueden incluir bibliotecas, incluidas bibliotecas 
 - [x] Las aplicaciones sin servidor tienen integraciones de servicios integradas.
 - [ ] Los clientes deben administrar la disponibilidad y la tolerancia a errores.
 
-*En la computación sin servidor, AWS gestiona los servidores, el escalado, la disponibilidad y la tolerancia a errores. Las aplicaciones pueden activarse e integrarse con otros servicios sin administrar esa infraestructura.*
+_En la computación sin servidor, AWS gestiona los servidores, el escalado, la disponibilidad y la tolerancia a errores. Las aplicaciones pueden activarse e integrarse con otros servicios sin administrar esa infraestructura._
 </quiz>
 
 <quiz>
@@ -545,7 +550,7 @@ Las funciones Lambda también pueden incluir bibliotecas, incluidas bibliotecas 
 - [ ] Las máquinas virtuales deben utilizar el mismo sistema operativo que el hipervisor.
 - [ ] Cada contenedor tiene su propio kernel.
 
-*Los contenedores utilizan el kernel del sistema operativo anfitrión, por eso suelen iniciarse más rápido y consumir menos recursos que las máquinas virtuales. Una máquina virtual ejecuta su propio sistema operativo invitado.*
+_Los contenedores utilizan el kernel del sistema operativo anfitrión, por eso suelen iniciarse más rápido y consumir menos recursos que las máquinas virtuales. Una máquina virtual ejecuta su propio sistema operativo invitado._
 </quiz>
 
 <quiz>
@@ -556,7 +561,7 @@ Las funciones Lambda también pueden incluir bibliotecas, incluidas bibliotecas 
 - [ ] La tenencia de la instancia y el modelo de facturación.
 - [ ] La AMI y la velocidad de red.
 
-*El nombre de una instancia EC2 identifica su familia —por ejemplo, propósito general o optimizada para memoria— y su tamaño, que determina los recursos disponibles, como vCPU, memoria y capacidad de red.*
+_El nombre de una instancia EC2 identifica su familia —por ejemplo, propósito general o optimizada para memoria— y su tamaño, que determina los recursos disponibles, como vCPU, memoria y capacidad de red._
 </quiz>
 
 ---

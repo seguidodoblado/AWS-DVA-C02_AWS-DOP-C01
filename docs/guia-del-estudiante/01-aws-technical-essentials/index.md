@@ -45,15 +45,15 @@ También aborda otras tecnologías de red utilizadas para:
 
 ---
 
-### Módulo 4: Almacenamiento en AWS
+### [Módulo 4: Almacenamiento en AWS](modulos/04-almacenamiento-en-aws.md)
 
 Este módulo presenta diferentes soluciones de almacenamiento:
 
-- Amazon Simple Storage Service (Amazon S3).
-- Amazon Elastic Block Store (Amazon EBS).
-- Amazon Elastic File System (Amazon EFS).
-- Amazon FSx.
-- Almacenamiento de instancias de Amazon EC2.
+- [Amazon Simple Storage Service (Amazon S3).](modulos/04-almacenamiento-en-aws.md#almacenamiento-de-objetos)
+- [Amazon Elastic Block Store (Amazon EBS).](modulos/04-almacenamiento-en-aws.md#almacenamiento-en-bloques)
+- [Amazon Elastic File System (Amazon EFS).](modulos/04-almacenamiento-en-aws.md#amazon-elastic-file-system)
+- [Amazon FSx.](modulos/04-almacenamiento-en-aws.md#amazon-fsx)
+- [Almacenamiento de instancias de Amazon EC2.](modulos/04-almacenamiento-en-aws.md#almacenamiento-de-archivos)
 
 El módulo explica cómo seleccionar una solución de almacenamiento según las necesidades de la aplicación.
 
