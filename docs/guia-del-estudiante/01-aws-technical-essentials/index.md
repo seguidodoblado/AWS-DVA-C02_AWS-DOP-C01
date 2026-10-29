@@ -80,7 +80,7 @@ Estos servicios permiten observar el comportamiento de las aplicaciones, distrib
 
 ---
 
-### Módulo 7: Resumen del curso
+### [Módulo 7: Resumen del curso](modulos/07-resumen-del-curso.md)
 
 El último módulo resume los principales conceptos tratados durante el curso, especialmente:
 
