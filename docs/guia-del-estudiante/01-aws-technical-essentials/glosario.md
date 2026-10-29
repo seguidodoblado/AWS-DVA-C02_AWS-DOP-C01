@@ -1,0 +1,51 @@
+# Glosario
+
+Este glosario reúne los términos y las siglas principales de [AWS Technical Essentials](index.md). La columna **Sección** enlaza directamente con el apartado donde se explica cada término.
+
+| Término | Definición | Sección |
+|---|---|---|
+| **Amazon CloudWatch** | Servicio de monitorización que permite consultar métricas, crear alarmas y visualizar paneles. | [6. Amazon CloudWatch](modulos/06-monitorizacion-balanceo-de-carga-y-escalado.md#amazon-cloudwatch) |
+| **Amazon DynamoDB** | Servicio de base de datos NoSQL administrada. | [5. Amazon DynamoDB](modulos/05-bases-de-datos.md#amazon-dynamodb) |
+| **Amazon EBS (Elastic Block Store)** | Servicio de almacenamiento en bloques que proporciona volúmenes para instancias de Amazon EC2. | [4. Almacenamiento en bloques](modulos/04-almacenamiento-en-aws.md#almacenamiento-en-bloques) |
+| **Amazon EC2 (Elastic Compute Cloud)** | Servicio que proporciona capacidad de computación mediante instancias virtuales. | [2. Amazon EC2](modulos/02-computacion-en-aws.md#amazon-ec2) |
+| **Amazon ECS (Elastic Container Service)** | Servicio de AWS para desplegar y administrar aplicaciones en contenedores. | [2. Amazon ECS](modulos/02-computacion-en-aws.md#amazon-ecs) |
+| **Amazon EFS (Elastic File System)** | Servicio de almacenamiento de archivos elástico que pueden utilizar varias instancias. | [4. Amazon Elastic File System](modulos/04-almacenamiento-en-aws.md#amazon-elastic-file-system) |
+| **Amazon EKS (Elastic Kubernetes Service)** | Servicio administrado de Kubernetes para ejecutar aplicaciones en contenedores. | [2. Amazon EKS](modulos/02-computacion-en-aws.md#amazon-eks) |
+| **Amazon FSx** | Familia de servicios de sistemas de archivos administrados para distintas cargas de trabajo. | [4. Amazon FSx](modulos/04-almacenamiento-en-aws.md#amazon-fsx) |
+| **Amazon RDS (Relational Database Service)** | Servicio administrado para crear y operar bases de datos relacionales. | [5. Amazon Relational Database Service](modulos/05-bases-de-datos.md#amazon-relational-database-service) |
+| **Amazon S3 (Simple Storage Service)** | Servicio de almacenamiento de objetos organizado en buckets. | [4. Amazon Simple Storage Service](modulos/04-almacenamiento-en-aws.md#amazon-simple-storage-service) |
+| **Amazon VPC (Virtual Private Cloud)** | Red virtual aislada en AWS donde se pueden desplegar recursos. | [3. Amazon VPC](modulos/03-redes-en-aws.md#amazon-virtual-private-cloud-amazon-vpc) |
+| **Availability Zone (AZ)** | Una o más instalaciones aisladas dentro de una región de AWS, diseñadas para ofrecer redundancia y alta disponibilidad. | [1. Zonas de disponibilidad](modulos/01-introduccion-a-amazon-web-services.md#zonas-de-disponibilidad) |
+| **AWS** | Amazon Web Services, plataforma de servicios de computación en la nube. | [1. Amplitud de los servicios](modulos/01-introduccion-a-amazon-web-services.md#amplitud-de-los-servicios) |
+| **AWS CLI (Command Line Interface)** | Herramienta de línea de comandos para administrar servicios de AWS. | [1. Interfaz de línea de comandos](modulos/01-introduccion-a-amazon-web-services.md#interfaz-de-linea-de-comandos) |
+| **AWS Lambda** | Servicio de computación sin servidor que ejecuta código en respuesta a eventos. | [2. AWS Lambda](modulos/02-computacion-en-aws.md#aws-lambda) |
+| **AWS SDK (Software Development Kit)** | Conjunto de bibliotecas y herramientas para utilizar servicios de AWS desde aplicaciones. | [1. Kits de desarrollo de software](modulos/01-introduccion-a-amazon-web-services.md#kits-de-desarrollo-de-software) |
+| **Balanceador de carga** | Servicio o componente que distribuye las solicitudes entre varios destinos para mejorar la disponibilidad y la capacidad de respuesta. | [6. Elastic Load Balancing](modulos/06-monitorizacion-balanceo-de-carga-y-escalado.md#elastic-load-balancing) |
+| **Bucket** | Contenedor de Amazon S3 en el que se almacenan objetos. | [4. Amazon Simple Storage Service](modulos/04-almacenamiento-en-aws.md#amazon-simple-storage-service) |
+| **CIDR (Classless Inter-Domain Routing)** | Notación que representa un bloque o rango de direcciones IP, como `192.168.1.0/24`. | [3. Classless Inter-Domain Routing (CIDR)](modulos/03-redes-en-aws.md#classless-inter-domain-routing-cidr) |
+| **Computación en la nube** | Uso bajo demanda de recursos informáticos a través de una red, sin tener que poseer ni mantener toda la infraestructura física. | [1. ¿Qué es la computación en la nube?](modulos/01-introduccion-a-amazon-web-services.md#que-es-la-computacion-en-la-nube) |
+| **Contenedor** | Unidad de software que empaqueta una aplicación y sus dependencias para ejecutarla de forma consistente. | [2. Máquinas virtuales y contenedores](modulos/02-computacion-en-aws.md#maquinas-virtuales-y-contenedores) |
+| **Elastic Load Balancing (ELB)** | Servicio que distribuye automáticamente el tráfico entrante entre varios destinos, como instancias EC2. | [6. Elastic Load Balancing](modulos/06-monitorizacion-balanceo-de-carga-y-escalado.md#elastic-load-balancing) |
+| **Escalado** | Ajuste de la capacidad de una aplicación para responder a cambios en la carga de trabajo. Puede ser vertical (cambiar el tamaño de un recurso) u horizontal (añadir o quitar recursos). | [6. Escalado vertical](modulos/06-monitorizacion-balanceo-de-carga-y-escalado.md#escalado-vertical) y [horizontal](modulos/06-monitorizacion-balanceo-de-carga-y-escalado.md#escalado-horizontal) |
+| **Grupo de seguridad** | Firewall con estado que controla el tráfico permitido hacia y desde recursos compatibles, como instancias EC2. | [3. Grupos de seguridad](modulos/03-redes-en-aws.md#grupos-de-seguridad) |
+| **IAM (Identity and Access Management)** | Servicio de AWS para administrar identidades y controlar sus permisos de acceso. | [1. AWS Identity and Access Management (IAM)](modulos/01-introduccion-a-amazon-web-services.md#aws-identity-and-access-management-iam) |
+| **Instancia** | Recurso de computación virtual, como una máquina virtual de Amazon EC2. | [2. Amazon EC2](modulos/02-computacion-en-aws.md#amazon-ec2) |
+| **Internet Gateway** | Componente que permite la comunicación entre una VPC e Internet cuando la configuración de red lo permite. | [3. Internet Gateway](modulos/03-redes-en-aws.md#internet-gateway) |
+| **Latencia** | Tiempo que tarda una solicitud o un dato en desplazarse entre su origen y su destino. | [1. Selección de una región](modulos/01-introduccion-a-amazon-web-services.md#seleccion-de-una-region) |
+| **MFA (Multi-Factor Authentication)** | Autenticación que requiere más de un factor para verificar una identidad, por ejemplo, una contraseña y un código temporal. | [1. MFA](modulos/01-introduccion-a-amazon-web-services.md#mfa) |
+| **Modelo de responsabilidad compartida** | Modelo que define las responsabilidades de AWS sobre la seguridad de la nube y las del cliente sobre la seguridad de lo que ejecuta y configura en ella. | [1. Modelo de responsabilidad compartida de AWS](modulos/01-introduccion-a-amazon-web-services.md#modelo-de-responsabilidad-compartida-de-aws) |
+| **Multi-AZ** | Configuración que distribuye recursos entre varias zonas de disponibilidad para mejorar la disponibilidad y la tolerancia a fallos. | [5. Redundancia con Multi-AZ](modulos/05-bases-de-datos.md#redundancia-con-multi-az) |
+| **NAT Gateway** | Servicio que permite que recursos de una subred privada inicien conexiones hacia destinos externos sin aceptar conexiones entrantes no solicitadas desde esos destinos. | [3. NAT Gateway](modulos/03-redes-en-aws.md#nat-gateway) |
+| **Network ACL (lista de control de acceso de red)** | Firewall sin estado asociado a una subred que controla el tráfico entrante y saliente mediante reglas. | [3. Listas de control de acceso de red](modulos/03-redes-en-aws.md#listas-de-control-de-acceso-de-red) |
+| **NoSQL** | Categoría de bases de datos no relacionales, diseñadas para modelos de datos distintos de las tablas relacionales tradicionales. | [5. Tipos de bases de datos](modulos/05-bases-de-datos.md#tipos-de-bases-de-datos) |
+| **Región de AWS** | Área geográfica en la que AWS agrupa varias zonas de disponibilidad. | [1. Regiones de AWS](modulos/01-introduccion-a-amazon-web-services.md#regiones-de-aws) |
+| **Rol de IAM** | Identidad con permisos que puede asumirse para obtener credenciales temporales y acceder a recursos. | [1. Roles de IAM](modulos/01-introduccion-a-amazon-web-services.md#roles-de-iam) |
+| **Ruta y tabla de rutas** | Una ruta define el destino del tráfico y su objetivo; una tabla de rutas determina qué rutas se aplican a una subred. | [3. Tablas de rutas](modulos/03-redes-en-aws.md#tablas-de-rutas) |
+| **Sin servidor (serverless)** | Modelo en el que AWS administra la infraestructura subyacente y el cliente se centra en el código o la aplicación. | [2. Computación sin servidor](modulos/02-computacion-en-aws.md#computacion-sin-servidor) |
+| **SQL (Structured Query Language)** | Lenguaje utilizado para consultar y administrar datos en bases de datos relacionales. | [5. SQL](modulos/05-bases-de-datos.md#sql) |
+| **Subred** | Segmento de una VPC asociado a una zona de disponibilidad y a una tabla de rutas. Puede configurarse para que sea pública o privada. | [3. Subredes](modulos/03-redes-en-aws.md#subredes) |
+| **Ubicación de borde (edge location)** | Ubicación de la infraestructura global de AWS que puede acercar contenido en caché a los usuarios. | [1. Ubicaciones de borde](modulos/01-introduccion-a-amazon-web-services.md#ubicaciones-de-borde) |
+| **Usuario de IAM** | Identidad de IAM que representa a una persona o aplicación y puede recibir permisos. | [1. Usuarios de IAM](modulos/01-introduccion-a-amazon-web-services.md#usuarios-de-iam) |
+| **Usuario raíz** | Identidad inicial de una cuenta de AWS, con acceso completo a dicha cuenta. | [1. Usuario raíz de AWS](modulos/01-introduccion-a-amazon-web-services.md#usuario-raiz-de-aws) |
+| **VPN (Virtual Private Network)** | Conexión cifrada que permite comunicar redes a través de una infraestructura de red existente. | [3. Virtual Private Network (VPN)](modulos/03-redes-en-aws.md#virtual-private-network-vpn) |
+| **Volumen** | Dispositivo de almacenamiento en bloques que se puede asociar a una instancia EC2. | [4. Almacenamiento en bloques](modulos/04-almacenamiento-en-aws.md#almacenamiento-en-bloques) |

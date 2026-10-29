@@ -49,7 +49,6 @@ Una dimensión es un par clave-valor que se adjunta a una métrica para filtrar 
 Las métricas personalizadas de alta resolución pueden publicarse con gran detalle temporal. CloudWatch las agrega con una granularidad mínima de un segundo.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart TD
     A["Recurso de AWS<br/>por ejemplo, una instancia EC2"] --> B["Métrica"]
     B --> C["Namespace<br/>AWS/EC2"]
@@ -95,7 +94,6 @@ Una alarma puede activar acciones cuando cambia de estado, como:
 - El envío de una notificación.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Métrica<br/>CPUUtilization"] --> B["Alarma de CloudWatch"]
     B --> C{"CPU > 75 %<br/>durante 10 min"}
@@ -129,7 +127,6 @@ El escalado horizontal consiste en añadir o eliminar instancias EC2 según la d
 Puede automatizarse con Amazon EC2 Auto Scaling.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Escalado vertical"] --> B["Cambiar tamaño o tipo<br/>de una instancia"]
     C["Escalado horizontal"] --> D["Añadir o eliminar<br/>instancias"]
@@ -162,7 +159,6 @@ EC2 Auto Scaling utiliza plantillas de lanzamiento cuando necesita añadir insta
 Las plantillas admiten versiones. Esto permite lanzar instancias con una configuración anterior si una versión nueva provoca problemas.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Plantilla de lanzamiento"] --> B["Versión 1"]
     A --> C["Versión 2<br/>predeterminada"]
@@ -228,7 +224,6 @@ ELB puede distribuir tráfico hacia destinos en una o varias zonas de disponibil
 Si una instancia deja de responder, ELB dirige el tráfico a los destinos disponibles sin afectar a los clientes.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Clientes"] --> B["Elastic Load Balancing"]
     B --> C["Instancia EC2 1"]
@@ -261,7 +256,6 @@ Los componentes principales son:
 - **Target group:** conjunto de recursos que recibe tráfico después de superar las comprobaciones de estado.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["Cliente"] --> B["Listener"]
     B --> C["Target group"]
