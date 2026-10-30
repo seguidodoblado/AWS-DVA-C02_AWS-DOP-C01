@@ -25,121 +25,230 @@
   text-align: center;
 }
 
-.md-typeset .highlight.language-bash,
-.md-typeset .highlight.language-sh,
-.md-typeset .highlight.language-shell {
+.md-typeset .highlight {
+  --code-block-accent: var(--md-accent-fg-color);
   position: relative;
   overflow: hidden;
-  border-left: 0.35rem solid var(--md-accent-fg-color);
+  border-left: 0.35rem solid var(--code-block-accent);
   border-radius: 0.35rem;
   background: color-mix(in srgb, var(--md-code-bg-color) 88%, var(--md-default-fg-color));
 }
 
-.md-typeset .highlight.language-bash::before,
-.md-typeset .highlight.language-sh::before,
-.md-typeset .highlight.language-shell::before {
-  display: flex;
-  min-height: 2.8rem;
-  align-items: center;
-  padding: 0 1rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
-  color: var(--md-default-fg-color--light);
-  content: ">_    Shell";
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.md-typeset .highlight.language-bash pre,
-.md-typeset .highlight.language-sh pre,
-.md-typeset .highlight.language-shell pre {
-  margin: 0;
-  border-radius: 0;
-  background: transparent;
+.md-typeset .highlight.language-bash,
+.md-typeset .highlight.language-sh,
+.md-typeset .highlight.language-shell {
+  --code-block-accent: var(--md-accent-fg-color);
 }
 
 .md-typeset .highlight.language-json,
 .md-typeset .highlight.language-jsonc {
-  position: relative;
-  overflow: hidden;
-  border-left: 0.35rem solid #42a5f5;
-  border-radius: 0.35rem;
-  background: color-mix(in srgb, var(--md-code-bg-color) 88%, var(--md-default-fg-color));
-}
-
-.md-typeset .highlight.language-json::before,
-.md-typeset .highlight.language-jsonc::before {
-  display: flex;
-  min-height: 2.8rem;
-  align-items: center;
-  padding: 0 1rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
-  color: var(--md-default-fg-color--light);
-  content: "{ }    JSON";
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.md-typeset .highlight.language-json pre,
-.md-typeset .highlight.language-jsonc pre {
-  margin: 0;
-  border-radius: 0;
-  background: transparent;
+  --code-block-accent: #42a5f5;
 }
 
 .md-typeset .highlight.language-yaml {
-  position: relative;
-  overflow: hidden;
-  border-left: 0.35rem solid #cb8b27;
-  border-radius: 0.35rem;
-  background: color-mix(in srgb, var(--md-code-bg-color) 88%, var(--md-default-fg-color));
-}
-
-.md-typeset .highlight.language-yaml::before {
-  display: flex;
-  min-height: 2.8rem;
-  align-items: center;
-  padding: 0 1rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
-  color: var(--md-default-fg-color--light);
-  content: "---    YAML";
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.md-typeset .highlight.language-yaml pre {
-  margin: 0;
-  border-radius: 0;
-  background: transparent;
+  --code-block-accent: #cb8b27;
 }
 
 .md-typeset .highlight.language-toml {
-  position: relative;
-  overflow: hidden;
-  border-left: 0.35rem solid #9c6ade;
-  border-radius: 0.35rem;
-  background: color-mix(in srgb, var(--md-code-bg-color) 88%, var(--md-default-fg-color));
+  --code-block-accent: #9c6ade;
 }
 
-.md-typeset .highlight.language-toml::before {
+.md-typeset .highlight.language-python,
+.md-typeset .highlight.language-py {
+  --code-block-accent: #3776ab;
+}
+
+.md-typeset .highlight[data-code-language="c#"],
+.md-typeset .highlight[data-code-language="csharp"] {
+  --code-block-accent: #68217a;
+}
+
+.md-typeset .highlight[data-code-language="java"] {
+  --code-block-accent: #f89820;
+}
+
+.md-typeset .highlight[data-code-language="text"] {
+  --code-block-accent: var(--md-default-fg-color--light);
+}
+
+.md-typeset .code-block-header {
   display: flex;
   min-height: 2.8rem;
   align-items: center;
-  padding: 0 1rem;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0.75rem 0.35rem 1rem;
   border-bottom: 1px solid color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
   color: var(--md-default-fg-color--light);
-  content: "[ ]    TOML";
+}
+
+.md-typeset .code-block-meta,
+.md-typeset .code-block-controls {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.md-typeset .code-block-meta {
+  flex: 1 1 auto;
+}
+
+.md-typeset .code-block-icon {
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--code-block-accent);
+  font-family: var(--md-code-font);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.md-typeset .code-block-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.md-typeset .highlight[data-code-language="bash"] .code-block-icon,
+.md-typeset .highlight[data-code-language="shell"] .code-block-icon,
+.md-typeset .highlight[data-code-language="sh"] .code-block-icon,
+.md-typeset .highlight[data-code-language="toml"] .code-block-icon,
+.md-typeset .highlight[data-code-language="yaml"] .code-block-icon,
+.md-typeset .highlight[data-code-language="yml"] .code-block-icon {
+  box-sizing: border-box;
+  padding: 0.15rem;
+  border-radius: 0.25rem;
+  background: #fff;
+}
+
+.md-typeset .code-block-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.md-typeset .code-block-language {
+  flex: 0 0 auto;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
-.md-typeset .highlight.language-toml pre {
+.md-typeset .highlight .code-block-title {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.md-typeset .code-block-controls {
+  flex: 0 0 auto;
+}
+
+.md-typeset .code-block-collapse {
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 0.25rem;
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+}
+
+.md-typeset .code-block-collapse:hover {
+  background: color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .code-block-collapse svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  transition: transform 160ms ease;
+}
+
+.md-typeset .code-block-collapse[aria-expanded="false"] svg {
+  transform: rotate(-90deg);
+}
+
+.md-typeset .highlight pre {
   margin: 0;
   border-radius: 0;
   background: transparent;
+}
+
+.md-typeset .highlight.code-block-collapsed pre {
+  display: none;
+}
+
+.md-typeset .md-clipboard,
+.md-typeset .code-block-copy,
+.md-typeset .highlight .md-code__button {
+  position: static;
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  color: var(--md-default-fg-color--light);
+  transform: none;
+  cursor: pointer;
+}
+
+.md-typeset .md-clipboard:hover,
+.md-typeset .code-block-copy:hover,
+.md-typeset .highlight .md-code__button:hover {
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .code-block-copy svg,
+.md-typeset .highlight .md-code__button svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+@media (max-width: 600px) {
+  .md-typeset .code-block-header {
+    gap: 0.5rem;
+    padding-left: 0.75rem;
+  }
+
+  .md-typeset .code-block-meta {
+    gap: 0.45rem;
+  }
+
+  .md-typeset .highlight .code-block-title {
+    font-size: 0.7rem;
+  }
 }
 
 #mermaid-modal {

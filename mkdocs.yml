@@ -45,6 +45,7 @@ extra_css:
 extra_javascript:
   - https://unpkg.com/mermaid@11/dist/mermaid.min.js
   - javascripts/mermaid-modal.js
+  - javascripts/code-blocks.js
 
 markdown_extensions:
   - admonition
@@ -84,6 +85,8 @@ nav:
           - Referencias: guia-del-estudiante/01-aws-technical-essentials/referencias.md
       - Developing on AWS:
           - 00. Descripción general del curso: guia-del-estudiante/02-developing-on-aws/index.md
+          - 01. Creación de una aplicación web en AWS: guia-del-estudiante/02-developing-on-aws/modulos/01-creacion-de-una-aplicacion-web-en-aws.md
+          - 02. Introducción al desarrollo en AWS: guia-del-estudiante/02-developing-on-aws/modulos/02-introduccion-al-desarrollo-en-aws.md
           - Glosario: guia-del-estudiante/02-developing-on-aws/glosario.md
           - Referencias: guia-del-estudiante/02-developing-on-aws/referencias.md
       - Advanced Developing on AWS:
