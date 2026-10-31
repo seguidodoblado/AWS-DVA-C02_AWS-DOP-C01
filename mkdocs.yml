@@ -87,6 +87,7 @@ nav:
           - 00. Descripción general del curso: guia-del-estudiante/02-developing-on-aws/index.md
           - 01. Creación de una aplicación web en AWS: guia-del-estudiante/02-developing-on-aws/modulos/01-creacion-de-una-aplicacion-web-en-aws.md
           - 02. Introducción al desarrollo en AWS: guia-del-estudiante/02-developing-on-aws/modulos/02-introduccion-al-desarrollo-en-aws.md
+          - 03. Introducción a los permisos: guia-del-estudiante/02-developing-on-aws/modulos/03-introduccion-a-los-permisos.md
           - Glosario: guia-del-estudiante/02-developing-on-aws/glosario.md
           - Referencias: guia-del-estudiante/02-developing-on-aws/referencias.md
       - Advanced Developing on AWS:

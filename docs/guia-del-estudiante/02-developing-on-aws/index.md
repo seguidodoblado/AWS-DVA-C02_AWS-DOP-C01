@@ -57,7 +57,7 @@ El contenido se desarrollará siguiendo este orden de módulos:
 
 1. [**Módulo 1: Creación de una aplicación web en AWS.**](modulos/01-creacion-de-una-aplicacion-web-en-aws.md)
 2. [**Módulo 2: Introducción al desarrollo en AWS.**](modulos/02-introduccion-al-desarrollo-en-aws.md)
-3. **Módulo 3: Introducción a los permisos.**
+3. [**Módulo 3: Introducción a los permisos.**](modulos/03-introduccion-a-los-permisos.md)
 4. **Módulo 4: Introducción al almacenamiento.**
 5. **Módulo 5: Procesamiento de las operaciones de almacenamiento.**
 6. **Módulo 6: Introducción a las bases de datos.**

@@ -49,3 +49,9 @@ Este glosario reúne los términos y las siglas principales de [AWS Technical Es
 | **Usuario raíz** | Identidad inicial de una cuenta de AWS, con acceso completo a dicha cuenta. | [1. Usuario raíz de AWS](modulos/01-introduccion-a-amazon-web-services.md#usuario-raiz-de-aws) |
 | **VPN (Virtual Private Network)** | Conexión cifrada que permite comunicar redes a través de una infraestructura de red existente. | [3. Virtual Private Network (VPN)](modulos/03-redes-en-aws.md#virtual-private-network-vpn) |
 | **Volumen** | Dispositivo de almacenamiento en bloques que se puede asociar a una instancia EC2. | [4. Almacenamiento en bloques](modulos/04-almacenamiento-en-aws.md#almacenamiento-en-bloques) |
+
+---
+
+!!! info "Acerca de este proyecto"
+    - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
+    - No constituye documentación oficial de Amazon Web Services (AWS).

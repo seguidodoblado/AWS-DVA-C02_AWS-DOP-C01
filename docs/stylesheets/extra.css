@@ -111,18 +111,18 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: grayscale(1);
 }
 
-.md-typeset .highlight[data-code-language="bash"] .code-block-icon,
-.md-typeset .highlight[data-code-language="shell"] .code-block-icon,
-.md-typeset .highlight[data-code-language="sh"] .code-block-icon,
-.md-typeset .highlight[data-code-language="toml"] .code-block-icon,
-.md-typeset .highlight[data-code-language="yaml"] .code-block-icon,
-.md-typeset .highlight[data-code-language="yml"] .code-block-icon {
-  box-sizing: border-box;
-  padding: 0.15rem;
-  border-radius: 0.25rem;
+[data-md-color-scheme="slate"] .md-typeset .code-block-icon img {
+  filter: grayscale(1) brightness(0) invert(1);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlight[data-code-language="json"] .code-block-icon img,
+[data-md-color-scheme="slate"] .md-typeset .highlight[data-code-language="jsonc"] .code-block-icon img {
+  border-radius: 50%;
   background: #fff;
+  filter: grayscale(1);
 }
 
 .md-typeset .code-block-icon svg {
@@ -149,8 +149,8 @@
   border-radius: 0;
   background: transparent;
   color: var(--md-default-fg-color--light);
-  font-size: 0.8rem;
-  font-style: italic;
+  font-family: var(--md-code-font);
+  font-size: 0.85em;
   font-weight: 400;
   text-overflow: ellipsis;
   white-space: nowrap;

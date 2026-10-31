@@ -12,7 +12,10 @@
     python: "python",
     sh: "bash",
     shell: "bash",
+    plaintext: "text",
+    text: "text",
     toml: "toml",
+    txt: "text",
     yaml: "yaml",
     yml: "yaml"
   };
@@ -41,6 +44,9 @@
     toml: "TOML",
     ts: "TypeScript",
     typescript: "TypeScript",
+    plaintext: "Texto simple",
+    text: "Texto simple",
+    txt: "Texto simple",
     yaml: "YAML",
     yml: "YAML"
   };

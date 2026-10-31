@@ -46,7 +46,6 @@ Las cabeceras pueden aplicarse a ambos mensajes, solo a la solicitud, solo a la 
 Puedes utilizar las distintas modalidades de acceso de forma intercambiable:
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     client["Aplicación o desarrollador"]
     api["AWS REST API"]
@@ -114,6 +113,8 @@ def list_client():
         print(content["Key"], content["LastModified"])
 ```
 
+---
+
 ```python title="API de alto nivel: listar objetos de un bucket"
 # Los recursos proporcionan una interfaz orientada a objetos para AWS.
 # Ofrecen una abstracción de más alto nivel que las llamadas de bajo
@@ -142,6 +143,8 @@ La configuración inicial puede establecer credenciales y una región predetermi
 aws <servicio> <subcomando> <parámetros> <opciones>
 ```
 
+---
+
 Ejemplo conceptual:
 
 ```shell title="Ejemplo de comando AWS CLI"
@@ -167,7 +170,6 @@ La ayuda está disponible en varios niveles, por ejemplo con `aws help`, `aws s3
 Una operación puede ejecutarse de dos formas:
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     request["Solicitud del cliente"]
 
@@ -187,7 +189,6 @@ flowchart LR
 En una operación asíncrona, la aplicación debe obtener posteriormente el resultado o determinar si la solicitud ha fallado.
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 sequenceDiagram
     participant C as Cliente
     participant D as Amazon DynamoDB
@@ -240,6 +241,8 @@ while (status != "ACTIVE")
 }
 ```
 
+---
+
 ```python title="Ejemplo: waiter en Python"
 # Crea una tabla y espera hasta que esté disponible.
 
@@ -260,6 +263,8 @@ table.meta.client.get_waiter("table_exists").wait(
 # Muestra datos de la tabla.
 print(table.item_count)
 ```
+
+---
 
 ```java title="Ejemplo: sondeo con waiters en Java"
 // Crea un waiter que espera la creación correcta de una tabla.
@@ -324,7 +329,6 @@ Kiro es un IDE basado en IA, construido sobre Code-OSS, que propone un enfoque d
 Este enfoque relaciona los requisitos del producto con los detalles técnicos de implementación mediante tres archivos principales:
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     req["requirements.md<br/>Qué y por qué"]
     design["design.md<br/>Cómo"]
