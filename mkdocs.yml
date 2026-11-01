@@ -118,6 +118,9 @@ nav:
   - Laboratorios:
       - Como usar esta guía: laboratorios/labs-guides.md
       - Configuración inicial: laboratorios/configuracion-inicial.md
+      - Configurar entorno:
+          - 00. Preparación del entorno: laboratorios/00-configurar-entorno/00-preparacion-entorno.md
+          - 01. Herramientas base y Docker: laboratorios/00-configurar-entorno/01-herramientas-base-docker.md
       - AWS Technical Essentials:
           - 00. Descripción general del curso: laboratorios/01-aws-technical-essentials/index.md
           - 01. Introducción a AWS Identity and Access Management: laboratorios/01-aws-technical-essentials/labs/01-introduccion-a-aws-identity-and-access-management.md
