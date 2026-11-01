@@ -104,6 +104,15 @@ Ejemplo:
 
 ---
 
+Máquina virtual base preparada:
+
+<!-- markdownlint-disable MD033 -->
+<!-- cSpell:disable-next-line -->
+<img src="../../../assets/aws-labs.png" alt="Entorno AWS Labs" class="zoomable">
+<!-- markdownlint-enable MD033 -->
+
+---
+
 !!! info "Acerca de este proyecto"
     - Esta documentación ha sido elaborada de forma independiente por **José Antonio Seguido Doblado** como material de estudio.
     - No constituye documentación oficial de Amazon Web Services (AWS).

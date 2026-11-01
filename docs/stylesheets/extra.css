@@ -608,6 +608,9 @@ img.zoomable:hover {
 }
 
 .image-modal-content img {
+  position: absolute;
+  top: 0;
+  left: 0;
   max-width: none !important;
   transform-origin: top left;
   cursor: grab;

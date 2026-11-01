@@ -81,7 +81,7 @@ Ejemplo:
 
 <!-- markdownlint-disable MD033 -->
 <!-- cSpell:disable-next-line -->
-<img src="../../../assets/preparar-repositorio-docker.png" alt="Comprobar herramientas básicas" class="zoomable">
+<img src="../../../assets/preparar-repositorio-docker.png" alt="Preparar repositorio Docker" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 
 ### Instalar Docker y Docker Compose
@@ -99,7 +99,7 @@ Ejemplo:
 
 <!-- markdownlint-disable MD033 -->
 <!-- cSpell:disable-next-line -->
-<img src="../../../assets/instalar-docker.png" alt="Comprobar herramientas básicas" class="zoomable">
+<img src="../../../assets/instalar-docker.png" alt="Instalar Docker" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 
 ### Comprobar el servicio Docker
@@ -118,7 +118,7 @@ Ejemplo:
 
 <!-- markdownlint-disable MD033 -->
 <!-- cSpell:disable-next-line -->
-<img src="../../../assets/comprobar-docker.png" alt="Comprobar herramientas básicas" class="zoomable">
+<img src="../../../assets/comprobar-docker.png" alt="Comprobar servicio Docker" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 
 Si no estuviera iniciado:
@@ -137,7 +137,7 @@ Ejemplo:
 
 <!-- markdownlint-disable MD033 -->
 <!-- cSpell:disable-next-line -->
-<img src="../../../assets/habilitar-inicio-automatico-docker.png" alt="Comprobar herramientas básicas" class="zoomable">
+<img src="../../../assets/habilitar-inicio-automatico-docker.png" alt="Habilitar inicio automático Docker" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 
 ### Ejecutar Docker sin sudo
@@ -164,7 +164,7 @@ Ejemplo:
 
 <!-- markdownlint-disable MD033 -->
 <!-- cSpell:disable-next-line -->
-<img src="../../../assets/comprobar-grupo-docker.png" alt="Comprobar herramientas básicas" class="zoomable">
+<img src="../../../assets/comprobar-grupo-docker.png" alt="Comprobar grupo Docker" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 
 Comprobar que Docker funciona sin privilegios elevados:
@@ -179,7 +179,7 @@ Ejemplo:
 
 <!-- markdownlint-disable MD033 -->
 <!-- cSpell:disable-next-line -->
-<img src="../../../assets/comprobar-funciona-docker.png" alt="Comprobar herramientas básicas" class="zoomable">
+<img src="../../../assets/comprobar-funciona-docker.png" alt="Comprobar funcionamiento Docker" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 
 ### Comprobar versiones
@@ -205,7 +205,7 @@ Ejemplo:
 
 <!-- markdownlint-disable MD033 -->
 <!-- cSpell:disable-next-line -->
-<img src="../../../assets/versiones-docker.png" alt="Comprobar herramientas básicas" class="zoomable">
+<img src="../../../assets/versiones-docker.png" alt="Versiones Docker y Docker Compose" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 
 ---
