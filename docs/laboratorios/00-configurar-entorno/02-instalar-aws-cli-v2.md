@@ -1,4 +1,4 @@
-# Módulo 2. AWS CLI v2
+# Módulo 2: AWS CLI v2
 
 <!-- markdownlint-disable MD033 -->
 <p align="center">
@@ -34,7 +34,7 @@ x86_64
 
 ## Instalar AWS CLI v2
 
-AWS proporciona un instalador oficial par Linux. El instalador actual instala AWS CLI para el usuario actual y coloca el ejecutable en `~/.local/bin`.
+AWS proporciona un instalador oficial para Linux. El instalador actual instala AWS CLI para el usuario actual y coloca el ejecutable en `~/.local/bin`.
 Ejecutar:
 
 ```shell title="Instalar AWS CLI v2"

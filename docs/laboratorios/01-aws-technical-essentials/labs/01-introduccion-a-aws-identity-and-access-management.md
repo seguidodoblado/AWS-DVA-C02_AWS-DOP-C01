@@ -1,4 +1,4 @@
-# Lab 1 - Introduction to AWS Identity and Access Management
+# Lab 1: Introduction to AWS Identity and Access Management
 
 <!-- markdownlint-disable MD033 -->
 <p align="center">

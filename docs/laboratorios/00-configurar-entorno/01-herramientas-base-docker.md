@@ -1,4 +1,4 @@
-# Módulo 1. Herramientas básicas y Docker
+# Módulo 1: Herramientas básicas y Docker
 
 <!-- markdownlint-disable MD033 -->
 <p align="center">

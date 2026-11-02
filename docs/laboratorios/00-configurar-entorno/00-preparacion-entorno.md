@@ -1,4 +1,4 @@
-# Módulo 0. Preparación del entorno
+# Módulo 0: Preparación del entorno
 
 <!-- markdownlint-disable MD033 -->
 <p align="center">
