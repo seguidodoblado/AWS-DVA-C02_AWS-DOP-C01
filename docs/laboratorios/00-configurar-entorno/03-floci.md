@@ -9,7 +9,7 @@
 
 ## Objetivo
 
-Instalar Floci Community dentro de la máquina virtual y dejarlo preparado para ejecutar los laboratorios AWS localmente.
+Instalar Floci (edición `floci-always-free`) dentro de la máquina virtual y dejarlo preparado para ejecutar los laboratorios AWS localmente.
 Floci se ejecutará mediante Docker y expondrá sus servicios AWS a través del puerto 4566.
 
 ## Requisitos previos
@@ -18,6 +18,7 @@ Floci se ejecutará mediante Docker y expondrá sus servicios AWS a través del 
 - Docker Engine instalado.
 - Docker Compose instalado.
 - AWS CLI v2 instalado.
+- `curl` instalado.
 - Usuario con permisos para ejecutar Docker.
 - Conexión a Internet.
 
@@ -75,8 +76,12 @@ floci version
 La instalación utilizada para los laboratorios es:
 
 ```shell title="Resultado esperado"
-Floci 2.4.0
+Floci CLI 0.4.0
+Server:    2.4.0 (floci-always-free)
 ```
+
+!!! note
+    `floci version` muestra dos versiones independientes: la de la CLI (`0.4.0`) y la del servidor (`2.4.0`). La edición utilizada es `floci-always-free`.
 
 Ejemplo:
 
@@ -116,6 +121,8 @@ El servicio quedará disponible en:
 
 [http://localhost:4566](http://localhost:4566)
 
+También responde en `http://localhost.floci.io:4566`, que es el alias que utiliza `floci doctor` para AWS CLI.
+
 Ejemplo:
 
 <!-- markdownlint-disable MD033 -->
@@ -139,8 +146,10 @@ El resultado debe indicar:
 ```shell title="Resultado esperado"
 Container:  floci  running
 Reachable:  yes
-Version:    2.2.0
+Version:    2.4.0
 ```
+
+La salida completa incluye también `Image`, `Ports`, `Endpoint` y `Edition`.
 
 Ejemplo:
 
@@ -163,6 +172,9 @@ El diagnóstico debe confirmar:
 - Contenedor activo.
 - Endpoint accesible.
 - Versión de Floci detectada.
+
+!!! note
+    Si `floci doctor` muestra el aviso `aws.cli.endpoint` con `AWS_ENDPOINT_URL is not set`, es esperado antes de configurar AWS CLI. Se resuelve con `use-floci` que explicaremos más adelante, el cual define `AWS_ENDPOINT_URL=http://localhost.floci.io:4566`. Las comprobaciones directas con `curl` o `aws --endpoint-url` pueden seguir usando `http://localhost:4566`.
 
 Ejemplo:
 
@@ -241,7 +253,11 @@ Para una mayor comodidad, creamos un fichero `.bash_aliases` con el siguiente co
 
 ```text title=".bash_aliases"
 alias floci-iam='docker compose -f compose.floci.yaml up -d'
+alias noendpoint='unset AWS_ENDPOINT_URL'
 ```
+
+!!! note
+    Los alias utilizan la ruta relativa `compose.floci.yaml`. Ejecútalos desde el directorio en el que creaste el archivo, o sustituye la ruta por una absoluta. El alias `noendpoint` elimina `AWS_ENDPOINT_URL` de la sesión actual.
 
 Posteriormente lo hacemos efectivo con:
 
@@ -269,13 +285,16 @@ Verificar que la variable está dentro del contenedor:
 ```shell title="Comprobar variable evaluación políticas"
 docker inspect floci \
   --format '{{range .Config.Env}}{{println .}}{{end}}' \
-  | grep FLOCI_SERVICES_IAM_ENFORCEMENT_ENABLED
+  | grep FLOCI_
 ```
 
 Resultado esperado:
 
 ```shell title="Resultado esperado"
 FLOCI_SERVICES_IAM_ENFORCEMENT_ENABLED=true
+FLOCI_DEFAULT_REGION=eu-west-1
+FLOCI_VERSION=2.4.0
+FLOCI_STORAGE_PERSISTENT_PATH=/app/data
 ```
 
 Ejemplo:
@@ -343,7 +362,7 @@ aws --endpoint-url=http://localhost:4566 \
 iam list-users
 ```
 
-Al comenzar, lista debería estar vacía:
+Al comenzar, la lista debería estar vacía:
 
 ```json title="Lista vacía usuarios IAM"
 {
@@ -366,17 +385,20 @@ Después de iniciar Floci, configuramos las variables de entorno que utilizará 
 export AWS_ACCESS_KEY_ID='test'
 export AWS_SECRET_ACCESS_KEY='test'
 export AWS_DEFAULT_REGION='eu-west-1'
-export AWS_ENDPOINT_URL="http://localhost::4566'
+export AWS_ENDPOINT_URL='http://localhost.floci.io:4566'
 ```
 
-Para mayor comodidad podemos añadir este contenido en `.bash_aliases`.
+!!! note
+    `http://localhost:4566` y `http://localhost.floci.io:4566` apuntan al mismo emulador local. Se usa `localhost.floci.io` en `AWS_ENDPOINT_URL` porque es el alias que recomienda `floci doctor`; para comprobaciones directas sigue siendo válido `http://localhost:4566`.
+
+Para mayor comodidad podemos añadir este contenido en `.bash_aliases`
 
 ```text title="use-floci"
 use-floci() {
   export AWS_ACCESS_KEY_ID=test
   export AWS_SECRET_ACCESS_KEY=test
   export AWS_DEFAULT_REGION=eu-west-1
-  export AWS_ENDPOINT_URL=http://localhost:4566
+  export AWS_ENDPOINT_URL=http://localhost.floci.io:4566
 
   echo "AWS CLI configurada para Floci"
 }
@@ -402,13 +424,13 @@ AWS CLI configurada para Floci
 
 ## Detener Floci
 
-Si se inicio mediante Docker Compose:
+Si se inició mediante Docker Compose:
 
 ```shell title="Detener Floci con evaluación de políticas"
 docker compose -f compose.floci.yaml down
 ```
 
-Si se inicio mediante CLI:
+Si se inició mediante CLI:
 
 ```shell title="Detener Floci"
 floci stop
@@ -421,9 +443,13 @@ En `.bash_aliases` ponemos el siguiente contenido tras el alias de inicio:
 alias floci-iam-stop='docker compose -f compose.floci.yaml down'
 ```
 
-Y volver a hacer efectivo el alias que acabamos de crear:
+Recargamos los alias y ejecutamos el de parada para comprobar que detiene el entorno:
 
-```shell title="Activa alias"
+```shell title="Recargar alias"
+source ~/.bash_aliases
+```
+
+```shell title="Detener Floci con evaluación de políticas"
 floci-iam-stop
 ```
 
@@ -437,13 +463,13 @@ Ejemplo:
 ## Restablecer el entorno
 
 El estado de Floci se conserva en el volumen `floci-data`.
-Para eliminar completamente el estado del entorno:
+Para eliminar completamente el estado del entorno, incluido el volumen:
 
 ```shell title="Eliminar completamente estado entorno Floci"
-docker compose -f compose.floci.yaml down
+docker compose -f compose.floci.yaml down -v
 ```
 
-Consultar los volúmenes:
+Si el contenedor ya se detuvo con `down` sin `-v`, el volumen sigue existiendo. En ese caso, consultar los volúmenes:
 
 ```shell title="Consultar volúmenes"
 docker volume ls
@@ -455,7 +481,7 @@ Eliminar únicamente el volumen de Floci:
 docker volume rm seguidodoblado_floci-data
 ```
 
-El nombre puede variar según el nombre del proyecto de Docker Compose.
+El nombre puede variar según el nombre del proyecto de Docker Compose. Sustituye `seguidodoblado_floci-data` por el que aparezca en `docker volume ls`.
 
 !!! warning
     Eliminar el volumen borra usuarios, grupos, políticas, buckets, instancias y demás recursos locales de Floci.
@@ -467,46 +493,65 @@ El nombre puede variar según el nombre del proyecto de Docker Compose.
 
 ## Alternancia con LocalStack
 
-Floci y LocalStack utilizar el puerto 4566, por lo que no pueden ejecutarse simultáneamente.
-Para iniciar Floci:
+Floci y LocalStack utilizan el puerto 4566, por lo que no pueden ejecutarse simultáneamente.
 
-```shell title="Iniciar Floci"
+### Alternar Floci
+
+Si quieres Floci en modo normal:
+
+```shell title="Alternar a Floci normal"
+lstk stop
+noendpoint
 floci start
-```
-
-En caso de necesitar evaluación de políticas:
-
-```shell title="Iniciar Floci con evaluación de políticas"
-floci-iam
-```
-
-Configuramos las variables para AWS CLI:
-
-```shell title="Configurar variables AWS CLI"
 use-floci
 ```
 
-Para detenerlo:
+Si necesitas evaluación de políticas:
 
-```shell title="Detener Floci"
+```shell title="Alternar a Floci con evaluación de políticas"
+lstk stop
+noendpoint
+floci-iam
+use-floci
+```
+
+`use-floci` configura `AWS_ENDPOINT_URL=http://localhost.floci.io:4566` y las credenciales de AWS CLI.
+
+### Alternar LocalStack
+
+En caso de haber iniciado Floci de manera normal:
+
+```shell title="Alternar con Floci iniciado normalmente"
 floci stop
+noendpoint
+lstk start
+use-localstack
 ```
 
-En caso de haber iniciado el motor de evaluación de políticas:
+En caso de haber iniciado Floci con evaluación de políticas:
 
-```shell title="Detener Floci con evaluación de políticas"
+```shell title="Alternar con Floci iniciado con evaluación de políticas"
 floci-iam-stop
+noendpoint
+lstk start
+use-localstack
 ```
 
-Antes de iniciar LocalStack, Floci debe estar detenido.
+`use-localstack` está definida en [04. LocalStack](04-localstack.md#configurar-aws-cli-para-localstack) y configura `AWS_ENDPOINT_URL=http://localhost.localstack.cloud:4566`.
+
+!!! note
+    `floci-iam` y `floci-iam-stop` utilizan `compose.floci.yaml` con ruta relativa. Ejecuta estos comandos desde el directorio en el que creaste el archivo, o usa una ruta absoluta.
+
+Solo debe estar activo uno de los dos emuladores.
 
 <!-- markdownlint-disable MD046 -->
 !!! success "Resultado"
     Floci queda instalado y preparado dentro de la máquina virtual con:
 
-    - Floci Community 2.2.0.
+    - Floci CLI 0.4.0 y servidor 2.4.0 (edición `floci-always-free`).
     - Docker como motor de ejecución.
-    - Endpoint local en `http://localhost:4566`.
+    - Endpoint local en `http://localhost:4566` (`http://localhost.floci.io:4566` para AWS CLI).
+    - Región de AWS CLI: `eu-west-1`.
     - IAM Policy Enforcement activado mediante Docker Compose.
     - Persistencia local mediante el volumen `floci-data`.
     - AWS CLI preparada para conectarse al emulador.

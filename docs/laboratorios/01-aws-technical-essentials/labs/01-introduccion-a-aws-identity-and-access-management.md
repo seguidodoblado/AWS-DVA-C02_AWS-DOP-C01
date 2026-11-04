@@ -34,7 +34,7 @@ El núcleo del laboratorio es IAM. S3 y EC2 se utilizan para demostrar cómo las
 
 ## Requisitos del entorno local
 
-Para realizar este laboratorio se deben haber ejecutado los pasos previos de la [configuración inicial.](../../configuracion-floci.md)
+Para realizar este laboratorio se deben haber ejecutado los pasos previos de la [configuración inicial](../../00-configurar-entorno/03-floci.md).
 
 ## Preparación del simulador
 
@@ -98,7 +98,7 @@ La cuenta `000000000000` es la cuenta simulada por Floci.
 ### Fase 2 - Verificar IAM antes de comenzar
 
 !!! warning "Atención"
-    Este laboratorio en particular requiere la activación de Policy Enforcement en Floci siguiendo los siguientes [pasos](../../configuracion-inicial.md#activar-iam-policy-enforcement-en-floci).
+    Este laboratorio en particular requiere la activación de Policy Enforcement en Floci siguiendo los siguientes [pasos](../../00-configurar-entorno/03-floci.md#activar-iam-policy-enforcement).
 
 Consultar los usuarios existentes:
 

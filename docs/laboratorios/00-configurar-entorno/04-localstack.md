@@ -19,7 +19,6 @@ LocalStack se ejecutará mediante la CLI oficial `lstk`, que gestionará el cont
 
 - Linux Mint Cinnamon 22.3.
 - Docker Engine instalado.
-- Docker Compose instalado.
 - AWS CLI v2 instalado.
 - `curl` instalado.
 - Conexión a Internet.
@@ -31,13 +30,7 @@ Comprobar Docker:
 docker --version
 ```
 
----
-
-```shell title="Comprobar versión Docker Compose"
-docker compose version
-```
-
-Comprobar AWS CLI
+Comprobar AWS CLI:
 
 ```shell title="Comprobar versión AWS CLI"
 aws --version
@@ -51,6 +44,9 @@ Instalar nvm:
 ```shell title="Instalar nvm"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 ```
+
+!!! warning
+    El instalador se descarga y ejecuta directamente desde Internet. En un entorno sensible conviene revisar previamente el contenido del script.
 
 Ejemplo:
 
@@ -148,6 +144,12 @@ Comprobar la versión:
 lstk --version
 ```
 
+Resultado esperado:
+
+```shell title="Resultado esperado"
+lstk 1.4.3
+```
+
 Comprobar la ubicación:
 
 ```shell title="Comprobar ruta ejecutable CLI lstk"
@@ -184,19 +186,12 @@ Ejemplo:
 
 <!-- markdownlint-disable MD033 -->
 <!-- cSpell:disable-next-line -->
-<img src="../../../assets/lstk-doctor.png" alt="Versiones de requisitos para Floci" class="zoomable">
+<img src="../../../assets/lstk-doctor.png" alt="Comprobar entorno lstk" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 
 ## Autenticación
 
-La primera ejecución de `lstk` puede iniciar un proceso de autenticación en el navegador.
-Ejecutar:
-
-```shell title="Iniciar LocalStack"
-lstk start
-```
-
-Completar el inicio de sesión si la CLI lo solicita.
+La primera vez que se ejecute `lstk start` (en la sección siguiente) puede abrirse un proceso de autenticación en el navegador. Complétalo si la CLI lo solicita.
 
 ## Configurar IAM Policy Enforcement
 
@@ -273,7 +268,7 @@ Iniciar LocalStack:
 lstk start
 ```
 
-La CLI debe arrancar el contenedor configurado en `config.toml`.
+La primera ejecución puede solicitar autenticación y preguntar qué emulador utilizar. Selecciona `AWS`. La CLI arranca el contenedor configurado en `config.toml`; si cambias la configuración, el propio `lstk` indica que se edite en `.config/lstk/config.toml`.
 
 <!-- markdownlint-disable MD033 -->
 <!-- cSpell:disable-next-line -->
@@ -296,11 +291,11 @@ La CLI debe arrancar el contenedor configurado en `config.toml`.
 lstk status
 ```
 
-El resultado debe indicar que el emulador AWS está ejecutándose y que el endpoint es accesible.
+El resultado debe indicar que el emulador AWS está ejecutándose y que el endpoint es accesible. En este entorno, la salida muestra el contenedor `localstack-aws` y la versión `2026.10.4`.
 
 <!-- markdownlint-disable MD033 -->
 <!-- cSpell:disable-next-line -->
-<img src="../../../assets/lstk-status.png" alt="Versiones de requisitos para Floci" class="zoomable">
+<img src="../../../assets/lstk-status.png" alt="Estado de LocalStack" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 
 Comprobar también el contenedor Docker:
@@ -309,7 +304,7 @@ Comprobar también el contenedor Docker:
 docker ps
 ```
 
-El nombre del contenedor lo gestiona `lstk` y puede no ser simplemente `localstack`.
+El nombre del contenedor lo gestiona `lstk`. En este entorno se llama `localstack-aws`, aunque puede variar.
 En caso de estar todo correcto, LocalStack estará accesible desde:
 
 [https://app.localstack.cloud](https://app.localstack.cloud)
@@ -335,10 +330,12 @@ docker ps --format '{{.Names}}'
 Inspeccionar sus variables:
 
 ```shell title="Inspeccionar variables contenedor"
-docker inspect <CONTENEDOR_LOCALSTACK> \
+docker inspect localstack-aws \
   --format '{{range .Config.Env}}{{println .}}{{end}}' \
   | grep ENFORCE_IAM
 ```
+
+Sustituye `localstack-aws` por el nombre que devuelva `docker ps` si es diferente.
 
 Resultado esperado:
 
@@ -355,7 +352,7 @@ Ejemplo:
 
 <!-- markdownlint-disable MD033 -->
 <!-- cSpell:disable-next-line -->
-<img src="../../../assets/verificar-variable-iam.png" alt="Versiones de requisitos para Floci" class="zoomable">
+<img src="../../../assets/verificar-variable-iam.png" alt="Verificar variable IAM" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 
 ## Comprobar el endpoint
@@ -423,7 +420,9 @@ echo "$AWS_ENDPOINT_URL"
 
 Para una mayor comodidad podemos generar el siguiente contenido en `.bash_aliases`.
 
-```text title="use-localstack"
+```text title=".bash_aliases"
+alias noendpoint='unset AWS_ENDPOINT_URL'
+
 use-localstack() {
   export AWS_ACCESS_KEY_ID=test
   export AWS_SECRET_ACCESS_KEY=test
@@ -434,17 +433,29 @@ use-localstack() {
 }
 ```
 
-Recargamos con `source ~/.bash_aliases` y después podemos invocar el comando:
+El alias `noendpoint` elimina `AWS_ENDPOINT_URL` de la sesión actual.
+
+Recargamos los alias:
+
+```shell title="Recargar alias"
+source ~/.bash_aliases
+```
+
+Después podemos invocar:
 
 ```shell title="Configurar variables LocalStack en AWS CLI"
 use-localstack
 ```
 
 `AWS_ENDPOINT_URL` no debe estar definida al ejecutar `lstk start`, porque `lstk` gestiona su propio contenedor local. Se configura después de iniciar LocalStack.
+
+!!! note
+    `http://localhost:4566` y `http://localhost.localstack.cloud:4566` apuntan al mismo emulador local. Se usa el alias `localhost.localstack.cloud` en `AWS_ENDPOINT_URL` porque es el que muestra `lstk status`; para comprobaciones directas con `curl` o `aws --endpoint-url` sigue siendo válido `http://localhost:4566`.
+
 También se puede evitar la variable y especificar siempre el endpoint:
 
-```shell title="Espeficicar endpoint"
-aws --endpoint-url=http://localhost:4566 ...
+```shell title="Especificar endpoint"
+aws --endpoint-url=http://localhost:4566 sts get-caller-identity
 ```
 
 ## Detener LocalStack
@@ -457,7 +468,7 @@ Ejemplo:
 
 <!-- markdownlint-disable MD033 -->
 <!-- cSpell:disable-next-line -->
-<img src="../../../assets/lstk-stop.png" alt="Versiones de requisitos para Floci" class="zoomable">
+<img src="../../../assets/lstk-stop.png" alt="Detener LocalStack" class="zoomable">
 <!-- markdownlint-enable MD033 -->
 Comprobar que se ha detenido:
 
@@ -490,37 +501,46 @@ En caso de haber iniciado Floci de manera normal:
 
 ```shell title="Alternar con Floci iniciado normalmente"
 floci stop
-unset AWS_ENDPOINT_URL
+noendpoint
 lstk start
+use-localstack
 ```
 
 En caso de haber iniciado Floci con evaluación de políticas:
 
 ```shell title="Alternar con Floci iniciado con evaluación de políticas"
 floci-iam-stop
-unset AWS_ENDPOINT_URL
+noendpoint
 lstk start
+use-localstack
 ```
 
-Después de iniciar LocalStack:
-
-```shell title="Añadir variable endpoint"
-export AWS_ENDPOINT_URL='http://localhost.localstack.cloud:4566'
-```
+`use-localstack` configura `AWS_ENDPOINT_URL=http://localhost.localstack.cloud:4566` y las credenciales de AWS CLI.
 
 ### Alternar Floci
 
-```shell title="Alternar con LocalStack"
+Si quieres Floci en modo normal:
+
+```shell title="Alternar a Floci normal"
 lstk stop
-unset AWS_ENDPOINT_URL
+noendpoint
+floci start
+use-floci
+```
+
+Si necesitas evaluación de políticas:
+
+```shell title="Alternar a Floci con evaluación de políticas"
+lstk stop
+noendpoint
 floci-iam
+use-floci
 ```
 
-Después de iniciar Floci:
+`use-floci` está definida en [03. Floci](03-floci.md#configuracion-de-aws-cli-para-floci) y configura `AWS_ENDPOINT_URL=http://localhost.floci.io:4566`.
 
-```shell title="Añadir variable endpoint"
-export AWS_ENDPOINT_URL='http://localhost.floci.io:4566'
-```
+!!! note
+    `floci-iam` y `floci-iam-stop` utilizan `compose.floci.yaml` con ruta relativa. Ejecuta estos comandos desde el directorio en el que creaste el archivo, o usa una ruta absoluta.
 
 Solo debe estar activo uno de los dos emuladores.
 
@@ -530,13 +550,13 @@ Solo debe estar activo uno de los dos emuladores.
 
     - Node.js LTS gestionado mediante nvm.
     - npm compatible con Node.js.
-    - CLI `lstk`.
+    - CLI `lstk` 1.4.3.
     - Autenticación gestionada por `lstk`.
     - Docker como motor de ejecución.
     - IAM Policy Enforcement activado mediante un perfil de `config.toml`.
-    - Endpoint local en `http://localhost:4566`.
-    - Región predeterminada en `eu-west-1`.
-    - Persistencia gestionada por `lstk`.
+    - Endpoint local en `http://localhost:4566` (`http://localhost.localstack.cloud:4566` para AWS CLI).
+    - Región usada por AWS CLI: `eu-west-1`.
+    - Persistencia y reset gestionados por `lstk`.
     - AWS CLI preparada para conectarse al emulador.
 
     No es necesario utilizar Docker Compose para LocalStack en la evaluación de políticas. Compose se reserva para Floci, mientras que LocalStack se inicia y configura mediante `lstk`.
