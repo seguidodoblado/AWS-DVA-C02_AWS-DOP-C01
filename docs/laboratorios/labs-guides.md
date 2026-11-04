@@ -13,14 +13,16 @@ Aquí se recogen las adaptaciones de los laboratorios oficiales para ejecutarlos
 
 ---
 
-## [Configuración inicial](../laboratorios/configuracion-inicial.md)
-
----
-
 ## Laboratorios disponibles
 
 <!-- markdownlint-disable MD033 -->
 <div class="grid cards card-button-grid" markdown>
+
+- :material-wrench-outline:{ .lg .middle } **Configurar entorno**
+
+    Pasos para preparar el entorno local antes de realizar los laboratorios.
+
+    [:octicons-arrow-right-24: Acceder a la configuración](./00-configurar-entorno/00-preparacion-entorno.md){ .md-button .md-button--primary }
 
 - :material-cloud-outline:{ .lg .middle } **AWS Technical Essentials**
 

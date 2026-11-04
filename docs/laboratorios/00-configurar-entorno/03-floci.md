@@ -197,6 +197,7 @@ services:
       - "4566:4566"
     environment:
       FLOCI_SERVICES_IAM_ENFORCEMENT_ENABLED: "true"
+      FLOCI_DEFAULT_REGION: "eu-west-1"
     volumes:
       - floci-data:/app/data
       - /var/run/docker.sock:/var/run/docker.sock
@@ -356,6 +357,17 @@ Ejemplo:
 <!-- cSpell:disable-next-line -->
 <img src="../../../assets/comprobar-credenciales-usuarios-iam.png" alt="Comprobar credenciales usuarios IAM" class="zoomable">
 <!-- markdownlint-enable MD033 -->
+
+## Configuración de AWS CLI para Floci
+
+Después de iniciar Floci, configuramos las variables de entorno que utilizará AWS CLI:
+
+```shell title="Configurar AWS CLI con endpoint local"
+export AWS_ACCESS_KEY_ID='test'
+export AWS_SECRET_ACCESS_KEY='test'
+export AWS_DEFAULT_REGION='eu-west-1'
+export AWS_ENDPOINT_URL="http://localhost::4566'
+```
 
 ## Detener Floci
 

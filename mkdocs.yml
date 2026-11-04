@@ -117,12 +117,12 @@ nav:
 
   - Laboratorios:
       - Como usar esta guía: laboratorios/labs-guides.md
-      - Configuración inicial: laboratorios/configuracion-inicial.md
       - Configurar entorno:
           - 00. Preparación del entorno: laboratorios/00-configurar-entorno/00-preparacion-entorno.md
           - 01. Herramientas base y Docker: laboratorios/00-configurar-entorno/01-herramientas-base-docker.md
           - 02. Instalar AWS CLI v2: laboratorios/00-configurar-entorno/02-instalar-aws-cli-v2.md
           - 03. Floci: laboratorios/00-configurar-entorno/03-floci.md
+          - 04. LocalStack: laboratorios/00-configurar-entorno/04-localstack.md
       - AWS Technical Essentials:
           - 00. Descripción general del curso: laboratorios/01-aws-technical-essentials/index.md
           - 01. Introducción a AWS Identity and Access Management: laboratorios/01-aws-technical-essentials/labs/01-introduccion-a-aws-identity-and-access-management.md
