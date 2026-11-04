@@ -421,6 +421,25 @@ Comprobar:
 echo "$AWS_ENDPOINT_URL"
 ```
 
+Para una mayor comodidad podemos generar el siguiente contenido en `.bash_aliases`.
+
+```text title="use-localstack"
+use-localstack() {
+  export AWS_ACCESS_KEY_ID=test
+  export AWS_SECRET_ACCESS_KEY=test
+  export AWS_DEFAULT_REGION=eu-west-1
+  export AWS_ENDPOINT_URL=http://localhost.localstack.cloud:4566
+
+  echo "AWS CLI configurada para LocalStack"
+}
+```
+
+Recargamos con `source ~/.bash_aliases` y después podemos invocar el comando:
+
+```shell title="Configurar variables LocalStack en AWS CLI"
+use-localstack
+```
+
 `AWS_ENDPOINT_URL` no debe estar definida al ejecutar `lstk start`, porque `lstk` gestiona su propio contenedor local. Se configura después de iniciar LocalStack.
 También se puede evitar la variable y especificar siempre el endpoint:
 

@@ -369,6 +369,37 @@ export AWS_DEFAULT_REGION='eu-west-1'
 export AWS_ENDPOINT_URL="http://localhost::4566'
 ```
 
+Para mayor comodidad podemos añadir este contenido en `.bash_aliases`.
+
+```text title="use-floci"
+use-floci() {
+  export AWS_ACCESS_KEY_ID=test
+  export AWS_SECRET_ACCESS_KEY=test
+  export AWS_DEFAULT_REGION=eu-west-1
+  export AWS_ENDPOINT_URL=http://localhost:4566
+
+  echo "AWS CLI configurada para Floci"
+}
+```
+
+Posteriormente recargamos los alias con:
+
+```shell title="Recargar alias"
+source ~/.bash_aliases
+```
+
+Y ahora podemos preparar las variables de Floci para AWS CLI con este simple comando:
+
+```shell title="Preparar variables Floci para AWS CLI"
+use-floci
+```
+
+---
+
+```shell title="Resultado esperado"
+AWS CLI configurada para Floci
+```
+
 ## Detener Floci
 
 Si se inicio mediante Docker Compose:
@@ -447,6 +478,12 @@ En caso de necesitar evaluación de políticas:
 
 ```shell title="Iniciar Floci con evaluación de políticas"
 floci-iam
+```
+
+Configuramos las variables para AWS CLI:
+
+```shell title="Configurar variables AWS CLI"
+use-floci
 ```
 
 Para detenerlo:
