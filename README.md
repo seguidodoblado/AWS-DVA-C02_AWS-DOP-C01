@@ -9,6 +9,21 @@
 </p>
 <!-- markdownlint-enable MD033 -->
 
+<!-- markdownlint-disable MD033 -->
+<p align="center">
+  <a href="https://github.com/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01/releases"><img src="https://img.shields.io/github/v/release/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01" alt="release"></a>
+  <a href="https://github.com/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01/actions/workflows/deploy.yml"><img src="https://github.com/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01/actions/workflows/deploy.yml/badge.svg" alt="Deploy MkDocs"></a>
+  <a href="https://github.com/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01/blob/main/COPYING"><img src="https://img.shields.io/github/license/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01" alt="license"></a>
+  <a href="https://github.com/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01/commits/main/"><img src="https://img.shields.io/github/last-commit/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01" alt="last commit"></a>
+  <a href="https://github.com/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01/commits/main/"><img src="https://img.shields.io/github/commit-activity/t/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01" alt="total commits"></a>
+  <a href="https://github.com/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01/stargazers"><img src="https://img.shields.io/github/stars/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01?style=flat" alt="stars"></a>
+  <a href="https://github.com/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01/issues"><img src="https://img.shields.io/github/issues/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01" alt="issues"></a>
+  <a href="https://github.com/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01"><img src="https://img.shields.io/github/languages/top/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01" alt="language"></a>
+  <a href="https://codetime.dev"><img src="https://shields.jannchie.com/endpoint?style=flat&color=0284c7&url=https%3A%2F%2Fcodetime.dev%2Fv3%2Fusers%2Fshield%3Fuid%3D36830" alt="CodeTime"></a>
+  <a href="https://wakatime.com/badge/github/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01"><img src="https://wakatime.com/badge/github/seguidodoblado/AWS-DVA-C02_AWS-DOP-C01.svg" alt="wakatime"></a>
+</p>
+<!-- markdownlint-enable MD033 -->
+
 Material de estudio en español para preparar las certificaciones **AWS Certified Developer - Associate (DVA-C02)** y **AWS Certified DevOps Engineer - Professional (DOP-C01)**.
 
 La guía reúne los cursos teóricos organizados para consultar sus módulos, términos y referencias.
