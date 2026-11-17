@@ -28,3 +28,31 @@ Este repositorio es material de estudio independiente y no oficial. AWS, Amazon 
 ## Licencia
 
 Consulta el archivo [COPYING](COPYING) para más información.
+
+---
+
+# English
+
+## AWS DVA-C02 / AWS DOP-C01
+
+Study material in Spanish to prepare for the **AWS Certified Developer - Associate (DVA-C02)** and **AWS Certified DevOps Engineer - Professional (DOP-C01)** certifications.
+
+The guide gathers the theory courses, organized so you can browse their modules, terms and references.
+
+---
+
+### Documentation
+
+Visit the published site at **[https://seguidodoblado.github.io/AWS-DVA-C02_AWS-DOP-C01/](https://seguidodoblado.github.io/AWS-DVA-C02_AWS-DOP-C01/)** to access all the organized content. Note that the content itself is written in Spanish.
+
+---
+
+### Disclaimer
+
+This repository is independent, unofficial study material. AWS, Amazon Web Services and related service names are trademarks of Amazon.com, Inc. or its affiliates.
+
+---
+
+### License
+
+See the [COPYING](COPYING) file for more information.
